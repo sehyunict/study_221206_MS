@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="mybatis.main">
+
+	<resultMap type="musicVo" id="music">
+		<result column="MUSIC_No" property="MUSIC_No"/>
+		<result column="MUSIC_Title" property="MUSIC_Title"/>
+	</resultMap>
+  
+	<select id="selectMusic" resultMap="music">
+		select MUSIC_No, MUSIC_Title from TN_MS_MUSIC ORDER BY MUSIC_No
+	</select>
+	
+</mapper>
