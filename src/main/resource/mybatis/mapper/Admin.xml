@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+	<mapper namespace="mybatis.admin">
+
+	<!-- admin 로그인 체크 sql -->
+	<select id="adminlogincheck" resultType="int" parameterType="memberVo">
+	
+		SELECT COUNT(*) FROM TN_MS_MEMBER WHERE MEMBER_ID = 'admin' AND MEMBER_PW = #{MEMBER_Pw}
+		
+	</select>
+	
+	<!-- 전체 회원 조회 sql -->
+	<select id="memberlist" resultType="memberVo" parameterType="pageVo">
+		
+		<![CDATA[
+		SELECT 
+			MEMBER_NO, MEMBER_ID, MEMBER_NAME, MEMBER_EMAIL 
+		FROM
+		    (SELECT ROWNUM RN, MEMBER_NO, MEMBER_ID, MEMBER_NAME, MEMBER_EMAIL
+		    FROM 
+		    	(SELECT MEMBER_NO, MEMBER_ID, MEMBER_NAME, MEMBER_EMAIL
+		    	 FROM TN_MS_MEMBER
+		]]>    
+		
+		<if test="keyword != null">
+		
+        WHERE UPPER(${select}) LIKE UPPER('%'||#{keyword}||'%')
+        
+        </if>    
+		    
+		<![CDATA[    
+		    ORDER BY MEMBER_NO
+		    	)
+		    )
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
+		]]>
+		
+	</select>
+	
+	<!-- 페이징처리 전체 회원수 sql -->
+	<select id="membercount" resultType="int">
+	
+	<![CDATA[
+	SELECT COUNT(*) FROM TN_MS_MEMBER
+	]]>
+	
+	<if test="keyword != null">
+		
+    WHERE UPPER(${select}) LIKE UPPER('%'||#{keyword}||'%')
+        
+    </if>    
+	
+	</select>
+	
+	<select id="memberinfo" resultType="MemberVo">
+	
+	SELECT 
+		MEMBER_NO, MEMBER_ID, MEMBER_NAME, MEMBER_EMAIL, MEMBER_PHONE, MEMBER_SUBSCRIPTION, MEMBER_RATING, MEMBER_MARKETINGCHECK
+	FROM 
+		TN_MS_MEMBER
+	WHERE
+		MEMBER_NO = #{MEMBER_No}
+	
+	</select>
+	
+	
+	<!-- 선택회원 정보 업테이트 sql -->
+	
+	<update id="memberupdate" parameterType="MemberVo">
+ 		
+ 	UPDATE 
+ 		TN_MS_MEMBER 
+ 	SET 
+ 		MEMBER_NAME=#{MEMBER_Name}, MEMBER_EMAIL=#{MEMBER_Email}, MEMBER_PHONE=#{MEMBER_Phone}, 
+ 		MEMBER_SUBSCRIPTION=#{MEMBER_Subscription}, MEMBER_RATING=#{MEMBER_Rating}, MEMBER_MARKETINGCHECK=#{MEMBER_Marketingcheck}
+ 	WHERE
+ 		MEMBER_NO = #{MEMBER_No}
+ 	
+	</update>
+	
+	<delete id="memberdelete" parameterType="MemberVo">
+	
+	DELETE
+	FROM
+		TN_MS_MEMBER
+	WHERE
+		MEMBER_NO = #{MEMBER_No}
+	
+	</delete>
+  		
+  		 		
+  		
+</mapper>
