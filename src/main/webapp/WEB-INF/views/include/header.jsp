@@ -10,6 +10,8 @@
 		a {
 			text-decoration: none;
 			font-weight: bold;
+			color: black;
+			cursor: pointer;
 		}
 		header {
 		    width: 1920px;
@@ -70,12 +72,15 @@
 			outline: none;
 		}
 		section {
+			width: 1920px;
+			height: 900px;
 			padding: 50px 150px;
-			width: 100%;
+			margin: 0px auto;
 		}
 		footer {
-			width: 100%;
+			width: 1920px;
 			height: 120px;
+			margin: 0px auto;
 			padding: 35px;
 			text-align: center;
 			border-top: 1px #E6E6E6 solid;
@@ -89,14 +94,13 @@
 			<li><a href="#">음악차트</a></li>
 			<li><a href="#">음악추천</a></li>
 			<li><a href="#">마이앨범</a></li>
-			<li><a href="#">상품구매</a></li>
 		</ul>
 	</nav>
 	<div>
 		<ul>
 			<li><a href="#">마이페이지</a></li>
 			<li><a href="#">로그아웃</a></li>
-			<li><form action="#"><input type="text"><input type="submit" value="검색"></form></li>
+			<li><form action="MS"><input type="text"><input type="submit" value="검색"></form></li>
 		</ul>
 	</div>
 </header>

@@ -6,6 +6,9 @@
 
 <configuration>
 
-	<typeAliases><typeAlias type="sehyunict.main.entity.MusicVo" alias="musicVo"/></typeAliases>
-  
+	<typeAliases>
+		<typeAlias type="sehyunict.main.entity.MainRankVo" alias="MainRankVo"/>
+		<typeAlias type="sehyunict.main.entity.MainPlayListVo" alias="MainPlayListVo"/>
+	</typeAliases>
+	
 </configuration>

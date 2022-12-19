@@ -16,4 +16,6 @@
 	
 	<context:component-scan base-package="sehyunict"/>
 	
+	<mvc:resources mapping="resources/**" location="resources/"/>
+	
 </beans:beans>

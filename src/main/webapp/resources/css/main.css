@@ -1,0 +1,135 @@
+#mainRank { /*--------------------mainRank--------------------*/
+	width: 900px;
+	height: 800px;
+	background-color: #F0F0F0;
+	margin-right: 50px;
+	padding-top: 50px;
+	float: left;
+	text-align: left;
+	position: relative;
+}
+#mainRank > h2 {
+	margin-left: 100px;
+}
+#mainRankBtnWrap {
+	position: absolute;
+	top: 50px;
+	right: 100px;
+}
+#mainRankBtn {
+	padding: 5px 10px;
+}
+#mainRankTblWrap {
+	width: 900px;
+	height: 670px;
+	margin: 50px 0px 0px 0px;
+	padding-left: 100px;
+	overflow: scroll;
+}
+#mainRankTbl {
+	width: 700px;
+	text-align: left;
+	border-collapse: collapse;
+}
+#mainRankTbl > tbody > tr > th {
+	height: 40px;
+	text-align: center;
+	color: white;
+	background-color: black;
+}
+#mainRankTbl > tbody > tr > td {
+	border-bottom: 1px black solid;
+	height: 40px;
+}
+#mainRankTbl > tbody > tr > td:first-child {
+	width: 50px;
+	text-align: center;
+}
+#mainPlayList { /*--------------------mainPlayList--------------------*/
+	width: 670px;
+	height: 800px;
+	float: left;
+}
+#mainPlay { /*--------------------mainPlay--------------------*/
+	width: 670px;
+	height: 130px;
+	background-color: #F0F0F0;
+	padding: 25px;
+	margin-bottom: 50px;
+}
+#mainPlayWrap {
+	width: 240px;
+	height: 80px;
+	margin: 0px auto;
+}
+.decoBtn {
+	float: left;
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	border: 1px black solid;
+	border-radius: 25px;
+	font-size: 9pt;
+	text-align: center;
+	padding-top: 15px;
+	margin: 17.5px 15px;
+	background-color: black;
+	color: white;
+}
+#playBtn {
+	float: left;
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+	border: 1px black solid;
+	border-radius: 40px;
+	font-size: 22pt;
+	text-align: center;
+	padding: 15px 0px 0px 5px;
+	background-color: black;
+	color: white;
+}
+#mainList { /*--------------------mainList--------------------*/
+	width: 670px;
+	height: 620px;
+	background-color: #F0F0F0;
+	padding-top: 50px;
+	text-align: left;
+	position: relative;
+}
+#mainList > h2 {
+	margin-left: 50px;
+}
+#listDelBtnWrap {
+	position: absolute;
+	top: 50px;
+	right: 50px;
+}
+#listDelBtn {
+	padding: 5px 10px;
+}
+#mainListTblWrap {
+	height: 490px;
+	margin-top: 50px;
+	overflow: scroll;
+}
+#mainListTbl {
+	width: 570px;
+	text-align: left;
+	border-collapse: collapse;
+	margin-left: 50px;
+}
+#mainListTbl > tbody > tr > th {
+	height: 40px;
+	text-align: center;
+	color: white;
+	background-color: black;
+}
+#mainListTbl > tbody > tr > td {
+	border-bottom: 1px black solid;
+	height: 40px;
+}
+#mainListTbl > tbody > tr > td:first-child {
+	width: 50px;
+	text-align: center;
+}
