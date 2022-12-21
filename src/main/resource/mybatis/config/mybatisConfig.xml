@@ -10,9 +10,15 @@
 	
 	<typeAlias type="sehyunict.main.entity.MusicVo" alias="musicVo"/>
 	
-	<typeAlias type="sehyunict.member.entity.MemberVo" alias="memberVo"/>
+	<typeAlias type="sehyunict.admin.entity.AdminMemberVo" alias="adminMemberVo"/>
 	
 	<typeAlias type="sehyunict.admin.entity.PageVo" alias="pageVo"/>
+	
+	<typeAlias type="sehyunict.admin.entity.AdminMusicVo" alias="adminMusicVo"/>
+	
+	<typeAlias type="sehyunict.admin.entity.AdminAlbumVo" alias="adminAlbumVo"/>
+	
+	<typeAlias type="sehyunict.admin.entity.AdminArtistVo" alias="adminArtistVo"/>
 	
 	</typeAliases>
   

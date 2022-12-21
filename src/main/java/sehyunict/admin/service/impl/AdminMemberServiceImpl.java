@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import sehyunict.admin.entity.AdminMemberVo;
 import sehyunict.admin.entity.PageVo;
 import sehyunict.admin.service.AdminMemberService;
-import sehyunict.member.entity.MemberVo;
 
 @Service
 public class AdminMemberServiceImpl implements AdminMemberService{
@@ -16,7 +16,7 @@ public class AdminMemberServiceImpl implements AdminMemberService{
 	private AdminMemberMapper adminMemberMapper;
 	
 	//유저 리스트 출력
-	public List<MemberVo> adminMemberList(PageVo pvo) {
+	public List<AdminMemberVo> adminMemberList(PageVo pvo) {
 		
 		return adminMemberMapper.adminMemberList(pvo);
 		
@@ -29,31 +29,52 @@ public class AdminMemberServiceImpl implements AdminMemberService{
 		
 	}
 	
-	//멤버 검색
-	public List<MemberVo> adminMemberSearch() {
-		
-		return adminMemberMapper.adminMemberSearch();
-				
-	}
-	
 	//선택회원 관리페이지 (단일회원정보)
-	public MemberVo adminMemberInfo(MemberVo vo) {
+	public AdminMemberVo adminMemberInfo(AdminMemberVo vo) {
 		
 		return adminMemberMapper.adminMemberInfo(vo);
 		
 	}
 	
 	//선택회원 정보 업데이트
-	public int adminMemberUpdate(MemberVo vo) {
+	public int adminMemberUpdate(AdminMemberVo vo) {
 		
 		return adminMemberMapper.adminMemberUpdate(vo);
 		
 	}
 	
 	//선택회원 정보 삭제
-	public int adminMemberDelete(MemberVo vo) {
+	public int adminMemberDelete(AdminMemberVo vo) {
 		
 		return adminMemberMapper.adminMemberDelete(vo);
+		
+	}
+	
+	//체크박스 회원 정보 삭제
+	public String adminMemberChDelete(int[] checkList) {
+		
+		int result = 0;
+		String data = "";
+		
+		for (int i = 0; i < checkList.length; i++) {
+			
+			System.out.println(checkList[i]);
+			result += adminMemberMapper.adminMemberChDelete(checkList[i]);
+			System.out.println(checkList[i]);
+		}
+		
+		if (result == checkList.length) {
+			
+			data = "success";
+			
+		}else {
+			
+			data = "fail";
+		
+		};
+		
+		
+		return data;
 		
 	}
 	

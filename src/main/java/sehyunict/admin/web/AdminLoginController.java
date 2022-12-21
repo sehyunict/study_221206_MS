@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import sehyunict.admin.entity.AdminMemberVo;
 import sehyunict.admin.service.AdminLoginService;
-import sehyunict.member.entity.MemberVo;
 
 @Controller
 public class AdminLoginController {
@@ -20,15 +20,15 @@ public class AdminLoginController {
 	@RequestMapping(value = "/admin")
 	public String adminLogin() {
 
-		return "/adminLogin";
+		return "admin/adminLogin";
 	}
 
 	// 관리자 로그인 체크
 
 	@RequestMapping(value = "/adminLoginCheck")
-	public String adminLoginCheck(MemberVo vo, HttpSession session) {
+	public String adminLoginCheck(AdminMemberVo vo, HttpSession session) {
 
-		String adminId = vo.getMEMBER_Id();
+		String adminId = vo.getMember_id();
 		String url;
 
 		if (adminId.equals("admin")) {
@@ -39,7 +39,7 @@ public class AdminLoginController {
 				
 				System.out.println("비밀번호가 일치하지 않습니다.");
 				
-				url = "/adminLogin";
+				url = "admin/adminLogin";
 			} else {
 				
 				session.setAttribute("adminId", adminId);
@@ -52,7 +52,7 @@ public class AdminLoginController {
 			
 			System.out.println("올바른 아이디로 로그인 바랍니다.");
 			
-			url = "/adminLogin";
+			url = "/admin";
 			
 		}
 

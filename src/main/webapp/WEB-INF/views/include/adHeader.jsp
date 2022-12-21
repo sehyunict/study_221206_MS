@@ -73,7 +73,7 @@
 		}
 		footer {
 			width: 100%;
-			height: 120px;
+			height: 120px; 
 			padding: 35px;
 			text-align: center;
 			border-top: 1px #E6E6E6 solid;
@@ -81,13 +81,13 @@
 	</style>
 </head>
 <header>
-	<a href="/"><h1>SEHYUNICT MUSIC</h1></a>
+	<a href="/adminMember"><h1>SEHYUNICT Admin</h1></a>
 	<nav>
 		<ul>
-			<li><a href="#">회원관리</a></li>
-			<li><a href="#">음악관리</a></li>
-			<li><a href="#">앨범관리</a></li>
-			<li><a href="#">가수관리</a></li>
+			<li><a href="/adminMember">회원관리</a></li>
+			<li><a href="/adminMusic">음악관리</a></li>
+			<li><a href="/adminAlbum">앨범관리</a></li>
+			<li><a href="/adminArtist">가수관리</a></li>
 		</ul>
 	</nav>
 	<div>

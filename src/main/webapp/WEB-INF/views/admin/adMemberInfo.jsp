@@ -71,25 +71,26 @@ float: left;
 	// 회원 정보 로드 메서드
 	function memberInfo(){
 	
-	var memberNo = ${Member_No};
+	var memberNo = ${member_no};
+	
 	
  	$.ajax({
  	
 	    type : "POST",
-        url : "/adminmember/info",
-        data : "MEMBER_No=" + memberNo,
+        url : "/adminMember/info",
+        data : "member_no=" + memberNo,
         dataType : "json",
         success : function(memberInfo) {
         	
         	console.log(memberInfo)
         	
-        	document.getElementById('MEMBER_Id').value = memberInfo.member_Id;
-        	document.getElementById('MEMBER_Name').value = memberInfo.member_Name;
-        	document.getElementById('MEMBER_Phone').value = memberInfo.member_Phone;
-        	document.getElementById('MEMBER_Email').value = memberInfo.member_Email;
-        	document.getElementById('MEMBER_Subscription').value = memberInfo.member_Subscription;
-        	document.getElementById('MEMBER_Rating').value = memberInfo.member_Rating;
-        	document.getElementById('MEMBER_MarketingCheck').value = memberInfo.member_Marketingcheck;
+        	document.getElementById('member_id').value = memberInfo.member_id;
+        	document.getElementById('member_name').value = memberInfo.member_name;
+        	document.getElementById('member_phone').value = memberInfo.member_phone;
+        	document.getElementById('member_email').value = memberInfo.member_email;
+        	document.getElementById('member_subscription').value = memberInfo.member_subscription;
+        	document.getElementById('member_rating').value = memberInfo.member_rating;
+        	document.getElementById('member_marketingcheck').value = memberInfo.member_marketingcheck;
 			
     	},
     	
@@ -116,20 +117,11 @@ float: left;
         <table class="table table-boardered">
             <tr>
                 <th>아이디</th>
-                <td><input type="text" class="form-control" id="MEMBER_Id" readonly ></td>
-            </tr>
-            <tr>
-                <th>패스워드<br>
-                <div style="font-size: 12px;">(초기화만 가능합니다.)</div>
-                </th>
-                <td><input type="text" class="form-control" id="MEMBER_Pw" name="MEMBER_Pw" value="패스워드 초기화 값:1234" readonly>
-                    <input type="button" class="form-control" id="Reset" value="초기화" onclick="javascript:pwReset_check('memberPwResetAction.ca?MID=')" >
-                </td>      
-            </tr>
-            
+                <td><input type="text" class="form-control" id="member_id" readonly ></td>
+            </tr>         
             <tr>
                 <th>이름</th>
-                <td><input type="text" class="form-control" id="MEMBER_Name" placeholder="" required="required"></td>       
+                <td><input type="text" class="form-control" id="member_name" placeholder="" required="required"></td>       
             </tr>
             
              <tr>
@@ -137,33 +129,33 @@ float: left;
                  <div style="font-size: 12px;">(- 제외 숫자만 입력 바랍니다.)</div>
                 </th>
                
-                <td><input type="tel" class="form-control" id="MEMBER_Phone" maxlength = "12" minlength = "9" required="required"></td>       
+                <td><input type="tel" class="form-control" id="member_phone" maxlength = "12" minlength = "9" required="required"></td>       
             </tr>
 
 		  	<tr>    
                 <th>이메일</th>
-				<td><input type="text" class="form-control" id="MEMBER_Email" required="required"></td>
+				<td><input type="text" class="form-control" id="member_email" required="required"></td>
 			</tr>
 			             <tr>
                 <th>구독권<br>
                  <div style="font-size: 12px;"></div>
                 </th>
                
-                <td><input type="tel" class="form-control" id="MEMBER_Subscription"  maxlength = "12" minlength = "9" required="required"></td>       
+                <td><input type="tel" class="form-control" id="member_subscription"  maxlength = "12" minlength = "9" required="required"></td>       
             </tr>
                          <tr>
                 <th>등급<br>
                  <div style="font-size: 12px;"></div>
                 </th>
                
-                <td><input type="tel" class="form-control" id="MEMBER_Rating"  maxlength = "12" minlength = "9" required="required"></td>       
+                <td><input type="tel" class="form-control" id="member_rating"  maxlength = "12" minlength = "9" required="required"></td>       
             </tr>
                          <tr>
                 <th>마케팅동의<br>
                  <div style="font-size: 12px;"></div>
                 </th>
                
-                <td><input type="tel" class="form-control" id="MEMBER_MarketingCheck"  maxlength = "12" minlength = "9" required="required"></td>       
+                <td><input type="tel" class="form-control" id="member_marketingcheck"  maxlength = "12" minlength = "9" required="required"></td>       
             </tr>
 			
 
@@ -191,26 +183,26 @@ float: left;
 	
 	function adMemberUpdate() {
 	
-	var member_No = ${Member_No};
-	var member_Id = document.getElementById('MEMBER_Id').value
-	var member_Name = document.getElementById('MEMBER_Name').value
-	var member_Phone = document.getElementById('MEMBER_Phone').value
-	var member_Email = document.getElementById('MEMBER_Email').value
-	var member_Subscription = document.getElementById('MEMBER_Subscription').value
-	var member_Rating = document.getElementById('MEMBER_Rating').value
-	var member_Marketingcheck = document.getElementById('MEMBER_MarketingCheck').value
+	var member_No = ${member_no};
+	var member_Id = document.getElementById('member_id').value
+	var member_Name = document.getElementById('member_name').value
+	var member_Phone = document.getElementById('member_phone').value
+	var member_Email = document.getElementById('member_email').value
+	var member_Subscription = document.getElementById('member_subscription').value
+	var member_Rating = document.getElementById('member_rating').value
+	var member_Marketingcheck = document.getElementById('member_marketingcheck').value
 	
  	 $.ajax({
  	
 	    type : "POST",
-        url : "/adminmember/update",
-        data : "MEMBER_No=" + member_No + 
-        	   "&MEMBER_Name=" + member_Name + 
-        	   "&MEMBER_Phone=" + member_Phone + 
-        	   "&MEMBER_Email=" + member_Email + 
-        	   "&MEMBER_Subscription=" + member_Subscription + 
-        	   "&MEMBER_Rating=" + member_Rating + 
-        	   "&MEMBER_Marketingcheck=" + member_Marketingcheck,
+        url : "/adminMember/update",
+        data : "member_no=" + member_No + 
+        	   "&member_name=" + member_Name + 
+        	   "&member_phone=" + member_Phone + 
+        	   "&member_email=" + member_Email + 
+        	   "&member_subscription=" + member_Subscription + 
+        	   "&member_rating=" + member_Rating + 
+        	   "&member_marketingcheck=" + member_Marketingcheck,
         	   
         dataType : "text",
         
@@ -241,15 +233,15 @@ float: left;
 // 회원 정보 삭제 메서드
 function adMemberDelete(){
 
-	var memberNo = ${Member_No};
+	var memberNo = ${member_no};
 	
-	var memberId = document.getElementById('MEMBER_Id').value
+	var memberId = document.getElementById('member_id').value
 
 	$.ajax({
 	
     type : "POST",
-    url : "/adminmember/delete",
-    data : "MEMBER_No=" + memberNo,
+    url : "/adminMember/delete",
+    data : "member_no=" + memberNo,
     dataType : "text",
     success : function(data) {
     	

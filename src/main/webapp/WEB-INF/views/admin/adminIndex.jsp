@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,12 +59,13 @@ function selectAll(selectAll)  {
 
 	<div class="container mt-3">
 		<h2>User List</h2>
+		<p>전체 회원수 : ${pageMaker.totalCount}</p>
 		<div align="right">
 		<form:form action="/adminMember" modelAttribute="pvo">
 			<select class="form-select" name = select style = "display: inline-block; width: 10%">
-				<option value = "MEMBER_NAME">이름검색</option>
-				<option value = "MEMBER_ID">아이디검색</option>
-				<option value = "MEMBER_EMAIL">이메일검색</option>
+				<option value = "member_name">이름검색</option>
+				<option value = "member_id">아이디검색</option>
+				<option value = "member_email">이메일검색</option>
 			</select> 
 			<input type="text" name="keyword" class="form-control" placeholder="${keyword}" style = "display: inline-block; width: 20%">
 			<input type="submit" class="btn btn-primary" value="검색">
@@ -73,8 +73,8 @@ function selectAll(selectAll)  {
 		</div>
 		
 
-		<table class="table table-striped">
-			<thead>
+		<table class="table" style="margin-top: 10px;">
+			<thead style="background-color:#E2E2E2;">
 				<tr>
 					<th>
 						<div class="form-check">
@@ -94,16 +94,16 @@ function selectAll(selectAll)  {
 					<tr>
 						<th>
 							<div class="form-check">
-						  		<input class="form-check-input" type="checkbox" name="checkbox" value="something" onclick='checkSelectAll()'>
+						  		<input class="form-check-input" type="checkbox" name="checkbox" value="${e.member_no}" onclick='checkSelectAll()'>
 							</div>
 						</th>
-						<th>${e.MEMBER_No}</th>
-						<th>${e.MEMBER_Id}</th>
-						<th>${e.MEMBER_Name}</th>
-						<th>${e.MEMBER_Email}</th>
+						<th>${e.member_no}</th>
+						<th>${e.member_id}</th>
+						<th>${e.member_name}</th>
+						<th>${e.member_email}</th>
 						<th>
-						<form:form action="/admember/info" modelAttribute="vo">
-						<input type="hidden" name = "MEMBER_No" value="${e.MEMBER_No}">
+						<form:form action="/adminMember/user" modelAttribute="vo">
+						<input type="hidden" name = "member_no" value="${e.member_no}">
 						<button type="submit" class="btn btn-light">관리</button>
 						</form:form>
 						</th>
@@ -112,7 +112,7 @@ function selectAll(selectAll)  {
 			</tbody>
 		</table>
 		<div class="container mt-3" align="right">
-	  	<button type="button" class="btn btn-danger">선택항목 삭제</button>
+	  	<button type="button" class="btn btn-danger" onclick='checkDelete()'>선택항목 삭제</button>
 		</div>
 	</div>
 	<ul class="pagination">
@@ -120,9 +120,9 @@ function selectAll(selectAll)  {
 			<li class="page-item"><a class="page-link"
 				href="/adminMember${pageMaker.makeQuery(pageMaker.startPage - 1)}">이전</a></li>
 		</c:if>
+		
 		<c:set var="nowpage" value="${pageMaker.pvo.page}" />
-		<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}"
-			var="i">
+		<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="i">
 			<c:choose>
 				<c:when test="${nowpage == i}">
 					<li class="page-item"><a class="page-link"
@@ -136,10 +136,12 @@ function selectAll(selectAll)  {
 			</c:choose>
 		</c:forEach>
 		
+		
 		<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
 			<li class="page-item"><a class="page-link"
 				href="/adminMember${pageMaker.makeQuery(pageMaker.endPage + 1)}">다음</a></li>
 		</c:if>
+		
 		</ul>
 		
 	<%@ include file="/WEB-INF/views/include/adFooter.jsp"%>
@@ -149,27 +151,31 @@ function selectAll(selectAll)  {
 <script>
 
 //선택항목 삭제
-function selectDelete(){
+	function checkDelete(){
 	
+	var checkList = new Array();
+	var checked = document.querySelectorAll("input[name=checkbox]:checked");
 	
+		for (var i = 0; i < checked.length; i++){
+			
+			checkList.push(checked[i].value);
+		
+		}
+		console.log(checkList);
 	
  	$.ajax({
- 	
-	    type : "POST",
-        url : "/adminmember/select/delete",
-        data : "MEMBER_No=" + memberNo,
-        dataType : "json",
-        success : function(memberInfo) {
+ 		
+ 		type : "POST",
+        url : "/adminMember/chdelete",
+        traditional : true,
+        data : {
+        	 'checkList' : checkList
+        }, 
+        success : function(){
         	
-        	console.log(memberInfo)
+        	alert ("선택항목 삭제에 성공했습니다.");
         	
-        	document.getElementById('MEMBER_Id').value = memberInfo.member_Id;
-        	document.getElementById('MEMBER_Name').value = memberInfo.member_Name;
-        	document.getElementById('MEMBER_Phone').value = memberInfo.member_Phone;
-        	document.getElementById('MEMBER_Email').value = memberInfo.member_Email;
-        	document.getElementById('MEMBER_Subscription').value = memberInfo.member_Subscription;
-        	document.getElementById('MEMBER_Rating').value = memberInfo.member_Rating;
-        	document.getElementById('MEMBER_MarketingCheck').value = memberInfo.member_Marketingcheck;
+        	location = "/adminMember";
 			
     	},
     	
@@ -180,11 +186,6 @@ function selectDelete(){
     	
  	})
 };
-
-
-
-
-
 
 </script>
 </html>

@@ -5,37 +5,49 @@
   
 	<mapper namespace="mybatis.admin">
 
-	<!-- admin 로그인 체크 sql -->
-	<select id="adminlogincheck" resultType="int" parameterType="memberVo">
 	
-		SELECT COUNT(*) FROM TN_MS_MEMBER WHERE MEMBER_ID = 'admin' AND MEMBER_PW = #{MEMBER_Pw}
+	<!--  Member 관련 SQL문  -->	 
+
+	<!-- admin 로그인 체크 sql -->
+	<select id="adminlogincheck" resultType="int" parameterType="adminMemberVo">
+	
+		SELECT 
+			COUNT(*) 
+		FROM 
+			tn_ms_member 
+		WHERE 
+			member_id = 'admin' AND member_pw = #{member_pw}
 		
 	</select>
 	
 	<!-- 전체 회원 조회 sql -->
-	<select id="memberlist" resultType="memberVo" parameterType="pageVo">
+	<select id="memberlist" resultType="adminMemberVo" parameterType="pageVo">
 		
 		<![CDATA[
 		SELECT 
-			MEMBER_NO, MEMBER_ID, MEMBER_NAME, MEMBER_EMAIL 
+			member_no, member_id, member_name, member_email 
 		FROM
-		    (SELECT ROWNUM RN, MEMBER_NO, MEMBER_ID, MEMBER_NAME, MEMBER_EMAIL
+		    (SELECT rownum rn, member_no, member_id, member_name, member_email
 		    FROM 
-		    	(SELECT MEMBER_NO, MEMBER_ID, MEMBER_NAME, MEMBER_EMAIL
-		    	 FROM TN_MS_MEMBER
+		    	(SELECT member_no, member_id, member_name, member_email
+		    	 FROM tn_ms_member
 		]]>    
 		
 		<if test="keyword != null">
 		
-        WHERE UPPER(${select}) LIKE UPPER('%'||#{keyword}||'%')
-        
+	       		WHERE 
+	        	UPPER(${select}) 
+				LIKE 
+	        	UPPER('%'||#{keyword}||'%')
+	        
         </if>    
 		    
 		<![CDATA[    
-		    ORDER BY MEMBER_NO
-		    	)
-		    )
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
+			    ORDER BY member_no
+			    	)
+			)
+		WHERE rn 
+		BETWEEN #{rowStart} AND #{rowEnd}
 		]]>
 		
 	</select>
@@ -44,53 +56,324 @@
 	<select id="membercount" resultType="int">
 	
 	<![CDATA[
-	SELECT COUNT(*) FROM TN_MS_MEMBER
+	SELECT COUNT(*) FROM tn_ms_member
 	]]>
 	
 	<if test="keyword != null">
 		
-    WHERE UPPER(${select}) LIKE UPPER('%'||#{keyword}||'%')
+    WHERE UPPER(${select}) 
+    LIKE UPPER('%'||#{keyword}||'%')
         
     </if>    
 	
 	</select>
 	
-	<select id="memberinfo" resultType="MemberVo">
+	<select id="memberinfo" resultType="adminMemberVo">
 	
 	SELECT 
-		MEMBER_NO, MEMBER_ID, MEMBER_NAME, MEMBER_EMAIL, MEMBER_PHONE, MEMBER_SUBSCRIPTION, MEMBER_RATING, MEMBER_MARKETINGCHECK
+		member_no, member_id, member_name, member_email, member_phone, member_subscription, member_rating, member_marketingcheck
 	FROM 
-		TN_MS_MEMBER
+		tn_ms_member
 	WHERE
-		MEMBER_NO = #{MEMBER_No}
+		member_no = #{member_no}
 	
 	</select>
 	
 	
 	<!-- 선택회원 정보 업테이트 sql -->
 	
-	<update id="memberupdate" parameterType="MemberVo">
+	<update id="memberupdate" parameterType="adminMemberVo">
  		
  	UPDATE 
- 		TN_MS_MEMBER 
+ 		tn_ms_member 
  	SET 
- 		MEMBER_NAME=#{MEMBER_Name}, MEMBER_EMAIL=#{MEMBER_Email}, MEMBER_PHONE=#{MEMBER_Phone}, 
- 		MEMBER_SUBSCRIPTION=#{MEMBER_Subscription}, MEMBER_RATING=#{MEMBER_Rating}, MEMBER_MARKETINGCHECK=#{MEMBER_Marketingcheck}
+ 		member_name=#{member_name}
+ 		, member_email=#{member_email}
+ 		, member_phone=#{member_phone}
+ 		, member_subscription=#{member_subscription}
+ 		, member_rating=#{member_rating}
+ 		, member_marketingcheck=#{member_marketingcheck}
  	WHERE
- 		MEMBER_NO = #{MEMBER_No}
+ 		member_no = #{member_no}
  	
 	</update>
 	
-	<delete id="memberdelete" parameterType="MemberVo">
+	<!-- 회원 삭제 -->
+	<delete id="memberdelete" parameterType="adminMemberVo">
 	
 	DELETE
 	FROM
-		TN_MS_MEMBER
+		tn_ms_member
 	WHERE
-		MEMBER_NO = #{MEMBER_No}
+		member_no = #{member_no}
+	
+	</delete>
+	
+	<!-- 체크박스 선택 회원 삭제 -->
+	<delete id="memberchdelete" parameterType="int">
+	
+	DELETE
+	FROM
+		tn_ms_member
+	WHERE
+		member_no = #{checkNum}
 	
 	</delete>
   		
   		 		
-  		
+  		 		
+  		 		
+  	<!--   //////////////////// Music 관련 SQL문/////////////////////       -->	
+  	
+  	 
+  	
+  	<!-- 전체 음악 조회 sql -->	
+  	<select id="musiclist" resultType="adminMusicVo" parameterType="pageVo">
+  	
+  	<![CDATA[
+ 	  	SELECT
+        a.rn
+		, a.music_no
+        , a.album_no
+        , a.artist_no
+        , a.music_title
+        , a.music_composition
+        , a.music_write
+        , a.music_genre
+        , a.music_like
+        , b.album_title
+        , c.artist_name
+        , d.com_code
+	FROM 
+		(SELECT row_number() over (order by music_no) rn
+		, music_no
+        , album_no
+		, artist_no
+		, music_title
+		, music_composition
+		, music_write
+		, music_genre
+		, music_like
+        FROM
+            tn_ms_music) a
+        ,tn_ms_album b
+        ,tn_ms_artist c
+        ,tc_ms_com_code d
+    WHERE
+        a.rn
+    BETWEEN #{rowStart} AND #{rowEnd}
+    AND
+		a.album_no = b.album_no
+    AND
+        a.artist_no = c.artist_no
+    AND
+        a.music_genre = d.com_code_no
+    ORDER BY rn
+		 
+  	]]>
+  	
+  	</select>	
+  	
+ 
+  	<!--페이징처리 전체 음악수 sql -->
+  	
+  	
+	<select id="musiccount" resultType="int">
+	
+	SELECT COUNT(*) FROM tn_ms_music
+
+	</select>
+  	
+  	<!-- 선택음악 정보 조회 -->	
+  	<select id="musicinfo" resultType = "adminMusicVo">
+  	
+  	SELECT 
+		a.music_no
+        , a.album_no
+        , a.artist_no
+        , a.music_title
+        , a.music_lyrics
+        , NVL(a.music_composition,'없음') as music_composition
+        , a.music_write
+        , NVL(a.music_arrange,'없음') as music_arrange
+        , a.music_genre
+        , a.music_like
+        , a.music_playcount
+        , a.music_adult
+        , a.music_albumorder
+        , b.album_title
+        , c.artist_name
+        , d.com_code
+	FROM 
+		tn_ms_music a
+        ,tn_ms_album b
+        ,tn_ms_artist c
+        ,tc_ms_com_code d
+	WHERE
+		a.music_no = #{music_no}
+	AND
+		a.album_no = b.album_no
+    AND
+        a.artist_no = c.artist_no
+    AND
+        a.music_genre = d.com_code_no
+    
+  	
+  	</select>
+  	
+  	<!-- 음악 업데이트 -->
+  	<update id ="musicupdate" parameterType="adminMusicVo">
+  	
+  	UPDATE 
+ 		tn_ms_music
+ 	SET 
+ 		music_title=#{music_title}
+ 		, music_lyrics=#{music_lyrics}
+ 		, music_composition=#{music_composition}
+ 		, music_write=#{music_write}
+ 		, music_arrange=#{music_arrange}
+ 		, music_genre=#{music_genre}
+ 		, music_albumorder=#{music_albumorder}
+ 		, music_adult=#{music_adult}
+ 	WHERE
+ 		music_no = #{music_no}
+  	
+  	</update>
+  	
+  	<!-- 음악 삭제 -->
+	<delete id="musicdelete" parameterType="adminMusicVo">
+	
+	DELETE
+	FROM
+		tn_ms_music
+	WHERE
+		music_no = #{music_no}
+	
+	</delete>
+  	
+  	<!-- 체크박스 선택 음악 삭제 -->
+  	<delete id="musicchdelete" parameterType="int">
+	
+	DELETE
+	FROM
+		tn_ms_music
+	WHERE
+		music_no = #{checkNum}
+	
+	</delete>
+  
+  
+  
+  <!--   //////////////////// Album 관련 SQL문 /////////////////////       -->	
+  
+  
+  
+  	<select id="albumlist" resultType="adminAlbumVo" parameterType="pageVo">
+  	
+  	<![CDATA[
+ 	  	SELECT
+        a.rn
+		, a.album_no
+        , a.artist_no
+        , a.album_title
+        , a.album_type
+        , a.album_genre
+        , a.album_commany
+        , a.album_date
+        , a.album_like
+        , b.artist_name
+        , c.com_code
+	FROM 
+		(SELECT row_number() over (order by album_no) rn
+		, album_no
+        , artist_no
+		, album_title
+		, album_type
+		, album_genre
+		, album_commany
+		, album_date
+		, album_like
+        FROM
+            tn_ms_album) a
+        ,tn_ms_artist b
+        ,tc_ms_com_code c
+    WHERE
+        a.rn
+    BETWEEN #{rowStart} AND #{rowEnd}
+    AND
+        a.artist_no = b.artist_no
+    AND
+        a.album_genre = c.com_code_no
+    ORDER BY rn
+		 
+  	]]>
+  	
+  	</select>	
+  	
+ 
+  	<!--페이징처리 전체 음악수 sql -->
+  	
+  	
+	<select id="albumcount" resultType="int">
+	
+	SELECT COUNT(*) FROM tn_ms_album
+
+	</select>
+	
+	
+	
+	
+	
+	  <!--   //////////////////// Album 관련 SQL문 /////////////////////       -->
+	  
+	  
+	<select id="artistlist" resultType="adminArtistVo" parameterType="pageVo">
+  	
+  	<![CDATA[
+ 	  	SELECT
+        a.rn
+		, a.artist_no
+        , a.artist_name
+        , a.artist_date
+        , a.artist_type
+        , a.artist_company
+        , a.artist_debut
+        , a.artist_genre
+        , a.artist_fan
+        , b.com_code
+	FROM 
+		(SELECT row_number() over (order by artist_no) rn
+		, artist_no
+        , artist_name
+		, artist_date
+		, artist_type
+		, artist_company
+		, artist_debut
+		, artist_genre
+		, artist_fan
+        FROM
+            tn_ms_artist) a
+        ,tc_ms_com_code b
+    WHERE
+        a.rn
+    BETWEEN #{rowStart} AND #{rowEnd}
+    AND
+        a.artist_genre = b.com_code_no
+    ORDER BY rn
+		 
+  	]]>
+  	
+  	</select>	
+  	
+ 
+  	<!--페이징처리 전체 음악수 sql -->
+  	
+  	
+	<select id="artistcount" resultType="int">
+	
+	SELECT COUNT(*) FROM tn_ms_artist
+
+	</select>
+  
+  
 </mapper>

@@ -6,8 +6,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import sehyunict.admin.entity.AdminMemberVo;
 import sehyunict.admin.entity.PageVo;
-import sehyunict.member.entity.MemberVo;
 
 @Repository
 public class AdminMemberMapper {
@@ -17,7 +17,7 @@ public class AdminMemberMapper {
 
 	
 	//어드민 회원 조회
-	public List<MemberVo> adminMemberList(PageVo pvo) {
+	public List<AdminMemberVo> adminMemberList(PageVo pvo) {
 		
 		return mybatis.selectList("mybatis.admin.memberlist", pvo);
 		
@@ -30,31 +30,31 @@ public class AdminMemberMapper {
 				
 	}
 	
-	//회원 검색
-	public List<MemberVo> adminMemberSearch(){
-		
-		return mybatis.selectList("mybatis.admin.memberserach");
-		
-	}
-	
 	//선택회원 정보 불러오기
-	public MemberVo adminMemberInfo(MemberVo vo){
+	public AdminMemberVo adminMemberInfo(AdminMemberVo vo){
 		
 		return mybatis.selectOne("mybatis.admin.memberinfo", vo);
 		
 	}
 	
 	//선택회원 정보 업데이트
-	public int adminMemberUpdate(MemberVo vo){
+	public int adminMemberUpdate(AdminMemberVo vo){
 		
 		return mybatis.update("mybatis.admin.memberupdate", vo);
 	
 	}
 	
 	//선택회원 정보 삭제
-	public int adminMemberDelete(MemberVo vo){
+	public int adminMemberDelete(AdminMemberVo vo){
 		
 		return mybatis.delete("mybatis.admin.memberdelete", vo);
+	
+	}
+	
+	//체크박스 선택회원 정보 삭제
+	public int adminMemberChDelete(int checkNum){
+		
+		return mybatis.delete("mybatis.admin.memberchdelete", checkNum);
 	
 	}
 }

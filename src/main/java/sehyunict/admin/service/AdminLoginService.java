@@ -1,10 +1,10 @@
 package sehyunict.admin.service;
 
-import sehyunict.member.entity.MemberVo;
+import sehyunict.admin.entity.AdminMemberVo;
 
 public interface AdminLoginService {
 
 	//adminLoginCheck
-	int adminLoginCheck(MemberVo vo);
+	int adminLoginCheck(AdminMemberVo vo);
 	
 }
