@@ -7,7 +7,21 @@ public class MainRankVo {
 	private String album_title;
 	private int music_like;
 	private int member_like;
+	private int artist_no;
+	private int album_no;
 	
+	public int getArtist_no() {
+		return artist_no;
+	}
+	public void setArtist_no(int artist_no) {
+		this.artist_no = artist_no;
+	}
+	public int getAlbum_no() {
+		return album_no;
+	}
+	public void setAlbum_no(int album_no) {
+		this.album_no = album_no;
+	}
 	public int getMusic_no() {
 		return music_no;
 	}

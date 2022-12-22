@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import sehyunict.main.entity.MainRankVo;
 import sehyunict.main.entity.MainPlayListVo;
+import sehyunict.main.entity.MainRankVo;
 import sehyunict.main.service.MainService;
 
 @Controller

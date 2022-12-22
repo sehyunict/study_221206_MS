@@ -1,5 +1,8 @@
 package sehyunict.main.service.impl;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -53,6 +56,20 @@ public class MainMapper {
 	}
 	
 	public int updatePlayCount(int musicNo) {
-		return sqlSession.update("mybatis.main.updatePlayCount", musicNo);
+		Map<String, String> map = new HashMap<String, String>();
+		
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
+		Date now = new Date();
+
+		map.put("today", dateFormat.format(now));
+		map.put("musicNo", Integer.toString(musicNo));
+		
+		int dateCheck = sqlSession.selectOne("mybatis.main.playCountUpdateCheck", map);
+		
+		if (dateCheck == 0) {
+			return sqlSession.insert("mybatis.main.playCountInsert", musicNo);
+		} else {
+			return sqlSession.insert("mybatis.main.playCountUpdate", map);
+		}
 	}
 }

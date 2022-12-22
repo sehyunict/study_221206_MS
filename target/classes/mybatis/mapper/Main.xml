@@ -37,6 +37,8 @@
 			    WHERE T1.album_no = album_no) album_title
 			  , T1.music_like
 			  , DECODE(T2.music_no, NULL, 0, 1) member_like 
+			  , T1.artist_no
+			  , T1.album_no
 			FROM
 			    (SELECT
 			        ROWNUM
@@ -68,6 +70,7 @@
 		    WHERE T3.artist_no = artist_no) artist_name
 		  , T1.now_playList_count
 		  , T1.now_playList_date
+		  , T3.artist_no
 		FROM
 		    TN_MS_NOW_PLAYLIST T1
 		  , TN_MS_MEMBER T2
@@ -137,12 +140,6 @@
 		  , SYSDATE)
 	</insert>
 	
-	<update id="updateInertLike" parameterType="int">
-		UPDATE TN_MS_MUSIC
-		SET music_like = music_like + 1
-		WHERE music_no = #{musicNo}
-	</update>
-	
 	<delete id="deleteLike" parameterType="hashMap">
 		DELETE
 		FROM TN_MS_LIKE_MUSIC
@@ -151,16 +148,43 @@
 		  AND music_no = #{musicNo}
 	</delete>
 	
-	<update id="updateDeleteLike" parameterType="int">
-		UPDATE TN_MS_MUSIC
-		SET music_like = music_like - 1
-		WHERE music_no = #{musiNo}
-	</update>
+	<select id="playCountUpdateCheck" parameterType="hashMap" resultType="int">
+		SELECT
+		    COUNT(*)
+		FROM
+		    TH_MS_RANK
+		WHERE
+		    rank_date BETWEEN TO_DATE(#{today} || '0000', 'YYYYMMDDHH24MI')
+		  AND TO_DATE(#{today} || '2359', 'YYYYMMDDHH24MI')
+		  AND music_no = #{musicNo}
+	</select>
 	
-	<update id="updatePlayCount" parameterType="int">
-		UPDATE TN_MS_MUSIC
-		SET music_playCount = music_playCount + 1
+	<insert id="playCountInsert" parameterType="int">
+		INSERT
+		INTO TH_MS_RANK
+		VALUES(
+		    SEQ_MS_RANK.NEXTVAL
+		  , #{musicNo}
+		  , SYSDATE
+		  , 1
+		  , 0
+		  , 1
+		  , 0
+		  , 1
+		  , 0
+		  , 0
+		  , 0
+		  , 0)
+	</insert>
+	
+	<update id="playCountUpdate" parameterType="hashMap">
+		UPDATE TH_MS_RANK
+		SET rank_count = rank_count + 1
+		  , rank_gender_female = rank_gender_female + 1
+		  , rank_age_20 = rank_age_20 + 1
 		WHERE music_no = #{musicNo}
+		  AND rank_date BETWEEN TO_DATE(#{today} || '0000', 'YYYYMMDDHH24MI')
+		  AND TO_DATE(#{today} || '2359', 'YYYYMMDDHH24MI')
 	</update>
 	
 </mapper>

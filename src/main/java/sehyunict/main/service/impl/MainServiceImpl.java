@@ -77,7 +77,6 @@ public class MainServiceImpl implements MainService {
 		map.put("musicNo", musicNo);
 		
 		mapper.insertLike(map);
-		mapper.updateInertLike(map.get("musicNo"));
 	}
 	
 	@Transactional
@@ -89,7 +88,6 @@ public class MainServiceImpl implements MainService {
 		map.put("musicNo", musicNo);
 		
 		mapper.deleteLike(map);
-		mapper.updateDeleteLike(map.get("musicNo"));
 	}
 	
 	@Transactional

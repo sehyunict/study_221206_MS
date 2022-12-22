@@ -9,7 +9,14 @@ public class MainPlayListVo {
 	private String artist_name;
 	private int now_playList_count;
 	private Date now_playList_date;
+	private int artist_no;
 	
+	public int getArtist_no() {
+		return artist_no;
+	}
+	public void setArtist_no(int artist_no) {
+		this.artist_no = artist_no;
+	}
 	public int getNow_playList_no() {
 		return now_playList_no;
 	}

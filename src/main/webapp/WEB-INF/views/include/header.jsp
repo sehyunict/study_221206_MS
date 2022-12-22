@@ -91,15 +91,13 @@
 	<a href="/"><h1>SEHYUNICT MUSIC</h1></a>
 	<nav>
 		<ul>
-			<li><a href="#">음악차트</a></li>
-			<li><a href="#">음악추천</a></li>
+			<li><a href="/RD">음악차트</a></li>
 			<li><a href="#">마이앨범</a></li>
 		</ul>
 	</nav>
 	<div>
 		<ul>
 			<li><a href="#">마이페이지</a></li>
-			<li><a href="#">로그아웃</a></li>
 			<li><form action="MS"><input type="text"><input type="submit" value="검색"></form></li>
 		</ul>
 	</div>

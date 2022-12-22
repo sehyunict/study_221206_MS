@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="mybatis.rank">
+
+	<resultMap type="MainRankVo" id="rankList">
+		<result column="music_no" property="music_no"/>
+		<result column="music_title" property="music_title"/>
+		<result column="artist_name" property="artist_name"/>
+		<result column="album_title" property="album_title"/>
+		<result column="music_like" property="music_like"/>
+		<result column="member_like" property="member_like"/>
+	</resultMap>
+	
+	<resultMap type="RankAlbumVo" id="albumList">
+		<result column="member_album_no" property="member_album_no"/>
+		<result column="member_album_title" property="member_album_title"/>
+	</resultMap>
+  
+	<select id="selectRankDayList" resultMap="rankList" parameterType="hashMap">
+		<![CDATA[
+			SELECT
+			    T2.music_no
+			  , T2.music_title
+			  , (SELECT artist_name
+			    FROM TN_MS_ARTIST
+			    WHERE T2.artist_no = artist_no) artist_name
+			  , (SELECT album_title
+			    FROM TN_MS_ALBUM
+			    WHERE T2.album_no = album_no) album_title
+			  , T2.music_like
+			  , DECODE(T3.music_no, NULL, 0, 1) member_like
+			  , T2.artist_no
+			  , T2.album_no
+			FROM
+			    (SELECT
+			        ROWNUM
+			      , rank_count
+			      , music_no
+			    FROM th_ms_rank
+			    WHERE
+			        rank_date > TO_DATE(#{today}, 'YYYYMM')
+			      AND ROWNUM <= 50
+			    ORDER BY
+			        rank_count DESC
+			      , music_no) T1
+			  , (SELECT
+			        music_no
+			      , music_title
+			      , artist_no
+			      , album_no
+			      , music_like
+			    FROM TN_MS_MUSIC) T2
+			  , (SELECT music_no
+			    FROM TN_MS_LIKE_MUSIC
+			    WHERE member_no = TO_NUMBER(#{memberNo})) T3
+			WHERE
+			    T1.music_no = T2.music_no
+			  AND T1.music_no = T3.music_no(+)
+			ORDER BY
+			    T1.rank_count DESC
+			  , T1.music_no
+	    ]]>
+	</select>
+	
+	<select id="selectAlbumList" resultMap="albumList" parameterType="int">
+		SELECT
+		    member_album_no
+		  , member_album_title
+		FROM
+		    TN_MS_MEMBER_ALBUM
+		WHERE
+		    member_no = #{memberNo}
+	</select>
+	
+	<insert id="insertAlbum" parameterType="hashMap">
+		INSERT
+		INTO TN_MS_MEMBER_ALBUM_MUSIC
+		VALUES(
+		    SEQ_MS_MEMBER_ALBUM_MUSIC.NEXTVAL
+		  , #{albumNo}
+		  , #{musicNo}
+		  , SYSDATE)
+	</insert>
+	
+</mapper>

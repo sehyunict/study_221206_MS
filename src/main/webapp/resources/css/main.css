@@ -7,6 +7,7 @@
 	float: left;
 	text-align: left;
 	position: relative;
+	overflow-x: hidden;
 }
 #mainRank > h2 {
 	margin-left: 100px;
@@ -96,6 +97,7 @@
 	padding-top: 50px;
 	text-align: left;
 	position: relative;
+	overflow-x: hidden;
 }
 #mainList > h2 {
 	margin-left: 50px;
