@@ -1,12 +1,15 @@
 package sehyunict.admin.web;
 
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import sehyunict.admin.entity.AdminMemberVo;
 import sehyunict.admin.entity.AdminMusicVo;
 import sehyunict.admin.entity.PageMaker;
 import sehyunict.admin.entity.PageVo;
@@ -47,10 +50,28 @@ public class AdminMusicController {
 	
 	//음악 인서트 (미구현)
 	@RequestMapping(value = "/adminMusic/insert") 
-	public void adminMuscicInsert(AdminMusicVo vo) {
+	@ResponseBody
+	public String adminMuscicInsert(AdminMusicVo vo) {
 		
+		String data = "";
+		
+		int result = adminMusicService.adminMusicInsert(vo);
+		
+		System.out.println(result);
+		
+		if (result != 1) {
+			
+			data = "error";
+			
+		}else {
+			
+			data = "success";
+		}
+		
+		return data;
 		
 	}
+		
 	
 	// info 페이지 이동
 	@RequestMapping(value = "/adMusicInfo") 
@@ -121,7 +142,8 @@ public class AdminMusicController {
 		
 	}
 	
-	// AJAX 연결 체크박스회원 삭제
+	// AJAX 연결 체크박스음악 삭제
+	
 	@RequestMapping(value = "/adminMusic/chdelete") 
 	@ResponseBody
 	public String adminMusicChDelete(int[] checkList) {
@@ -132,5 +154,31 @@ public class AdminMusicController {
 		return data;
 	}
 	
+	
+	// AJAX insert시 select box artist 출력 정보
+	
+	@RequestMapping(value = "/adminMusic/comboInfo") 
+	@ResponseBody
+	public List<Map<String, Object>> adminComboInfo() {
+		
+	
+		List<Map<String, Object>> data = adminMusicService.adminComboArtist();
+		
+		return data;
+	}
+	
+	// AJAX insert시 select box album 출력 정보
+	
+	@RequestMapping(value = "/adminMusic/comboAlbum") 
+	@ResponseBody
+	public List<Map<String, Object>> adminComboAlbum(@RequestParam Map<String, Object> param) {
+		
+		String artistNo = (String)param.get("artistNo");
+		
+		
+		List<Map<String, Object>> data = adminMusicService.adminComboAlbum(artistNo);
+		
+		return data;
+	}
 }
 

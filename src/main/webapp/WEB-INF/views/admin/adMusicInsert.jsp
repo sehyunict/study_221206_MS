@@ -10,10 +10,111 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 </head>
+
+<script>
+	//온로드시 combobox 정보 불러오기
+	
+	window.onload = function(){
+	
+	comboInfo();
+	
+	};
+	
+	// 수정 취소 확인 알러창
+	function cancleCheck() {
+		
+		if (confirm("작업을 취소하시겠습니까?")) {
+		
+			location = "/adminMusic";
+			
+		}
+		
+	};
+	
+	
+	//체크박스 변경시 이벤트
+	function chageSelect() {
+		
+	var select = $('#comboArtist').val();
+	
+	$.ajax({
+	 	
+	    type : "POST",
+        url : "/adminMusic/comboAlbum",
+        data : { "artistNo" : select },
+        success : function(comboAlbumList) {
+        	
+        	$("#comboAlbum").attr('disabled', false);
+        	$("#comboAlbum").empty();
+        	var album = comboAlbumList;
+			var tmpAlbum = "";
+         	
+			if (album.length == 0){
+				
+				alert("선택가능한 앨범이 없습니다.");
+				$("#comboAlbum").append("<option selected disabled hidden>--- 다른가수를 선택해주세요 ---</option>");
+				$("#comboAlbum").attr('disabled', true);
+				
+			}else{
+			
+         		for (var i = 0; i < album.length; i++){
+         		
+            	tmpAlbum += "<option selected disabled hidden>--- 앨범을 선택해주세요 ---</option><option value=" + album[i].ALBUM_NO + ">" + album[i].ALBUM_TITLE + "</option>";
+                
+            	}
+			}
+         	
+         	$("#comboAlbum").append(tmpAlbum);
+
+    	},
+    	
+        error : function(jqXHR, textStatus, errorThrown) {
+      	  
+      	  alert("에러 발생 \n" +"/"+jqXHR+"/"+ textStatus + " : " + errorThrown);
+        }
+    	
+ 	})
+};
+
+	
+	// 회원 정보 로드 메서드
+	function comboInfo(){
+		
+ 	$.ajax({
+ 	
+	    type : "POST",
+        url : "/adminMusic/comboInfo",
+        dataType : "json",
+        success : function(comboArtist) {
+        	
+        	var artist = comboArtist;
+        	var tmpArtist = "<option selected disabled hidden>--- 추가할 음악의 가수를 선택해주세요 ---</option>";
+         	
+         	for (var i = 0; i < artist.length; i++){
+         		
+            	tmpArtist += "<option value=" + artist[i].ARTIST_NO + ">" + artist[i].ARTIST_NAME + "</option>";
+                
+            }
+         	
+         	
+         	$("#comboArtist").append(tmpArtist);
+
+    	},
+    	
+        error : function(jqXHR, textStatus, errorThrown) {
+      	  
+      	  alert("에러 발생 \n" +"/"+jqXHR+"/"+ textStatus + " : " + errorThrown);
+        }
+    	
+ 	})
+};
+
+</script>
+
 <body>
 	<%@ include file="/WEB-INF/views/include/adHeader.jsp"%>
 	<div style="margin-left: 20%; margin-top: 50px; margin-right: 20%;">
-		<h1>노래 수정</h1>
+		<h1>곡 추가</h1>
 		<br>
 		<hr>
 		<div style="margin-top: 50px;">
@@ -32,18 +133,22 @@
 						<input type="text" class="form-control" name="music_title" placeholder="" required="required">
 						</td>
 					</tr>
-					
-					<tr>
-						<th>앨범명</th>
-						<td>
-						<input type="text" class="form-control" name="album_no" placeholder="" required="required">
-						</td>
-					</tr>
 
 					<tr>
 						<th>가수명</th>
 						<td>
-						<input type="text" class="form-control" name="artist_no" placeholder="" required="required">
+							<select id=comboArtist name="artist_no" style="display: inline-block;" onchange="chageSelect()" >
+							
+							</select>
+						</td>
+					</tr>
+										
+					<tr>
+						<th>앨범명</th>
+						<td>
+							<select id=comboAlbum name="album_no" style="display: inline-block;" disabled="disabled" >
+								<option selected disabled hidden="ture" >--- 가수를 먼저 선택해 주세요 --- </option>
+							</select>
 						</td>
 					</tr>
 
@@ -71,23 +176,21 @@
 					<tr>
 						<th>장르</th>
 						<td>
-						<input type="text" class="form-control" name="music_genre" placeholder="" required="required">
+							<select name="music_genre" id = "genre" style="display: inline-block;" >
+								<option selected disabled hidden="ture">--- 장르를 선택해주세요 ---</option>
+								<option value="1">댄스</option>
+								<option value="2">록</option>
+								<option value="3">발라드</option>
+								<option value="4">팝</option>
+								<option value="5">힙합</option>
+							</select>
 						</td>
 					</tr>
-					
-					<tr>
-						<th>타이틀 여부</th>
-						<td>
-							<input type='radio' name='music_title' value='1' />예
-  							<input type='radio' name='music_title' value='2' checked="checked" />아니요
-						</td>
-					</tr>
-					
 					<tr>
 						<th>성인 여부</th>
 						<td>
 							<input type='radio' name='music_adult' value='1' />예
-  							<input type='radio' name='music_adult' value='2' checked="checked"/>아니요
+  							<input type='radio' name='music_adult' value='0' />아니요
 						</td>
 					</tr>
 					
@@ -111,36 +214,46 @@
 <script>
 	function adMusicInsert() {
 		
-		var musicInsert = $("form[name=musicInsert]").serialize();
-		console.log(musicInsert)
+		var selectArt = $('#comboArtist').val();
+		var selectAlb = $('#comboAlbum').val();
+		var genre = $('#genre').val();
+		
+		if (selectArt == null || selectAlb == null || genre == null) {
+			
+			alert ("음악 입력 정보가 정확하지 않습니다.");
+			
+		}else{
+		
+			var musicInsert = $("form[name=musicInsert]").serialize();
+			console.log(musicInsert)
 	
- 	 $.ajax({
+ 			$.ajax({
  	
-	    type : "POST",
-        url : "/adminMusic/insert",
-        data : musicInsert,
-        dataType : "text",
-        
-        success : function(data) {
-        	
-        	if (data == 'success') {
-        		
-        	alert ("회원수정에 성공했습니다.");
-        	
-        	memberInfo();
-        	
-        	}else if (data == 'error')
-        		
-        	alert ("회원수정에 싫패했습니다.");
-        	
-		},
+	  		type : "POST",
+		    url : "/adminMusic/insert",
+		    data : musicInsert,
+		    dataType : "text",
+		        
+		    success : function(data) {
+		    	if (data == 'success') {
+		        		
+		        alert ("음악추가에 성공했습니다.");
+		        	
+		        	
+		        }else if (data == 'error')
+		        		
+		        alert ("음악추가에 싫패했습니다.");
+		        	
+		        location = "/adminMusic";
+			},
     	
-        error : function(jqXHR, textStatus, errorThrown) {
-      	  
-      	  alert("에러 발생 \n" +"/"+jqXHR+"/"+ textStatus + " : " + errorThrown);
-        }
+     	    error : function(jqXHR, textStatus, errorThrown) {
+      		  
+			alert("에러 발생 \n" +"/"+jqXHR+"/"+ textStatus + " : " + errorThrown);
+    	    }
     	
- 	})
+ 		})
+	}
 };
 </script>
 

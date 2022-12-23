@@ -16,7 +16,7 @@ public class AdminMusicVo {
 	private int music_like;
 	private int music_playcount;
 	private byte[] music_mv;
-	private String music_adult;
+	private String music_adult; 
 	private String music_file;
 	private int music_albumorder;
 	private String album_title;

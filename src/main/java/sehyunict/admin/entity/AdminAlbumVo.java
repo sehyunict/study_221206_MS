@@ -1,7 +1,5 @@
 package sehyunict.admin.entity;
 
-import java.sql.Date;
-
 public class AdminAlbumVo {
 	
 	private int album_no;
@@ -13,7 +11,7 @@ public class AdminAlbumVo {
 	private String album_introduce;
 	private String album_commany;
 	private String album_agency;
-	private Date album_date;
+	private String album_date;
 	private int album_like;
 	private String artist_name;
 	private String com_code;
@@ -74,10 +72,10 @@ public class AdminAlbumVo {
 	public void setAlbum_agency(String album_agency) {
 		this.album_agency = album_agency;
 	}
-	public Date getAlbum_date() {
+	public String getAlbum_date() {
 		return album_date;
 	}
-	public void setAlbum_date(Date album_date) {
+	public void setAlbum_date(String album_date) {
 		this.album_date = album_date;
 	}
 	public int getAlbum_like() {

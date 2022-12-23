@@ -62,7 +62,7 @@ function selectAll(selectAll)  {
 
 	<div class="container mt-3">
 		<h2>Artist List</h2>
-		<p>전체 앨범수 : ${pageMaker.totalCount}</p>
+		<p>전체 가수 수 : ${pageMaker.totalCount}</p>
 		<div align="right">
 			<form:form action="/adminMember" modelAttribute="pvo">
 				<select class="form-select" name=select
@@ -90,8 +90,8 @@ function selectAll(selectAll)  {
 					<th>유형</th>
 					<th>소속사</th>
 					<th>데뷔일</th>
-					<th>주요장르</th>
-					<th>펜</th>
+					<th>장르</th>
+					<th>팬</th>
 					<th>관리</th>
 				</tr>
 			</thead>

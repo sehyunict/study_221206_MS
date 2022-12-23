@@ -1,11 +1,11 @@
 package sehyunict.admin.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import sehyunict.admin.entity.AdminMemberVo;
 import sehyunict.admin.entity.AdminMusicVo;
 import sehyunict.admin.entity.PageVo;
 import sehyunict.admin.service.AdminMusicService;
@@ -68,10 +68,31 @@ public class AdminMusicServiceImpl implements AdminMusicService{
 			
 			data = "fail";
 		
-		};
+		}
 		
 		
 		return data;
+		
+	}
+	
+	// insert 페이지 콤보박스 출력 album 정보 조회
+	public List<Map<String, Object>> adminComboAlbum(String artistNo){
+		
+		return adminMusicMapper.adminComboAlbum(artistNo);
+		
+	}
+	
+	// insert 페이지 콤보박스 출력 artist 정보 조회
+	public List<Map<String, Object>> adminComboArtist(){
+		
+		return adminMusicMapper.adminComboArtist();
+		
+	}
+
+	// 음악 추가
+	public int adminMusicInsert(AdminMusicVo vo) {
+		
+		return adminMusicMapper.adminMusicInsert(vo);
 		
 	}
 }

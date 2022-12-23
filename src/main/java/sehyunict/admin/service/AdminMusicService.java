@@ -1,8 +1,8 @@
 package sehyunict.admin.service;
 
 import java.util.List;
+import java.util.Map;
 
-import sehyunict.admin.entity.AdminMemberVo;
 import sehyunict.admin.entity.AdminMusicVo;
 import sehyunict.admin.entity.PageVo;
 
@@ -25,4 +25,13 @@ public interface AdminMusicService {
 	
 	// 체크박스 선택음악 삭제
 	String adminMusicChDelete(int[] checkList);
+	
+	// insert 페이지 콤보박스 출력 album 정보 조회
+	List<Map<String, Object>> adminComboAlbum(String artistNo);
+	
+	// insert 페이지 콤보박스 출력 artist 정보 조회
+	List<Map<String, Object>> adminComboArtist();
+	
+	// 음악 추가
+	int adminMusicInsert(AdminMusicVo vo);
 }

@@ -279,7 +279,7 @@
         , a.album_type
         , a.album_genre
         , a.album_commany
-        , a.album_date
+        , TO_CHAR(a.album_date,'yyyy-mm-dd') AS album_date
         , a.album_like
         , b.artist_name
         , c.com_code
@@ -311,7 +311,7 @@
   	</select>	
   	
  
-  	<!--페이징처리 전체 음악수 sql -->
+  	<!--페이징처리 전체 앨범수 sql -->
   	
   	
 	<select id="albumcount" resultType="int">
@@ -320,11 +320,90 @@
 
 	</select>
 	
+	<!-- 선택앨범 정보 조회 -->	
+  	<select id="albuminfo" resultType = "adminAlbumVo">
+  	
+  	
+  	SELECT 
+		a.album_title
+        , a.album_no
+        , a.artist_no
+        , a.album_type
+        , a.album_introduce
+        , a.album_commany
+        , a.album_agency
+        , TO_CHAR(a.album_date,'yyyy-mm-dd') AS album_date
+        , a.album_like
+        , a.album_genre
+        , b.artist_name
+        , c.com_code
+	FROM 
+		tn_ms_album a
+        ,tn_ms_artist b
+        ,tc_ms_com_code c
+	WHERE
+		a.album_no = #{album_no}
+	AND
+		a.artist_no = b.artist_no
+    AND
+        a.album_genre = c.com_code_no
+    
+  	
+  	</select>
+  	
+  	<!-- 앨범 업데이트 -->
+  	<update id ="albumupdate" parameterType="adminAlbumVo">
+  	
+  	UPDATE 
+ 		tn_ms_album
+ 	SET 
+ 		album_title=#{album_title}
+ 		, album_type=#{album_type}
+ 		, album_introduce=#{album_introduce}
+ 		, album_commany=#{album_commany}
+ 		, album_agency=#{album_agency}
+ 		, album_date=#{album_date}
+ 		, album_like=#{album_like}
+ 		, album_genre=#{album_genre}
+ 	WHERE
+ 		album_no = #{album_no}
+  	
+  	</update>
+  	
+  	<!-- 앨범 삭제 -->
+	<delete id="albumdelete" parameterType="adminAlbumVo">
+	
+	DELETE
+	FROM
+		tn_ms_album
+	WHERE
+		album_no = #{album_no}
+	
+	</delete>
+  	
+  	<!-- 체크박스 선택 앨범 삭제 -->
+  	<delete id="albumchdelete" parameterType="int">
+	
+	DELETE
+	FROM
+		tn_ms_album
+	WHERE
+		album_no = #{checkNum}
+	
+	</delete>
 	
 	
 	
 	
-	  <!--   //////////////////// Album 관련 SQL문 /////////////////////       -->
+	
+	
+	
+	
+	  <!--   //////////////////// Artist 관련 SQL문 /////////////////////       -->
+	  
+	  
+	  
+	  
 	  
 	  
 	<select id="artistlist" resultType="adminArtistVo" parameterType="pageVo">
@@ -334,10 +413,10 @@
         a.rn
 		, a.artist_no
         , a.artist_name
-        , a.artist_date
+        , TO_CHAR(a.artist_date,'yyyy-mm-dd') AS artist_date
         , a.artist_type
         , a.artist_company
-        , a.artist_debut
+        , TO_CHAR(a.artist_debut,'yyyy-mm-dd') AS artist_debut
         , a.artist_genre
         , a.artist_fan
         , b.com_code
@@ -366,7 +445,7 @@
   	</select>	
   	
  
-  	<!--페이징처리 전체 음악수 sql -->
+  	<!--페이징처리 전체 가수 수 sql -->
   	
   	
 	<select id="artistcount" resultType="int">
@@ -374,6 +453,148 @@
 	SELECT COUNT(*) FROM tn_ms_artist
 
 	</select>
+	
+	<!-- 선택가수 정보 조회 -->	
+  	<select id="artistinfo" resultType = "adminArtistVo">
+  	
+  	
+  	SELECT 
+		a.artist_no
+        , a.artist_name
+        , TO_CHAR(a.artist_date,'yyyy-mm-dd') AS artist_date
+        , a.artist_type
+        , a.artist_introduce
+        , a.artist_company
+        , TO_CHAR(a.artist_debut,'yyyy-mm-dd') AS artist_debut
+		, NVL(a.artist_awarded,'없음') as artist_awarded
+        , a.artist_genre
+        , a.artist_fan
+        , b.com_code
+	FROM 
+		tn_ms_artist a
+        ,tc_ms_com_code b
+	WHERE
+		a.artist_no = #{artist_no}
+	AND	
+		a.artist_genre = b.com_code_no
+    
+  	
+  	</select>
+  	
+  	
+  	<!-- 가수 업데이트 -->
+  	<update id ="artistupdate" parameterType="adminArtistVo">
+  	
+  	UPDATE 
+ 		tn_ms_artist
+ 	SET 
+ 		artist_name=#{artist_name}
+ 		, artist_date=#{artist_date}
+ 		, artist_introduce=#{artist_introduce}
+ 		, artist_company=#{artist_company}
+ 		, artist_debut=#{artist_debut}
+ 		, artist_awarded=#{artist_awarded}
+ 		, artist_genre=#{artist_genre}
+ 		, artist_fan=#{artist_fan}
+ 	WHERE
+ 		artist_no = #{artist_no}
+  	
+  	</update>
+  	
+  	<!-- 가수 삭제 -->
+	<delete id="artistdelete" parameterType="adminArtistVo">
+	
+	DELETE
+	FROM
+		tn_ms_artist
+	WHERE
+		artist_no = #{artist_no}
+	
+	</delete>
+  	
+  	<!-- 체크박스 선택 가수 삭제 -->
+  	<delete id="artistchdelete" parameterType="int">
+	
+	DELETE
+	FROM
+		tn_ms_artist
+	WHERE
+		artist_no = #{checkNum}
+	
+	</delete>	
   
   
+  
+	  
+	<!-- ///////////////////////        insert 관련 SQL문    /////////////////////////////////// -->
+	  
+	  
+	<!-- 콤보박스 앨범 조회 -->
+	<select id = "comboalbum" resultType="map">
+	  
+	SELECT
+		album_no
+		,album_title
+		,artist_no
+	FROM
+		tn_ms_album
+	WHERE
+		artist_no = #{artistNo}
+	ORDER BY
+		album_no
+	  
+	  
+	</select>
+	  
+	<!-- 콤보박스 가수 조회 -->
+	<select id = "comboartist" resultType="map">
+	
+	SELECT
+		artist_no
+		,artist_name
+	FROM
+		tn_ms_artist
+	ORDER BY
+		artist_no 
+	  
+	</select>
+	
+	
+	<!-- 음악 추가 -->
+	<insert id = "musicinsert" parameterType="adminMusicVo">
+	
+	INSERT INTO 
+		tn_ms_music
+		(
+		music_no
+		,album_no
+		,artist_no
+		,music_title
+		,music_lyrics
+		,music_composition
+		,music_write
+		,music_arrange
+		,music_genre
+		,music_like
+		,music_playcount
+		,music_adult
+		)
+	VALUES
+		(
+		SEQ_MS_MUSIC.NEXTVAL
+		,#{album_no}
+		,#{artist_no}
+		,#{music_title}
+		,#{music_lyrics}
+		,#{music_composition}
+		,#{music_write}
+		,#{music_arrange}
+		,#{music_genre}
+		,#{music_like}
+		,#{music_playcount}
+		,#{music_adult}
+		)
+	
+	</insert>
+	
 </mapper>

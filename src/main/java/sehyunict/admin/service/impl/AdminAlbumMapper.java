@@ -28,4 +28,32 @@ public class AdminAlbumMapper {
 		return mybatis.selectOne("mybatis.admin.albumcount");
 		
 	}
+	
+	//관리자 앨범 정보 조회
+	public AdminAlbumVo adminAlbumInfo(AdminAlbumVo vo) {
+		
+		return mybatis.selectOne("mybatis.admin.albuminfo", vo);
+		
+	}
+	
+	//관리자 앨범 업데이트
+	public int adminAlbumUpdate(AdminAlbumVo vo) {
+		
+		return mybatis.update("mybatis.admin.albumupdate", vo);
+	
+	}
+	
+	//선택 앨범 삭제
+	public int adminAlbumDelete(AdminAlbumVo vo){
+			
+		return mybatis.delete("mybatis.admin.albumdelete", vo);
+		
+	}	
+	
+	//관리자 체크박스 선택 앨범 삭제
+	public int adminAlbumChDelete(int checkNum) {
+			
+		return mybatis.delete("mybatis.admin.albumchdelete", checkNum);
+		
+	}
 }

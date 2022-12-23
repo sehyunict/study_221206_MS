@@ -58,9 +58,8 @@ public class AdminMemberServiceImpl implements AdminMemberService{
 		
 		for (int i = 0; i < checkList.length; i++) {
 			
-			System.out.println(checkList[i]);
 			result += adminMemberMapper.adminMemberChDelete(checkList[i]);
-			System.out.println(checkList[i]);
+			
 		}
 		
 		if (result == checkList.length) {

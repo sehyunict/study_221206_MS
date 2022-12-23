@@ -184,6 +184,7 @@
 		<input type="button"class="btn btn-danger" value="취소" onclick="cancleCheck()">
 		</div>
 	</div>
+		<%@ include file="/WEB-INF/views/include/adFooter.jsp"%>
 </body>
 <script>
 
@@ -242,7 +243,7 @@
 				if (data == 'success') {
 
 					alert(musicTitle + "음악삭제에 성공했습니다");
-					location = "/adminMember";
+					location = "/adminMusic";
 
 				} else if (data == 'error')
 

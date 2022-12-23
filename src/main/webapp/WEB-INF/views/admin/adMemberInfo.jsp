@@ -106,6 +106,7 @@ float: left;
 </head>
 
 <body>
+<%@ include file="/WEB-INF/views/include/adHeader.jsp"%>
 
      <div class="container" style="margin-bottom: 56px;">
     <div class="row">
@@ -178,6 +179,7 @@ float: left;
     </div>
     </div>
 </div>
+	<%@ include file="/WEB-INF/views/include/adFooter.jsp"%>
 </body>
 <script>
 	

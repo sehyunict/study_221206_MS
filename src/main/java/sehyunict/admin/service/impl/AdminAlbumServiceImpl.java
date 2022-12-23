@@ -28,4 +28,50 @@ public class AdminAlbumServiceImpl implements AdminAlbumService{
 		return adminAlbumMapper.adminAlbumCount();
 		
 	}
+	
+	//관리자 앨범 정보 불러오기
+	public AdminAlbumVo adminAlbumInfo(AdminAlbumVo vo) {
+		
+		return adminAlbumMapper.adminAlbumInfo(vo);
+		
+	}
+	
+	//관리자 앨범정보 수정
+	public int adminAlbumUpdate(AdminAlbumVo vo) {
+		
+		return adminAlbumMapper.adminAlbumUpdate(vo);
+	}
+	
+	//앨범 삭제
+	public int adminAlbumDelete(AdminAlbumVo vo) {
+		
+		return adminAlbumMapper.adminAlbumDelete(vo);
+		
+	}
+	
+	//체크박스 선택앨범 삭제
+	public String adminAlbumChDelete(int[] checkList) {
+		
+		int result = 0;
+		String data = "";
+		
+		for (int i = 0; i < checkList.length; i++) {
+			
+			result += adminAlbumMapper.adminAlbumChDelete(checkList[i]);
+		}
+		
+		if (result == checkList.length) {
+			
+			data = "success";
+			
+		}else {
+			
+			data = "fail";
+		
+		};
+		
+		
+		return data;
+		
+	}
 }
