@@ -28,7 +28,7 @@ public class MainController {
 		
 		model.addAttribute("rankList", rankList);
 		model.addAttribute("playList", playList);
-		return "main";
+		return "/main/main";
 	}
 	
 	@RequestMapping("/MIP")
