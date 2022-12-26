@@ -1,8 +1,5 @@
 package sehyunict.main.service.impl;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -10,8 +7,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import sehyunict.main.entity.MainRankVo;
+import sehyunict.main.entity.MainPlayCountVo;
 import sehyunict.main.entity.MainPlayListVo;
+import sehyunict.main.entity.MainRankVo;
 
 @Repository
 public class MainMapper {
@@ -27,7 +25,7 @@ public class MainMapper {
 		return sqlSession.selectList("mybatis.main.selectPlayList", memberNo);
 	}
 	
-	public void insertPlayList(Map<String, Integer> map) {
+	public void insertPlayList(Map<String, Object> map) {
 		sqlSession.insert("mybatis.main.insertPlayList", map);
 	}
 	
@@ -43,33 +41,19 @@ public class MainMapper {
 		sqlSession.insert("mybatis.main.insertLike", map);
 	}
 	
-	public void updateInertLike(int musicNo) {
-		sqlSession.update("mybatis.main.updateInertLike", musicNo);
-	}
-	
 	public void deleteLike(Map<String, Integer> map) {
 		sqlSession.delete("mybatis.main.deleteLike", map);
 	}
-	
-	public void updateDeleteLike(int musicNo) {
-		sqlSession.update("mybatis.main.updateDeleteLike", musicNo);
-	}
-	
-	public int updatePlayCount(int musicNo) {
-		Map<String, String> map = new HashMap<String, String>();
-		
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
-		Date now = new Date();
 
-		map.put("today", dateFormat.format(now));
-		map.put("musicNo", Integer.toString(musicNo));
-		
-		int dateCheck = sqlSession.selectOne("mybatis.main.playCountUpdateCheck", map);
-		
-		if (dateCheck == 0) {
-			return sqlSession.insert("mybatis.main.playCountInsert", musicNo);
-		} else {
-			return sqlSession.insert("mybatis.main.playCountUpdate", map);
-		}
+	public List<MainPlayCountVo> selectPlayListDate(Map<String, Object> map) {
+		return sqlSession.selectList("mybatis.main.selectPlayListDate", map);
+	}
+
+	public int updatePlayCount(Map<String, Object> map) {
+		return sqlSession.update("mybatis.main.updatePlayCount", map);
+	}
+
+	public int insertPlayCount(Map<String, Object> map) {
+		return sqlSession.update("mybatis.main.insertPlayCount", map);
 	}
 }

@@ -20,10 +20,10 @@
 		<result column="member_album_title" property="member_album_title"/>
 	</resultMap>
   
-	<select id="selectRankDayList" resultMap="rankList" parameterType="hashMap">
+	<select id="selectRankDayList" resultMap="rankList" parameterType="int">
 		<![CDATA[
 			SELECT
-			    T2.music_no
+				T2.music_no
 			  , T2.music_title
 			  , (SELECT artist_name
 			    FROM TN_MS_ARTIST
@@ -37,13 +37,13 @@
 			  , T2.album_no
 			FROM
 			    (SELECT
-			        ROWNUM
-			      , rank_count
+			        ROW_NUMBER() OVER(ORDER BY SUM(rank_count) DESC) RN
 			      , music_no
-			    FROM th_ms_rank
+			      , SUM(rank_count) rank_count
+			    FROM TH_MS_RANK
 			    WHERE
-			        rank_date > TO_DATE(#{today}, 'YYYYMM')
-			      AND ROWNUM <= 50
+			        TO_CHAR(rank_date, 'YYYYMM') = TO_CHAR(SYSDATE, 'YYYYMM')
+			    GROUP BY music_no
 			    ORDER BY
 			        rank_count DESC
 			      , music_no) T1
@@ -56,9 +56,10 @@
 			    FROM TN_MS_MUSIC) T2
 			  , (SELECT music_no
 			    FROM TN_MS_LIKE_MUSIC
-			    WHERE member_no = TO_NUMBER(#{memberNo})) T3
+			    WHERE member_no = #{memberNo}) T3
 			WHERE
 			    T1.music_no = T2.music_no
+			  AND T1.RN <= 50
 			  AND T1.music_no = T3.music_no(+)
 			ORDER BY
 			    T1.rank_count DESC

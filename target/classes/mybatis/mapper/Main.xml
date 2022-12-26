@@ -23,7 +23,12 @@
 		<result column="now_playList_count" property="now_playList_count"/>
 		<result column="now_playList_date" property="now_playList_date"/>
 	</resultMap>
-  
+  	
+  	<resultMap type="MainPlayCountVo" id="playCount">
+		<result column="music_no" property="music_no"/>
+		<result column="rank_count" property="rank_count"/>
+	</resultMap>
+  	
 	<select id="selectRankList" resultMap="rankList" parameterType="int" >
 		<![CDATA[
 			SELECT
@@ -86,12 +91,24 @@
 	<insert id="insertPlayList" parameterType="hashMap">
 		INSERT
 		INTO TN_MS_NOW_PLAYLIST
-		VALUES(
+		    (NOW_PLAYLIST_NO
+		  , MEMBER_NO
+		  , MUSIC_NO
+		  , NOW_PLAYLIST_COUNT
+		  , NOW_PLAYLIST_DATE)
+		SELECT
 		    SEQ_MS_NOW_PLAYLIST.NEXTVAL
-		  , #{memberNo}
-		  , #{musicNo}
-		  , 0
-		  , SYSDATE)
+		  , T1.*
+		FROM(
+		<foreach collection="list" item="item" separator="UNION ALL ">
+			SELECT
+		        #{item.memberNo} MEMBER_NO
+		      , #{item.musicNo} MUSIC_NO
+		      , 0 NOW_PLAYLIST_COUNT
+		      , SYSDATE NOW_PLAYLIST_DATE
+		    FROM DUAL
+		</foreach>
+		) T1
 	</insert>
 	
 	<select id="selectInsertPlayList" parameterType="hashMap" resultMap="playList">
@@ -110,7 +127,7 @@
 			  , TN_MS_MEMBER T2
 			  , TN_MS_MUSIC T3
 			  , (SELECT
-			        ROWNUM RN
+			        ROW_NUMBER() OVER(ORDER BY now_playList_no DESC) RN
 			      , now_playList_no
 			    FROM TN_MS_NOW_PLAYLIST
 			    WHERE member_no = #{memberNo}
@@ -148,43 +165,64 @@
 		  AND music_no = #{musicNo}
 	</delete>
 	
-	<select id="playCountUpdateCheck" parameterType="hashMap" resultType="int">
+	<select id="selectPlayListDate" parameterType="hashMap" resultMap="playCount">
 		SELECT
-		    COUNT(*)
+		    music_no
+		  , rank_count
 		FROM
 		    TH_MS_RANK
 		WHERE
-		    rank_date BETWEEN TO_DATE(#{today} || '0000', 'YYYYMMDDHH24MI')
-		  AND TO_DATE(#{today} || '2359', 'YYYYMMDDHH24MI')
-		  AND music_no = #{musicNo}
+		    TO_CHAR(rank_date, 'YYYYMMDD') = TO_CHAR(SYSDATE, 'YYYYMMDD')
+			  AND music_no IN
+		<foreach collection="list" item="item" open="(" close=")" separator=", ">
+			  #{item.music_no}
+		</foreach>
 	</select>
 	
-	<insert id="playCountInsert" parameterType="int">
+	<update id="updatePlayCount" parameterType="hashMap">
+		<foreach collection="list" item="item" separator=";" open="DECLARE BEGIN" close="; END;">
+			UPDATE TH_MS_RANK
+			SET rank_count = rank_count + 1
+			  , rank_gender_female = rank_gender_female + 1
+			  , rank_age_20 = rank_age_20 + 1
+			WHERE music_no = #{item.music_no}
+			  AND TO_CHAR(rank_date, 'YYYYMMDD') = TO_CHAR(SYSDATE, 'YYYYMMDD')
+		</foreach>
+	</update>
+	
+	<insert id="insertPlayCount" parameterType="hashMap">
 		INSERT
 		INTO TH_MS_RANK
-		VALUES(
+		    (RANK_NO
+		  , MUSIC_NO
+		  , RANK_DATE
+		  , RANK_COUNT
+		  , RANK_GENDER_MALE
+		  , RANK_GENDER_FEMALE
+		  , RANK_AGE_10
+		  , RANK_AGE_20
+		  , RANK_AGE_30
+		  , RANK_AGE_40
+		  , RANK_AGE_50)
+		SELECT
 		    SEQ_MS_RANK.NEXTVAL
-		  , #{musicNo}
-		  , SYSDATE
-		  , 1
-		  , 0
-		  , 1
-		  , 0
-		  , 1
-		  , 0
-		  , 0
-		  , 0
-		  , 0)
+		  , T1.*
+		FROM(
+		<foreach collection="list" item="item" separator="UNION ALL ">
+			SELECT
+				#{item.music_no} MUSIC_NO
+		      , SYSDATE RANK_DATE
+			  , 1 RANK_COUNT
+			  , 0 RANK_GENDER_MALE
+			  , 1 RANK_GENDER_FEMALE
+			  , 0 RANK_AGE_10
+			  , 1 RANK_AGE_20
+			  , 0 RANK_AGE_30
+			  , 0 RANK_AGE_40
+			  , 0 RANK_AGE_50
+		    FROM DUAL
+		</foreach>
+		) T1
 	</insert>
-	
-	<update id="playCountUpdate" parameterType="hashMap">
-		UPDATE TH_MS_RANK
-		SET rank_count = rank_count + 1
-		  , rank_gender_female = rank_gender_female + 1
-		  , rank_age_20 = rank_age_20 + 1
-		WHERE music_no = #{musicNo}
-		  AND rank_date BETWEEN TO_DATE(#{today} || '0000', 'YYYYMMDDHH24MI')
-		  AND TO_DATE(#{today} || '2359', 'YYYYMMDDHH24MI')
-	</update>
 	
 </mapper>

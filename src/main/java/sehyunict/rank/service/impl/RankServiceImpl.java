@@ -1,7 +1,5 @@
 package sehyunict.rank.service.impl;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,15 +21,7 @@ public class RankServiceImpl implements RankService {
 	@Transactional
 	@Override
 	public List<MainRankVo> selectRankDayList(int memberNo) {
-		Map<String, String> map = new HashMap<String, String>();
-		
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMM");
-		Date now = new Date();
-
-		map.put("today", dateFormat.format(now));
-		map.put("memberNo", Integer.toString(memberNo));
-		
-		return rankmapper.selectRankDayList(map);
+		return rankmapper.selectRankDayList(memberNo);
 	}
 	
 	@Transactional

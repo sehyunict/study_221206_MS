@@ -16,8 +16,8 @@ public class RankMapper {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	public List<MainRankVo> selectRankDayList(Map<String, String> map) {
-		return sqlSession.selectList("mybatis.rank.selectRankDayList", map);
+	public List<MainRankVo> selectRankDayList(int memberNo) {
+		return sqlSession.selectList("mybatis.rank.selectRankDayList", memberNo);
 	}
 
 	public List<RankAlbumVo> selectAlbumList(int memberNo) {
