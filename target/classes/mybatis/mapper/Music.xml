@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="mybatis.music">
+
+	<resultMap type="MusicSearchVo" id="music">
+		<result column="music_number" property="musicNumber"/>
+		<result column="music_title" property="musicTitle"/>
+		<result column="artist_name" property="artistName"/>
+		<result column="album_title" property="albumTitle"/>
+		<result column="music_like" property="musicLike"/>
+		<result column="music_mv" property="musicMv"/>
+		<result column="music_file" property="musicFile"/>
+		<result column="music_no" property="musicNo"/>
+		<result column="album_no" property="albumNo"/>
+		<result column="artist_no" property="artistNo"/>
+		<result column="music_adult" property="musicAdult"/>
+		<result column="music_albumorder" property="musicAlbumorder"/>	
+		<result column="music_heart" property="musicHeart"/>			
+	</resultMap>
+	 
+	<select id="musicSearch" parameterType="String" resultMap="music">
+		SELECT
+			 rownum as music_number 
+    		,t1.music_title as music_title
+    		,t2.artist_name as artist_name
+    		,t3.album_title as album_title
+    		,t1.music_like as music_like
+    		,t1.music_mv as music_mv
+    		,t1.music_file as music_file
+    		,t1.music_no as music_no
+    		,t3.album_no as album_no
+    		,t2.artist_no as artist_no
+    		,decode(t1.music_adult,'0',' ','🔞') as music_adult
+    		,decode(t1.music_albumorder,'1','(Title)',' ')
+    		,(select count(like_music_no) from tn_ms_like_music where music_no=t1.music_no and member_no=1) as music_heart   		
+		FROM
+						tn_ms_music t1
+			    left outer join tn_ms_artist t2
+			    	on	t1.artist_no = t2.artist_no
+			    left outer join tn_ms_album t3
+    				on	t1.album_no = t3.album_no
+		WHERE 
+			music_title like  '%' ||  #{search} || '%'			
+	</select>
+	
+	
+	  <resultMap type="musicDetailVo" id="musicD">
+		<result column="music_no" property="musicNo"/>
+		<result column="music_title" property="musicTitle"/>		
+		<result column="music_composition" property="musicComposition"/>	
+		<result column="music_write" property="musicWrite"/>			
+		<result column="music_arrange" property="musicArrange"/>		
+		<result column="artist_name" property="artistName"/>	
+		<result column="album_title" property="albumTitle"/>	
+		<result column="album_date" property="albumDate"/>	
+		<result column="music_genre" property="musicGenre"/>
+		<result column="music_mv" property="musicMv"/>
+		<result column="music_file" property="musicFile"/>
+		<result column="music_like" property="musicLike"/>
+		<result column="music_lyrics" property="musicLyrics"/>	
+		<result column="album_no" property="albumNo"/>	
+		<result column="artist_no" property="artistNo"/>
+		<result column="artist_awarded" property="artistAwarded"/>
+		<result column="album_jacket" property="albumJacket"/>
+		<result column="music_heart" property="musicHeart"/>
+		<result column="music_adult" property="musicAdult"/>
+		
+	</resultMap>
+			
+	<select id="musicDetail" parameterType="String" resultMap="musicD">
+  		SELECT
+  			t1.music_no as music_no
+			,t3.album_jacket as album_jacket
+    		,decode(t1.music_adult,'0',' ','🔞') as music_adult
+		    ,t1.music_title as music_title
+    		,t2.artist_name as artist_name
+    		,t1.music_lyrics as music_lyrics
+    		,t1.music_composition as music_composition 
+    		,t1.music_write as music_write
+    		,t1.music_arrange as music_arrange
+    		,t3.album_title as album_title
+    		,to_char(t3.album_date,'YYYY-MM-DD') as album_date
+    		,t4.com_code as music_genre
+    		,t1.music_mv as music_mv    		
+    		,t1.music_file as music_file
+    		,t1.music_like as music_like
+    		,t1.music_playcount as music_playcount
+    		,t3.album_no as album_no
+    		,t2.artist_no as artist_no
+    		,t3.album_jacket as albumJacket
+    		,(select count(like_music_no) from tn_ms_like_music where music_no=${musicNo} and member_no=1) as music_heart   		
+			,decode(t1.music_adult,'0',' ','🔞') as music_adult
+		FROM
+        			tn_ms_music t1
+    			left outer join tn_ms_artist t2
+        			on t1.artist_no= t2.artist_no
+    			left outer join tn_ms_album t3
+        			on t1.album_no = t3.album_no
+    			left outer join tc_ms_com_code t4
+        			on t1.music_genre = t4.com_code_no
+        WHERE music_no = ${musicNo}
+	</select>
+
+	
+	
+	<resultMap type="AlbumDetailVo" id="albumD">
+				<result column="album_no" property="albumNo"/>
+				<result column="album_title" property="albumTitle"/>
+				<result column="artist_name" property="artistName"/>
+				<result column="artist_no" property="artistNo"/>	
+				<result column="album_date" property="albumDate"/>				
+				<result column="album_company" property="albumCompany"/>	
+				<result column="album_agency" property="albumAgency"/>				
+				<result column="album_genre" property="albumGenre"/>	
+				<result column="album_like" property="albumLike"/>	
+				<result column="music_title" property="musicTitle"/>
+				<result column="album_introduce" property="albumIntroduce"/>
+				<result column="album_jacket" property="albumJacket"/>				
+				<result column="like_album_no" property="likeAlbumNo"/>
+				<result column="member_no" property="memberNo"/>
+				<result column="like_album_date" property="likeAlbumDate"/>		
+				<result column="album_heart" property="albumHeart"/>			
+	</resultMap>
+	
+	<select id="albumDetail" parameterType="String" resultMap="albumD">
+        SELECT                 
+    		 t1.album_title as album_title
+    		,t1.album_no as album_no
+      		,t2.artist_name as artist_name
+      		,t2.artist_no as artist_no
+      		,to_char(t1.album_date, 'YYYY-MM-DD') as album_date
+      		,t1.album_commany as album_company
+      		,t1.album_agency as album_agency
+		    ,t3.com_code as album_genre   	
+		    ,t1.album_like as album_like	
+            ,t1.album_introduce as album_introduce
+            ,t1.album_jacket as album_jacket
+            ,t5.music_title as music_title
+            ,(select count(like_album_no) from tn_ms_like_album where album_no=${albumNo} and member_no=1) as album_heart
+		FROM        
+            (SELECT 
+              	t01.album_no as album_no
+             	,LISTAGG(t04.music_title,', ') within group (order by t01.album_no) music_title 
+            FROM tn_ms_album t01 
+                	left outer join tn_ms_music t04 
+                  		on t01.album_no=t04.album_no
+            GROUP BY t01.album_no) t5
+                inner join tn_ms_album t1
+                    on t1.album_no = t5.album_no
+                left outer join tn_ms_artist t2
+                    on t1.artist_no=t2.artist_no
+                left outer join tc_ms_com_code t3
+                    on t1.album_genre = t3.com_code_no
+  		WHERE t1.album_no = ${albumNo}
+	
+	</select>
+	
+		<resultMap type="ArtistDetailVo" id="artistD">
+				<result column="artist_no" property="artistNo"/>
+				<result column="artist_name" property="artistName"/>
+				<result column="artist_profile" property="artistProfile"/>
+				<result column="artist_type" property="artistType"/>
+	  			<result column="artist_introduce" property="artistIntroduce"/> 				
+				<result column="artist_debut" property="artistDebut"/>		
+				<result column="artist_company" property="artistCompany"/>
+				<result column="artist_awarded" property="artistAwarded"/>
+				<result column="artist_genre" property="artistGenre"/>
+				<result column="artist_fan" property="artistFan"/>
+ 				<result column="fan_heart" property="fanHeart"/>
+ 	</resultMap>
+		<select id="artistDetail" parameterType="String" resultMap="artistD">
+		SELECT 
+			 t1.artist_no as artist_no
+			,t1.artist_name as artist_name
+    		,t1.artist_profile as artist_profile
+    		,t1.artist_type as artist_type
+    		,t1.artist_introduce as artist_introduce
+    		,to_char(t1.artist_debut,'YYYY-MM-DD') as artist_debut
+    		,t1.artist_company as artist_company
+    		,t1.artist_awarded as artist_awarded
+    		,t2.com_code as artist_genre
+    		,t1.artist_fan as artist_fan
+ 			,(select count(fan_no) from tn_ms_fan where artist_no=${artistNo} and member_no=1) as fan_heart
+		FROM 
+        		tn_ms_artist t1
+    		left outer join tc_ms_com_code t2
+        		on t1.artist_genre=t2.com_code_no
+		WHERE artist_no = ${artistNo}
+		
+		</select>
+		
+		<insert id="playlistInsert">
+		INSERT INTO 
+				tn_ms_now_playlist	( now_playlist_no
+									, member_no
+									, music_no
+									, now_playlist_count
+									, now_playlist_date ) 
+		VALUES ( seq_ms_now_playlist.NEXTVAL
+				, 1
+				, #{musicNo}
+				, 0
+				, sysdate )
+		</insert>
+		
+ 		<insert id="myAlbumInsert">
+		INSERT INTO 
+				tn_ms_member_album_music (member_album_music_no
+										, member_album_no
+										, music_no
+										, member_album_music_date) 
+		values (seq_ms_member_album_music.nextval
+				, #{memberAlbumNo}
+				, #{musicNo}
+				,sysdate )
+		</insert>
+		
+ 		<insert id = "albumLikeInsert">
+		INSERT INTO 
+				tn_ms_like_album ( like_album_no
+								 , member_no
+								 , album_no
+								 , like_album_date) 
+		SELECT 
+     			 seq_ms_like_album.NEXTVAL
+    			, 1
+    			, #{albumNo}
+    			, sysdate 
+		FROM dual
+		WHERE not exists ( SELECT
+							*
+						   FROM
+							tn_ms_like_album
+						   WHERE
+							member_no=1
+							and album_no=#{albumNo}
+							)
+		</insert> 
+		
+<!-- 		<update id="albumLikeUpdate">
+		UPDATE 
+			tn_ms_album 
+		SET 
+			album_like = (	SELECT 
+								count(like_album_no)as album_like 
+							FROM tn_ms_like_album 
+							WHERE album_no = #{albumNo}
+							) 
+		WHERE album_no= #{albumNo}
+		</update> -->
+		
+		<delete id="albumLikeDelete">
+		DELETE FROM tn_ms_like_album 
+		WHERE	
+			member_no = 1
+		and album_no = #{albumNo}
+		</delete>
+		
+		
+		 		<insert id = "musicLikeInsert">
+		INSERT INTO 
+				tn_ms_like_music ( like_music_no
+								 , member_no
+								 , music_no
+								 , like_music_date) 
+		SELECT 
+     			 seq_ms_like_music.NEXTVAL
+    			, 1
+    			, #{musicNo}
+    			, sysdate 
+		FROM dual
+		WHERE not exists ( SELECT
+							*
+						   FROM
+							tn_ms_like_music
+						   WHERE
+							member_no=1
+							and music_no=#{musicNo}
+							)
+		</insert>
+		
+				<delete id="musicLikeDelete">
+		DELETE FROM tn_ms_like_music
+		WHERE	
+			member_no = 1
+		and music_no = #{musicNo}
+		</delete>
+		
+		
+		
+		<!-- 팬 -->
+		<insert id = "fanInsert">
+		INSERT INTO 
+				tn_ms_fan ( fan_no
+							, member_no
+							, artist_no
+							, fan_date) 
+		SELECT 
+     			 seq_ms_fan.NEXTVAL
+    			, 1
+    			, #{artistNo}
+    			, sysdate 
+		FROM dual
+		WHERE not exists ( SELECT
+							*
+						   FROM
+							tn_ms_fan
+						   WHERE
+							member_no=1
+							and artist_no=#{artistNo}
+							)
+		</insert>
+		
+				<delete id="fanDelete">
+		DELETE FROM tn_ms_fan
+		WHERE	
+			member_no = 1
+		and artist_no = #{artistNo}
+		</delete>
+					
+</mapper>

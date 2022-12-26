@@ -6,6 +6,12 @@
 
 <configuration>
 
-	<typeAliases><typeAlias type="sehyunict.main.entity.MusicVo" alias="musicVo"/></typeAliases>
+	<typeAliases>
+		<typeAlias type="sehyunict.main.entity.MusicVo" alias="MusicVo"/>
+		<typeAlias type="sehyunict.music.entity.MusicSearchVo" alias="MusicSearchVo"/>
+		<typeAlias type="sehyunict.music.entity.MusicDetailVo" alias="MusicDetailVo"/>
+		<typeAlias type="sehyunict.music.entity.AlbumDetailVo" alias="AlbumDetailVo"/>
+		<typeAlias type="sehyunict.music.entity.ArtistDetailVo" alias="ArtistDetailVo"/>
+	</typeAliases>
   
 </configuration>

@@ -9,13 +9,13 @@ import org.springframework.transaction.annotation.Transactional;
 import sehyunict.main.entity.MusicVo;
 import sehyunict.main.service.MainService;
 
-@Transactional
 @Service
 public class MainServiceImpl implements MainService {
 
 	@Autowired
 	private MainMapper dao;
-
+	
+	@Transactional
 	@Override
 	public List<MusicVo> selectMusic() {
 		return dao.selectMusic();

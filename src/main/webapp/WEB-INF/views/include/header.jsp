@@ -96,7 +96,7 @@
 		<ul>
 			<li><a href="#">마이페이지</a></li>
 			<li><a href="#">로그아웃</a></li>
-			<li><form action="#"><input type="text"><input type="submit" value="검색"></form></li>
+			<li><form action="/MS"><input name="search" type="text"><input type="submit" value="검색"></form></li>
 		</ul>
 	</div>
 </header>
