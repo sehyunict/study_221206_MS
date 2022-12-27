@@ -7,11 +7,29 @@
 <configuration>
 
 	<typeAliases>
-		<typeAlias type="sehyunict.main.entity.MusicVo" alias="MusicVo"/>
+
+		<typeAlias type="sehyunict.main.entity.MainRankVo" alias="MainRankVo"/>
+		<typeAlias type="sehyunict.main.entity.MainPlayListVo" alias="MainPlayListVo"/>
+		<typeAlias type="sehyunict.main.entity.MainInsertPlayListVo" alias="MainInsertPlayListVo"/>
+		<typeAlias type="sehyunict.main.entity.MainPlayCountVo" alias="MainPlayCountVo"/>
+		<typeAlias type="sehyunict.rank.entity.RankAlbumVo" alias="RankAlbumVo"/>
+		
+		<typeAlias type="sehyunict.admin.entity.AdminMemberVo" alias="adminMemberVo"/>
+		<typeAlias type="sehyunict.admin.entity.PageVo" alias="pageVo"/>
+		<typeAlias type="sehyunict.admin.entity.AdminMusicVo" alias="adminMusicVo"/>
+		<typeAlias type="sehyunict.admin.entity.AdminAlbumVo" alias="adminAlbumVo"/>
+		<typeAlias type="sehyunict.admin.entity.AdminArtistVo" alias="adminArtistVo"/>
+	
+		<typeAlias type="sehyunict.member.entity.MemberVo" alias="memberVo"/>
+		<typeAlias type="sehyunict.member.entity.MemberLikeMusicVo" alias="memberMusicVo"/>
+		<typeAlias type="sehyunict.member.entity.MemberLikeAlbumVo" alias="memberAlbumVo"/>
+		<typeAlias type="sehyunict.member.entity.MemberFanVo" alias="memberFanVo"/>
+		
 		<typeAlias type="sehyunict.music.entity.MusicSearchVo" alias="MusicSearchVo"/>
 		<typeAlias type="sehyunict.music.entity.MusicDetailVo" alias="MusicDetailVo"/>
 		<typeAlias type="sehyunict.music.entity.AlbumDetailVo" alias="AlbumDetailVo"/>
 		<typeAlias type="sehyunict.music.entity.ArtistDetailVo" alias="ArtistDetailVo"/>
+		
 	</typeAliases>
-  
+
 </configuration>

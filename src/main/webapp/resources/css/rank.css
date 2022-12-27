@@ -1,0 +1,51 @@
+#rank {
+	width: 1620px;
+	height: 800px;
+	background-color: #F0F0F0;
+	padding-top: 50px;
+	text-align: left;
+	position: relative;
+	overflow-x: hidden;
+}
+#rank > h2 {
+	margin-left: 100px;
+}
+#rankBtnWrap {
+	position: absolute;
+	top: 50px;
+	right: 100px;
+}
+#albumSelect {
+	width: 250px;
+	height: 32px;
+}
+.rankBtn {
+	padding: 5px 10px;
+}
+#rankTblWrap {
+	width: 1620px;
+	height: 670px;
+	margin: 50px 0px 0px 0px;
+	padding-left: 100px;
+	overflow: scroll;
+}
+#rankTbl {
+	width: 1420px;
+	text-align: center;
+	border-collapse: collapse;
+}
+#rankTbl > tbody > tr > th {
+	height: 40px;
+	color: white;
+	background-color: black;
+}
+#rankTbl > tbody > tr > td {
+	border-bottom: 1px black solid;
+	height: 40px;
+}
+#rankTbl > tbody > tr > td:first-child {
+	width: 50px;
+}
+.infotd {
+	text-align: left;
+}
