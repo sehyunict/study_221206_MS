@@ -120,7 +120,18 @@ button {
 						<td><input type='checkbox' name='selected' onclick='checkSelectAll(this)'/></td>
 						<td>${music.musicNumber}</td>
 						<td><a href="${path}/MD?musicNo=${music.musicNo}"
-							value='${music.musicNo}'>${music.musicAdult}<%-- ${music.musicAlbumorder} --%>${music.musicTitle}</a></td>
+							value='${music.musicNo}'>${music.musicAdult}<%-- ${music.musicAlbumorder} --%>
+							
+							<c:if test="${music.musicAlbumorder eq 'Title' }">
+							
+							<b style="font-size:smaller; border:1px solid pink; padding:0 5px; border-radius:30px; color:pink">${music.musicAlbumorder}</b>
+							
+							
+							</c:if>
+							${music.musicTitle}
+							</a></td>
+							
+							
 						<td><a href="${path}/ATD?artistNo=${music.artistNo}"
 							value='${music.artistNo}'>${music.artistName}</a></td>
 						<td><a href="${path}/AD?albumNo=${music.albumNo}"

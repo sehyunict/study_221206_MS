@@ -12,7 +12,7 @@ public class MusicSearchVo {
 	private byte[] musicMv;
 	private int musicNo;	
 	private String musicAdult;
-	private int musicAlbumorder;
+	private String musicAlbumorder;
 	private int albumNo;
 	private int musicHeart;
 	
@@ -91,10 +91,10 @@ public class MusicSearchVo {
 	public void setMusicAdult(String musicAdult) {
 		this.musicAdult = musicAdult;
 	}
-	public int getMusicAlbumorder() {
+	public String getMusicAlbumorder() {
 		return musicAlbumorder;
 	}
-	public void setMusicAlbumorder(int musicAlbumorder) {
+	public void setMusicAlbumorder(String musicAlbumorder) {
 		this.musicAlbumorder = musicAlbumorder;
 	}
 	public int getArtistNo() {

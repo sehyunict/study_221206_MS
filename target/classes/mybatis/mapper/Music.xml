@@ -35,7 +35,7 @@
     		,t3.album_no as album_no
     		,t2.artist_no as artist_no
     		,decode(t1.music_adult,'0',' ','🔞') as music_adult
-    		,decode(t1.music_albumorder,'1','(Title)',' ')
+    		,decode(t1.music_albumorder,'1','Title',' ') as music_albumorder
     		,(select count(like_music_no) from tn_ms_like_music where music_no=t1.music_no and member_no=1) as music_heart   		
 		FROM
 						tn_ms_music t1

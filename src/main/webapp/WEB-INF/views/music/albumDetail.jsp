@@ -146,7 +146,7 @@
 					</tr>
 					<tr>
 						<td colspan="5">
-							<b>수록곡2</b><br>${albumD.musicTitle}
+							<b>수록곡</b><br>${albumD.musicTitle}
 						</td>
 					</tr>
 				</c:forEach>
