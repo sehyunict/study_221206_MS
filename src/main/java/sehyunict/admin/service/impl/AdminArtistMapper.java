@@ -23,9 +23,9 @@ public class AdminArtistMapper {
 	}
 	
 	//관리자 총 가수 수 조회
-	public int adminArtistCount() {
+	public int adminArtistCount(PageVo pvo) {
 		
-		return mybatis.selectOne("mybatis.admin.artistcount");
+		return mybatis.selectOne("mybatis.admin.artistcount", pvo);
 		
 	}
 

@@ -11,7 +11,7 @@ public interface AdminAlbumService {
 	List<AdminAlbumVo> adminAlbumList(PageVo pvo);
 		
 	// 페이징 전체 앨범수 조회
-	int adminAlbumCount();
+	int adminAlbumCount(PageVo pvo);
 	
 	// 선택앨범 정보 조회
 	AdminAlbumVo adminAlbumInfo(AdminAlbumVo vo);

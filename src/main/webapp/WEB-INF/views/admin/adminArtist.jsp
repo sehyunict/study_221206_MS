@@ -64,16 +64,12 @@ function selectAll(selectAll)  {
 		<h2>Artist List</h2>
 		<p>전체 가수 수 : ${pageMaker.totalCount}</p>
 		<div align="right">
-			<form:form action="/adminMember" modelAttribute="pvo">
-				<select class="form-select" name=select
-					style="display: inline-block; width: 10%">
-					<option value="member_name">이름검색</option>
-					<option value="member_id">아이디검색</option>
-					<option value="member_email">이메일검색</option>
-				</select>
-				<input type="text" name="keyword" class="form-control"
-					placeholder="${keyword}" style="display: inline-block; width: 20%">
-				<input type="submit" class="btn btn-primary" value="검색">
+			<form:form action="/admin/Artist" modelAttribute="pvo">
+			<select class="form-select" name = select style = "display: inline-block; width: 10%">
+				<option value = "artist_name">가수검색</option>
+			</select> 
+			<input type="text" name="keyword" class="form-control" placeholder="${keyword}" style = "display: inline-block; width: 20%">
+			<input type="submit" class="btn btn-primary" value="검색">
 			</form:form>
 		</div>
 		<table class="table" style="margin-top: 10px;">
@@ -111,7 +107,7 @@ function selectAll(selectAll)  {
 						<th>${e.artist_debut}</th>
 						<th>${e.com_code}</th>
 						<th>${e.artist_fan}</th>
-						<th><form:form action="/adArtistInfo" modelAttribute="vo">
+						<th><form:form action="/admin/ArtistInfo" modelAttribute="vo">
 								<input type="hidden" name="artist_no" value="${e.artist_no}">
 								<button type="submit" class="btn btn-light">관리</button>
 							</form:form></th>
@@ -121,13 +117,13 @@ function selectAll(selectAll)  {
 		</table>
 		<div class="container mt-3" align="right">
 			<button type="button" class="btn btn-danger" onclick='checkDeleteAT()'>선택항목삭제</button>
-			<button type="button" class="btn btn-primary" onclick="window.location.href='/adMusicInsert'">음악 추가</button>
+			<button type="button" class="btn btn-primary" onclick="window.location.href='/admin/MusicInsert'">음악 추가</button>
 		</div>
 	</div>
 	<ul class="pagination">
 		<c:if test="${pageMaker.prev}">
 			<li class="page-item"><a class="page-link"
-				href="/adminArtist${pageMaker.makeQuery(pageMaker.startPage - 1)}">이전</a></li>
+				href="/admin/Artist${pageMaker.makeQuery(pageMaker.startPage - 1)}">이전</a></li>
 		</c:if>
 
 		<c:set var="nowpage" value="${pageMaker.pvo.page}" />
@@ -137,11 +133,11 @@ function selectAll(selectAll)  {
 				<c:when test="${nowpage == i}">
 					<li class="page-item"><a class="page-link"
 						style="background-color: #dee2e6"
-						href="/adminArtist${pageMaker.makeQuery(i)}">${i}</a></li>
+						href="/admin/Artist${pageMaker.makeQuery(i)}">${i}</a></li>
 				</c:when>
 				<c:otherwise>
 					<li class="page-item"><a class="page-link"
-						href="/adminArtist${pageMaker.makeQuery(i)}">${i}</a></li>
+						href="/admin/Artist${pageMaker.makeQuery(i)}">${i}</a></li>
 				</c:otherwise>
 			</c:choose>
 		</c:forEach>
@@ -149,7 +145,7 @@ function selectAll(selectAll)  {
 
 		<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
 			<li class="page-item"><a class="page-link"
-				href="/adminArtist${pageMaker.makeQuery(pageMaker.endPage + 1)}">다음</a></li>
+				href="/admin/Artist${pageMaker.makeQuery(pageMaker.endPage + 1)}">다음</a></li>
 		</c:if>
 
 	</ul>
@@ -174,7 +170,7 @@ function selectAll(selectAll)  {
  	$.ajax({
  		
  		type : "POST",
-        url : "/adminArtist/chdelete",
+        url : "/admin/Artist/chdelete",
         traditional : true,
         data : {
         	 'checkList' : checkList
@@ -183,7 +179,7 @@ function selectAll(selectAll)  {
         	
         	alert ("선택항목 삭제에 성공했습니다.");
         	
-        	location = "/adminArtist";
+        	location = "/admin/Artist";
 			
     	},
     	

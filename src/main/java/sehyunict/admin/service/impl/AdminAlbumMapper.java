@@ -23,9 +23,9 @@ public class AdminAlbumMapper {
 	}
 	
 	//관리자 총 앨범수 조회
-	public int adminAlbumCount() {
+	public int adminAlbumCount(PageVo pvo) {
 		
-		return mybatis.selectOne("mybatis.admin.albumcount");
+		return mybatis.selectOne("mybatis.admin.albumcount", pvo);
 		
 	}
 	

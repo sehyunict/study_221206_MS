@@ -73,7 +73,6 @@
 		}
 		section {
 			width: 1920px;
-			height: 900px;
 			padding: 50px 150px;
 			margin: 0px auto;
 		}
@@ -92,13 +91,13 @@
 	<nav>
 		<ul>
 			<li><a href="/RD">음악차트</a></li>
-			<li><a href="#">마이앨범</a></li>
+			<li><a href="/ma">마이앨범</a></li>
 		</ul>
 	</nav>
 	<div>
 		<ul>
-			<li><a href="#">마이페이지</a></li>
-			<li><form action="MS"><input type="text"><input type="submit" value="검색"></form></li>
+			<li><a href="/MI">마이페이지</a></li>
+			<li><form action="/MS"><input name="search" type="text"><input type="submit" value="검색"></form></li>
 		</ul>
 	</div>
 </header>

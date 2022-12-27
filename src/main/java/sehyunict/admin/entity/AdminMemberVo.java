@@ -20,9 +20,23 @@ public class AdminMemberVo {
 	private String member_subscription;
 	private String member_rating;
 	private String member_marketingcheck;
-	private List<AdminMemberVo> checkList;
+	private String com_code1;
+	private String com_code2;
 	
-
+	
+	
+	public String getCom_code1() {
+		return com_code1;
+	}
+	public void setCom_code1(String com_code1) {
+		this.com_code1 = com_code1;
+	}
+	public String getCom_code2() {
+		return com_code2;
+	}
+	public void setCom_code2(String com_code2) {
+		this.com_code2 = com_code2;
+	}
 	public int getMember_no() {
 		return member_no;
 	}
@@ -107,22 +121,16 @@ public class AdminMemberVo {
 	public void setMember_marketingcheck(String member_marketingcheck) {
 		this.member_marketingcheck = member_marketingcheck;
 	}
-	public List<AdminMemberVo> getCheckList() {
-		return checkList;
-	}
-	public void setCheckedList(List<AdminMemberVo> checkList) {
-		this.checkList = checkList;
-	}
-	
 	
 	
 	@Override
 	public String toString() {
-		return "MemberVo [member_no=" + member_no + ", member_id=" + member_id + ", member_pw=" + member_pw
+		return "AdminMemberVo [member_no=" + member_no + ", member_id=" + member_id + ", member_pw=" + member_pw
 				+ ", member_profile=" + Arrays.toString(member_profile) + ", member_name=" + member_name
 				+ ", member_birthdate=" + member_birthdate + ", member_gender=" + member_gender + ", member_introduce="
 				+ member_introduce + ", member_email=" + member_email + ", member_phone=" + member_phone
 				+ ", member_date=" + member_date + ", member_subscription=" + member_subscription + ", member_rating="
-				+ member_rating + ", member_marketingcheck=" + member_marketingcheck + "]";
+				+ member_rating + ", member_marketingcheck=" + member_marketingcheck + ", com_code1=" + com_code1
+				+ ", com_code2=" + com_code2 + "]";
 	}
 }

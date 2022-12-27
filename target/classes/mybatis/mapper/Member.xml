@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="mybatis.member">
+
+	<resultMap type="memberVo" id="member">
+		<result column="member_no" property="member_no"/>
+		<result column="member_id" property="member_id"/>
+		<result column="member_profile" property="member_profile"/>
+		<result column="member_name" property="member_name"/>
+		<result column="member_birthdate" property="member_birthdate"/>
+		<result column="member_gender" property="member_gender"/>
+		<result column="member_introduce" property="member_introduce"/>
+		<result column="member_email" property="member_email"/>
+		<result column="member_phone" property="member_phone"/>
+		<result column="member_date" property="member_date"/>
+		<result column="member_subscription" property="member_subscription"/>
+		<result column="member_rating" property="member_rating"/>
+		<result column="member_marketingCheck" property="member_marketingCheck"/>
+	</resultMap>
+	
+	<resultMap type="memberMusicVo" id="memberMusic">
+		<result column="like_music_no" property="like_music_no"/>
+		<result column="music_no" property="music_no"/>
+		<result column="music_title" property="music_title"/>
+		<result column="artist_name" property="artist_name"/>
+		<result column="album_title" property="album_title"/>
+	</resultMap>
+	
+	<resultMap type="memberAlbumVo" id="memberAlbum">
+		<result column="like_album_no" property="like_album_no"/>
+		<result column="album_no" property="album_no"/>
+		<result column="album_title" property="album_title"/>
+		<result column="artist_name" property="artist_name"/>
+		<result column="album_date" property="album_date"/>
+	</resultMap>
+  		
+	<resultMap type="memberFanVo" id="memberFan">
+		<result column="fan_no" property="fan_no"/>
+		<result column="artist_no" property="artist_no"/>
+		<result column="artist_name" property="artist_name"/>
+		<result column="artist_introduce" property="artist_introduce"/>
+		<result column="artist_company" property="artist_company"/>
+		<result column="artist_debut" property="artist_debut"/>
+	</resultMap>
+	
+  	<!-- 회원 정보 조회 -->
+	<select id="selectMember" parameterType="int" resultMap="member">
+		SELECT
+			member_no
+		  , member_id
+		  , member_profile
+		  , member_name
+		  , member_birthdate
+		  , decode(member_gender, 0, '남', 1, '여') as member_gender
+		  , member_introduce
+		  , member_email
+		  , member_phone
+		  , member_date
+		  , (SELECT 
+		  		com_code 
+		  	FROM 
+		  		TC_MS_COM_CODE 
+		  	WHERE 
+		  		T1.member_subscription = com_code_no) member_subscription
+		  , (SELECT 
+		  		com_code 
+		  	FROM 
+		  		TC_MS_COM_CODE 
+		  	WHERE 
+		  		T1.member_rating = com_code_no) member_rating
+		  , member_marketingCheck
+		FROM
+			TN_MS_MEMBER T1
+		WHERE
+			member_no = #{memberNo}
+	</select>
+	
+	<!-- 회원 정보 수정 -->
+	<update id="updateMember" parameterType="memberVo">
+		UPDATE
+			TN_MS_MEMBER
+		SET
+			member_pw = #{member_pw}
+		  ,	member_name = #{member_name}
+		  ,	member_birthdate = #{member_birthdate}
+		  ,	member_gender = #{member_gender}
+		  , member_introduce = #{member_introduce}
+		  , member_email = #{member_email}
+		  , member_phone = #{member_phone}
+		  , member_marketingCheck = #{member_marketingCheck}
+		WHERE
+			member_no = #{member_no}
+	</update>
+	
+	<!-- 회원 정보 삭제 -->
+	<delete id="deleteMember">
+		DELETE
+		FROM
+			TN_MS_MEMBER
+		WHERE member_no = #{member_no}
+	</delete>
+	
+	<!-- 좋아요 한 곡 조회 -->
+	<select id="selectMusic" parameterType="HashMap" resultMap="memberMusic">
+		SELECT
+		    T1.like_music_no
+		  , T1.music_no
+		  , T2.music_title
+		  , (SELECT artist_name FROM TN_MS_ARTIST WHERE T2.artist_no = artist_no) artist_name
+		  , (SELECT album_title FROM TN_MS_ALBUM WHERE T2.album_no = album_no) album_title
+		FROM
+		    (SELECT
+		        T1.*
+		      , ROWNUM RN
+		    FROM
+		        (SELECT
+		            like_music_no
+		          , music_no
+		        FROM TN_MS_LIKE_MUSIC
+		        WHERE
+		            member_no = #{memberNo}
+		        ORDER BY
+		            music_no) T1) T1
+		  , TN_MS_MUSIC T2
+		WHERE
+	<![CDATA[
+			RN > (#{pageNum} - 1) * #{amount}
+		AND RN <= #{pageNum} * #{amount}
+	]]>
+		AND T1.music_no = T2.music_no
+	</select>
+	
+	<!-- 좋아요 한 곡 삭제 -->
+	<delete id="deleteMusic" parameterType="int">
+		DELETE
+		FROM
+			TN_MS_LIKE_MUSIC
+		WHERE
+			like_music_no = #{musicNo}
+	</delete>
+	
+	<!-- 곡 전체 갯수 -->
+	<select id="getMusicTotal" resultType="int" parameterType="int" >
+		SELECT
+			count(*)
+		FROM
+			TN_MS_LIKE_MUSIC
+		WHERE
+			member_no = #{memberNo}
+	</select>
+	
+	<!-- 좋아요 한 앨범 조회 -->
+	<select id="selectAlbum" parameterType="HashMap" resultMap="memberAlbum">
+		SELECT
+		    T1.like_album_no
+		  , T1.album_no
+		  , T2.album_jacket
+		  , T2.album_title
+		  , (SELECT artist_name FROM TN_MS_ARTIST WHERE T2.artist_no = artist_no) artist_name
+		  , (SELECT album_date FROM TN_MS_ALBUM WHERE T2.album_no = album_no) album_date
+		FROM
+		    (SELECT
+		        T1.*
+		      , ROWNUM RN
+		    FROM
+		        (SELECT
+		            like_album_no
+		          , album_no
+		        FROM TN_MS_LIKE_ALBUM
+		        WHERE
+		            member_no = #{memberNo}
+		        ORDER BY
+		            album_no) T1) T1
+		  , TN_MS_ALBUM T2
+		WHERE
+	<![CDATA[
+			RN > (#{pageNum} - 1) * #{amount}
+		AND RN <= #{pageNum} * #{amount}
+	]]>
+		AND T1.album_no = T2.album_no
+	</select>
+	
+	<!-- 좋아요 한 앨범 삭제 -->
+	<delete id="deleteAlbum" parameterType="int">
+		DELETE
+		FROM
+			TN_MS_LIKE_ALBUM
+		WHERE
+			like_album_no = #{albumNo}
+	</delete>
+	
+	<!-- 앨범 총 갯수 -->
+	<select id="getAlbumTotal" resultType="int" parameterType="int" >
+		SELECT
+			count(*)
+		FROM
+			TN_MS_LIKE_ALBUM
+		where
+			member_no = #{memberNo}
+	</select>
+	
+	<!-- 좋아요 한 가수 조회 -->
+	<select id="selectFan" parameterType="HashMap" resultMap="memberFan">
+		SELECT
+		    T1.fan_no
+		  , T1.artist_no
+		  , T2.artist_name
+		  , T2.artist_profile
+		  , T2.artist_introduce
+		  , T2.artist_company
+		  , T2.artist_debut
+		FROM
+		    (SELECT
+		        T1.*
+		      , ROWNUM RN
+		    FROM
+		        (SELECT
+		            fan_no
+		          , artist_no
+		        FROM TN_MS_FAN
+		        WHERE
+		            member_no = #{memberNo}
+		        ORDER BY
+		            artist_no) T1) T1
+		  , TN_MS_ARTIST T2
+		WHERE
+	<![CDATA[
+			RN > (#{pageNum} - 1) * #{amount}
+		AND RN <= #{pageNum} * #{amount}
+	]]>
+		AND T1.artist_no = T2.artist_no
+	</select>
+	
+	<!-- 좋아요한 가수 삭제 -->
+	<delete id="deleteFan" parameterType="int">
+		DELETE
+		FROM
+			TN_MS_FAN
+		WHERE
+			fan_no = #{fanNo}
+	</delete>
+	
+	<!-- 가수 총 카운트 -->
+	<select id="getFanTotal" resultType="int" parameterType="int" >
+		SELECT
+			count(*)
+		FROM
+			TN_MS_FAN
+		where
+			member_no = #{memberNo}
+	</select>
+</mapper>

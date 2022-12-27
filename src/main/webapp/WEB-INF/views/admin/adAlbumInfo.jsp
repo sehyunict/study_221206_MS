@@ -23,7 +23,7 @@
 		
 		if (confirm("작업을 취소하시겠습니까?")) {
 		
-			location = "/adminAlbum";
+			location = "/admin/Album";
 			
 		}
 		
@@ -39,7 +39,7 @@
  	$.ajax({
  	
 	    type : "POST",
-        url : "/adminAlbum/info",
+        url : "/admin/Album/info",
         data : "album_no=" + albumNo,
         dataType : "json",
         success : function(albumInfo) {
@@ -49,7 +49,6 @@
         	document.getElementById('album_title').value = albumInfo.album_title;
         	document.getElementById('artist_name').value = albumInfo.artist_name;
         	document.getElementById('album_type').value = albumInfo.album_type;
-        	document.getElementById('com_code').value = albumInfo.com_code;
         	document.getElementById('album_introduce').value = albumInfo.album_introduce;
         	document.getElementById('album_commany').value = albumInfo.album_commany;
         	document.getElementById('album_agency').value = albumInfo.album_agency;
@@ -57,7 +56,7 @@
         	document.getElementById('album_like').value = albumInfo.album_like;
         	document.getElementById('album_no').value = albumInfo.album_no;
         	document.getElementById('artist_no').value = albumInfo.artist_no;
-        	document.getElementById('album_genre').value = albumInfo.album_genre;
+        	$('#album_genre').val(albumInfo.album_genre).prop("selected",true);
 
     	},
     	
@@ -112,7 +111,13 @@
 					<tr>
 						<th>장르</th>
 						<td>
-						<input type="text" class="form-control" id="com_code" name="com_code" placeholder="" required="required">
+							<select class="form-control" name="album_genre" id = "album_genre" style="display: inline-block;" >
+								<option value="1">댄스</option>
+								<option value="2">록</option>
+								<option value="3">발라드</option>
+								<option value="4">팝</option>
+								<option value="5">힙합</option>
+							</select>
 						</td>
 					</tr>
 					
@@ -150,7 +155,6 @@
 							<textarea id="album_introduce" name='album_introduce' style=" width: 100%; height:100px" ></textarea>
 							</td>
 					</tr>
-							<input type='hidden' id="album_genre" name='album_genre'>
 							<input type='hidden' id="album_no" name='album_no'>
 							<input type='hidden' id="artist_no" name='artist_no'>
 					</form:form>
@@ -178,7 +182,7 @@
  	 $.ajax({
  	
 	    type : "POST",
-        url : "/adminAlbum/update",
+        url : "/admin/Album/update",
         data : albumUpdate,
         dataType : "text",
         
@@ -188,7 +192,7 @@
         		
         	alert ("회원수정에 성공했습니다.");
         	
-        	albumInfo();
+        	location = "/admin/Album";
         	
         	}else if (data == 'error')
         		
@@ -215,7 +219,7 @@
 		$.ajax({
 
 			type : "POST",
-			url : "/adminAlbum/delete",
+			url : "/admin/Album/delete",
 			data : "album_no=" + albumNo,
 			dataType : "text",
 			success : function(data) {
@@ -223,7 +227,7 @@
 				if (data == 'success') {
 
 					alert(albumTitle + "음악삭제에 성공했습니다");
-					location = "/adminAlbum";
+					location = "/admin/Album";
 
 				} else if (data == 'error')
 

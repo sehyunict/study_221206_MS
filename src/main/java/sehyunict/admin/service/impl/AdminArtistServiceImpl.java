@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import sehyunict.admin.entity.AdminArtistVo;
 import sehyunict.admin.entity.PageVo;
@@ -16,6 +17,7 @@ public class AdminArtistServiceImpl implements AdminArtistService {
 	
 	
 	//관리자 가수 리스트 조회
+	@Transactional
 	public List<AdminArtistVo> adminArtistList(PageVo pvo){
 		
 		return adminArtistMapper.adminArtistList(pvo);
@@ -23,13 +25,15 @@ public class AdminArtistServiceImpl implements AdminArtistService {
 	};
 	
 	//관리자 가수 총명수 조회
-	public int adminArtistCount() {
+	@Transactional
+	public int adminArtistCount(PageVo pvo) {
 		
-		return adminArtistMapper.adminArtistCount();
+		return adminArtistMapper.adminArtistCount(pvo);
 		
 	}
 	
 	//관리자 가수정보 불러오기
+	@Transactional
 	public AdminArtistVo adminArtistInfo(AdminArtistVo vo) {
 		
 		return adminArtistMapper.adminArtistInfo(vo);
@@ -37,12 +41,14 @@ public class AdminArtistServiceImpl implements AdminArtistService {
 	}
 	
 	//관리자 가수정보 수정
+	@Transactional
 	public int adminArtistUpdate(AdminArtistVo vo) {
 		
 		return adminArtistMapper.adminArtistUpdate(vo);
 	}
 	
 	//가수 삭제
+	@Transactional
 	public int adminArtistDelete(AdminArtistVo vo) {
 		
 		return adminArtistMapper.adminArtistDelete(vo);
@@ -50,6 +56,7 @@ public class AdminArtistServiceImpl implements AdminArtistService {
 	}
 	
 	//체크박스 선택가수 삭제
+	@Transactional
 	public String adminArtistChDelete(int[] checkList) {
 		
 		int result = 0;

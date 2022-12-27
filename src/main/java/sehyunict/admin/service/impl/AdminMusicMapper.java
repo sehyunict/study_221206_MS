@@ -25,9 +25,9 @@ public class AdminMusicMapper {
 	}
 	
 	//관리자 총 음악수 조회
-	public int adminMusicCount() {
+	public int adminMusicCount(PageVo pvo) {
 		
-		return mybatis.selectOne("mybatis.admin.musiccount");
+		return mybatis.selectOne("mybatis.admin.musiccount", pvo);
 		
 	}
 	
