@@ -23,14 +23,14 @@ public class AdminMusicController {
 
 	
 	//뮤직리스트
-	@RequestMapping(value = "/adminMusic") 
+	@RequestMapping(value = "/admin/Music") 
 	public String adminMusicList(PageVo pvo ,Model model) {
 		
 		model.addAttribute ("adminMusicList", adminMusicService.adminMusicList(pvo));
 		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setPvo(pvo);
-		pageMaker.setTotalCount(adminMusicService.adminMusicCount());
+		pageMaker.setTotalCount(adminMusicService.adminMusicCount(pvo));
 		
 		model.addAttribute("pageMaker", pageMaker);
 		
@@ -40,7 +40,7 @@ public class AdminMusicController {
 	}
 	
 	// insert 페이지 이동
-	@RequestMapping(value = "/adMusicInsert") 
+	@RequestMapping(value = "/admin/MusicInsert") 
 	public String adminMuscicInsertPage() {
 		
 
@@ -49,7 +49,7 @@ public class AdminMusicController {
 	
 	
 	//음악 인서트 (미구현)
-	@RequestMapping(value = "/adminMusic/insert") 
+	@RequestMapping(value = "/admin/Music/insert") 
 	@ResponseBody
 	public String adminMuscicInsert(AdminMusicVo vo) {
 		
@@ -74,7 +74,7 @@ public class AdminMusicController {
 		
 	
 	// info 페이지 이동
-	@RequestMapping(value = "/adMusicInfo") 
+	@RequestMapping(value = "/admin/MusicInfo") 
 	public String admMusicInfoPage(Model model, AdminMusicVo vo) {
 		
 		model.addAttribute("music_no", vo.getMusic_no());
@@ -83,7 +83,7 @@ public class AdminMusicController {
 	} 
 	
 	// info 선택 정보 출력
-	@RequestMapping(value = "/adminMusic/info") 
+	@RequestMapping(value = "/admin/Music/info") 
 	@ResponseBody
 	public AdminMusicVo adMusicInfo(AdminMusicVo vo) {
 		
@@ -95,7 +95,7 @@ public class AdminMusicController {
 	}
 	
 	// 음악 업데이트
-	@RequestMapping(value = "/adminMusic/update") 
+	@RequestMapping(value = "/admin/Music/update") 
 	@ResponseBody
 	public String admMusicUpdate(AdminMusicVo vo) {
 		
@@ -121,7 +121,7 @@ public class AdminMusicController {
 	// AJAX 연결 음악정보 삭제
 	
 	@ResponseBody
-	@RequestMapping(value = "/adminMusic/delete")
+	@RequestMapping(value = "/admin/Music/delete")
 	public String adminMusicDelete(AdminMusicVo vo) {
 		
 		System.out.println("음악정보 삭제");
@@ -144,7 +144,7 @@ public class AdminMusicController {
 	
 	// AJAX 연결 체크박스음악 삭제
 	
-	@RequestMapping(value = "/adminMusic/chdelete") 
+	@RequestMapping(value = "/admin/Music/chdelete") 
 	@ResponseBody
 	public String adminMusicChDelete(int[] checkList) {
 		
@@ -157,7 +157,7 @@ public class AdminMusicController {
 	
 	// AJAX insert시 select box artist 출력 정보
 	
-	@RequestMapping(value = "/adminMusic/comboInfo") 
+	@RequestMapping(value = "/admin/Music/comboInfo") 
 	@ResponseBody
 	public List<Map<String, Object>> adminComboInfo() {
 		
@@ -169,7 +169,7 @@ public class AdminMusicController {
 	
 	// AJAX insert시 select box album 출력 정보
 	
-	@RequestMapping(value = "/adminMusic/comboAlbum") 
+	@RequestMapping(value = "/admin/Music/comboAlbum") 
 	@ResponseBody
 	public List<Map<String, Object>> adminComboAlbum(@RequestParam Map<String, Object> param) {
 		

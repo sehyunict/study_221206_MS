@@ -61,7 +61,7 @@ function selectAll(selectAll)  {
 		<h2>User List</h2>
 		<p>전체 회원수 : ${pageMaker.totalCount}</p>
 		<div align="right">
-		<form:form action="/adminMember" modelAttribute="pvo">
+		<form:form action="/admin/Member" modelAttribute="pvo">
 			<select class="form-select" name = select style = "display: inline-block; width: 10%">
 				<option value = "member_name">이름검색</option>
 				<option value = "member_id">아이디검색</option>
@@ -102,7 +102,7 @@ function selectAll(selectAll)  {
 						<th>${e.member_name}</th>
 						<th>${e.member_email}</th>
 						<th>
-						<form:form action="/adminMember/user" modelAttribute="vo">
+						<form:form action="/admin/Member/user" modelAttribute="vo">
 						<input type="hidden" name = "member_no" value="${e.member_no}">
 						<button type="submit" class="btn btn-light">관리</button>
 						</form:form>
@@ -118,7 +118,7 @@ function selectAll(selectAll)  {
 	<ul class="pagination">
 		<c:if test="${pageMaker.prev}">
 			<li class="page-item"><a class="page-link"
-				href="/adminMember${pageMaker.makeQuery(pageMaker.startPage - 1)}">이전</a></li>
+				href="/admin/Member${pageMaker.makeQuery(pageMaker.startPage - 1)}">이전</a></li>
 		</c:if>
 		
 		<c:set var="nowpage" value="${pageMaker.pvo.page}" />
@@ -127,11 +127,11 @@ function selectAll(selectAll)  {
 				<c:when test="${nowpage == i}">
 					<li class="page-item"><a class="page-link"
 						style="background-color: #dee2e6"
-						href="/adminMember${pageMaker.makeQuery(i)}">${i}</a></li>
+						href="/admin/Member${pageMaker.makeQuery(i)}">${i}</a></li>
 				</c:when>
 				<c:otherwise>
 					<li class="page-item"><a class="page-link"
-						href="/adminMember${pageMaker.makeQuery(i)}">${i}</a></li>
+						href="/admin/Member${pageMaker.makeQuery(i)}">${i}</a></li>
 				</c:otherwise>
 			</c:choose>
 		</c:forEach>
@@ -139,7 +139,7 @@ function selectAll(selectAll)  {
 		
 		<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
 			<li class="page-item"><a class="page-link"
-				href="/adminMember${pageMaker.makeQuery(pageMaker.endPage + 1)}">다음</a></li>
+				href="/admin/Member${pageMaker.makeQuery(pageMaker.endPage + 1)}">다음</a></li>
 		</c:if>
 		
 		</ul>
@@ -166,7 +166,7 @@ function selectAll(selectAll)  {
  	$.ajax({
  		
  		type : "POST",
-        url : "/adminMember/chdelete",
+        url : "/admin/Member/chdelete",
         traditional : true,
         data : {
         	 'checkList' : checkList
@@ -175,7 +175,7 @@ function selectAll(selectAll)  {
         	
         	alert ("선택항목 삭제에 성공했습니다.");
         	
-        	location = "/adminMember";
+        	location = "/admin/Member";
 			
     	},
     	

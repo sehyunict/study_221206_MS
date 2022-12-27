@@ -23,7 +23,7 @@
 		
 		if (confirm("작업을 취소하시겠습니까?")) {
 		
-			location = "/adminMusic";
+			location = "/admin/Music";
 			
 		}
 		
@@ -39,7 +39,7 @@
  	$.ajax({
  	
 	    type : "POST",
-        url : "/adminMusic/info",
+        url : "/admin/Music/info",
         data : "music_no=" + musicNo,
         dataType : "json",
         success : function(musicInfo) {
@@ -62,10 +62,9 @@
         	document.getElementById('music_composition').value = musicInfo.music_composition;
         	document.getElementById('music_arrange').value = musicInfo.music_arrange;
         	document.getElementById('music_write').value = musicInfo.music_write;
-        	document.getElementById('com_code').value = musicInfo.com_code;
         	document.getElementById('music_albumorder').value = musicInfo.music_albumorder;
         	document.getElementById('music_lyrics').value = musicInfo.music_lyrics;
-        	document.getElementById('music_genre').value = musicInfo.music_genre;
+        	$('#music_genre').val(musicInfo.music_genre).prop("selected",true);
         	document.getElementById('album_no').value = musicInfo.album_no;
         	document.getElementById('artist_no').value = musicInfo.artist_no;
         	document.getElementById('music_no').value = musicInfo.music_no;
@@ -144,7 +143,13 @@
 					<tr>
 						<th>장르</th>
 						<td>
-						<input type="text" class="form-control" id="com_code" name="com_code" placeholder="" required="required">
+							<select class="form-control" name="music_genre" id = "music_genre" style="display: inline-block;" >
+								<option value="1">댄스</option>
+								<option value="2">록</option>
+								<option value="3">발라드</option>
+								<option value="4">팝</option>
+								<option value="5">힙합</option>
+							</select>
 						</td>
 					</tr>
 					
@@ -159,7 +164,7 @@
 						<th>성인 여부</th>
 						<td>
 							<input type='radio' id="music_adult1" name='music_adult' value='1' />예
-  							<input type='radio' id="music_adult2" name='music_adult' value='2' />아니요
+  							<input type='radio' id="music_adult2" name='music_adult' value='0' />아니요
 						</td>
 					</tr>
 					
@@ -198,7 +203,7 @@
  	 $.ajax({
  	
 	    type : "POST",
-        url : "/adminMusic/update",
+        url : "/admin/Music/update",
         data : musicUpdate,
         dataType : "text",
         
@@ -208,7 +213,7 @@
         		
         	alert ("회원수정에 성공했습니다.");
         	
-        	memberInfo();
+        	location = "/admin/Music";
         	
         	}else if (data == 'error')
         		
@@ -235,7 +240,7 @@
 		$.ajax({
 
 			type : "POST",
-			url : "/adminMusic/delete",
+			url : "/admin/Music/delete",
 			data : "music_no=" + musicNo,
 			dataType : "text",
 			success : function(data) {
@@ -243,7 +248,7 @@
 				if (data == 'success') {
 
 					alert(musicTitle + "음악삭제에 성공했습니다");
-					location = "/adminMusic";
+					location = "/admin/Music";
 
 				} else if (data == 'error')
 

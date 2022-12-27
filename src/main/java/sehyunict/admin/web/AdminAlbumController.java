@@ -18,14 +18,14 @@ public class AdminAlbumController {
 	private AdminAlbumService adminAlbumService;
 	
 	//앨범리스트
-		@RequestMapping(value = "/adminAlbum") 
+		@RequestMapping(value = "/admin/Album") 
 		public String adminAlbumList(PageVo pvo ,Model model) {
 			
 			model.addAttribute ("adminAlbumList", adminAlbumService.adminAlbumList(pvo));
 			
 			PageMaker pageMaker = new PageMaker();
 			pageMaker.setPvo(pvo);
-			pageMaker.setTotalCount(adminAlbumService.adminAlbumCount());
+			pageMaker.setTotalCount(adminAlbumService.adminAlbumCount(pvo));
 			
 			model.addAttribute("pageMaker", pageMaker);
 			
@@ -35,7 +35,7 @@ public class AdminAlbumController {
 		}
 
 		// info 페이지 이동
-		@RequestMapping(value = "/adAlbumInfo") 
+		@RequestMapping(value = "/admin/AlbumInfo") 
 		public String admAlbumInfoPage(Model model, AdminAlbumVo vo) {
 			
 			model.addAttribute("album_no", vo.getAlbum_no());
@@ -44,7 +44,7 @@ public class AdminAlbumController {
 		} 
 		
 		// info 선택 정보 출력
-		@RequestMapping(value = "/adminAlbum/info") 
+		@RequestMapping(value = "/admin/Album/info") 
 		@ResponseBody
 		public AdminAlbumVo adAlbumInfo(AdminAlbumVo vo) {
 			
@@ -56,7 +56,7 @@ public class AdminAlbumController {
 		}
 		
 		// 앨범 업데이트
-		@RequestMapping(value = "/adminAlbum/update") 
+		@RequestMapping(value = "/admin/Album/update") 
 		@ResponseBody
 		public String admAlbumUpdate(AdminAlbumVo vo) {
 			
@@ -82,7 +82,7 @@ public class AdminAlbumController {
 		// AJAX 연결 앨범정보 삭제
 		
 		@ResponseBody
-		@RequestMapping(value = "/adminAlbum/delete")
+		@RequestMapping(value = "/admin/Album/delete")
 		public String adminAlbumDelete(AdminAlbumVo vo) {
 			
 			System.out.println("음악정보 삭제");
@@ -105,7 +105,7 @@ public class AdminAlbumController {
 		
 		// AJAX 연결 체크박스앨범 삭제
 		
-		@RequestMapping(value = "/adminAlbum/chdelete") 
+		@RequestMapping(value = "/admin/Album/chdelete") 
 		@ResponseBody
 		public String adminMusicChDelete(int[] checkList) {
 			

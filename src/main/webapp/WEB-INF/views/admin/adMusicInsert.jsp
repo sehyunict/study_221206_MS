@@ -25,7 +25,7 @@
 		
 		if (confirm("작업을 취소하시겠습니까?")) {
 		
-			location = "/adminMusic";
+			location = "/admin/Music";
 			
 		}
 		
@@ -40,7 +40,7 @@
 	$.ajax({
 	 	
 	    type : "POST",
-        url : "/adminMusic/comboAlbum",
+        url : "/admin/Music/comboAlbum",
         data : { "artistNo" : select },
         success : function(comboAlbumList) {
         	
@@ -83,7 +83,7 @@
  	$.ajax({
  	
 	    type : "POST",
-        url : "/adminMusic/comboInfo",
+        url : "/admin/Music/comboInfo",
         dataType : "json",
         success : function(comboArtist) {
         	
@@ -176,7 +176,7 @@
 					<tr>
 						<th>장르</th>
 						<td>
-							<select name="music_genre" id = "genre" style="display: inline-block;" >
+							<select class="form-control" name="music_genre" id = "genre" style="display: inline-block;" >
 								<option selected disabled hidden="ture">--- 장르를 선택해주세요 ---</option>
 								<option value="1">댄스</option>
 								<option value="2">록</option>
@@ -230,7 +230,7 @@
  			$.ajax({
  	
 	  		type : "POST",
-		    url : "/adminMusic/insert",
+		    url : "/admin/Music/insert",
 		    data : musicInsert,
 		    dataType : "text",
 		        
@@ -244,7 +244,7 @@
 		        		
 		        alert ("음악추가에 싫패했습니다.");
 		        	
-		        location = "/adminMusic";
+		        location = "/admin/Music";
 			},
     	
      	    error : function(jqXHR, textStatus, errorThrown) {

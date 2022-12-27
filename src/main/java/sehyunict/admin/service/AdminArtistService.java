@@ -11,7 +11,7 @@ public interface AdminArtistService {
 	List<AdminArtistVo> adminArtistList(PageVo pvo);
 		
 	// 페이징 전체 가수 조회
-	int adminArtistCount();
+	int adminArtistCount(PageVo pvo);
 	
 	// 선택가수 정보 조회
 	AdminArtistVo adminArtistInfo(AdminArtistVo vo);

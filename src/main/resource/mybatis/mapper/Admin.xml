@@ -71,11 +71,26 @@
 	<select id="memberinfo" resultType="adminMemberVo">
 	
 	SELECT 
-		member_no, member_id, member_name, member_email, member_phone, member_subscription, member_rating, member_marketingcheck
+		a.member_no
+		, a.member_id
+		, a.member_name
+		, a.member_email
+		, a.member_phone
+		, a.member_subscription
+		, a.member_rating
+		, a.member_marketingcheck
+		, b.com_code as com_code1
+        , c.com_code as com_code2
 	FROM 
-		tn_ms_member
+		tn_ms_member a
+		, tc_ms_com_code b
+		, tc_ms_com_code c
 	WHERE
 		member_no = #{member_no}
+	AND
+		a.member_rating = b.com_code_no
+	AND
+		a.member_subscription = c.com_code_no
 	
 	</select>
 	
@@ -131,7 +146,7 @@
   	<select id="musiclist" resultType="adminMusicVo" parameterType="pageVo">
   	
   	<![CDATA[
- 	  	SELECT
+ 	SELECT
         a.rn
 		, a.music_no
         , a.album_no
@@ -141,33 +156,50 @@
         , a.music_write
         , a.music_genre
         , a.music_like
-        , b.album_title
-        , c.artist_name
-        , d.com_code
+        , a.album_title
+        , a.artist_name
+        , b.com_code
 	FROM 
 		(SELECT row_number() over (order by music_no) rn
-		, music_no
-        , album_no
-		, artist_no
-		, music_title
-		, music_composition
-		, music_write
-		, music_genre
-		, music_like
+			, a.music_no
+      		, a.album_no
+			, a.artist_no
+			, a.music_title
+			, a.music_composition
+			, a.music_write
+			, a.music_genre
+			, a.music_like
+			, b.album_title
+        	, c.artist_name
         FROM
-            tn_ms_music) a
-        ,tn_ms_album b
-        ,tn_ms_artist c
-        ,tc_ms_com_code d
+            tn_ms_music a
+            ,tn_ms_album b
+        	,tn_ms_artist c
+       	WHERE
+			a.album_no = b.album_no
+    	AND
+       		a.artist_no = c.artist_no  
+    ]]>
+    
+    		<if test="keyword != null">
+		
+	       		AND
+	        	UPPER(${select}) 
+				LIKE 
+	        	UPPER('%'||#{keyword}||'%')
+	        
+       		 </if>
+       		 
+    <![CDATA[    
+         	) a
+        ,tc_ms_com_code b
     WHERE
         a.rn
     BETWEEN #{rowStart} AND #{rowEnd}
+    
     AND
-		a.album_no = b.album_no
-    AND
-        a.artist_no = c.artist_no
-    AND
-        a.music_genre = d.com_code_no
+        a.music_genre = b.com_code_no
+        		  
     ORDER BY rn
 		 
   	]]>
@@ -180,10 +212,29 @@
   	
 	<select id="musiccount" resultType="int">
 	
-	SELECT COUNT(*) FROM tn_ms_music
+	<![CDATA[
+	SELECT 
+	COUNT(a.music_no) 
+	FROM 
+		tn_ms_music a
+		,tn_ms_album b
+    	,tn_ms_artist c
+    WHERE
+    	a.album_no = b.album_no
+    AND
+        a.artist_no = c.artist_no
+    
+	]]>
+	
+	<if test="keyword != null">
+		
+    AND UPPER(${select}) 
+    LIKE UPPER('%'||#{keyword}||'%')
+        
+    </if>    
 
 	</select>
-  	
+	
   	<!-- 선택음악 정보 조회 -->	
   	<select id="musicinfo" resultType = "adminMusicVo">
   	
@@ -281,29 +332,45 @@
         , a.album_commany
         , TO_CHAR(a.album_date,'yyyy-mm-dd') AS album_date
         , a.album_like
-        , b.artist_name
-        , c.com_code
+        , a.artist_name
+        , b.com_code
 	FROM 
 		(SELECT row_number() over (order by album_no) rn
-		, album_no
-        , artist_no
-		, album_title
-		, album_type
-		, album_genre
-		, album_commany
-		, album_date
-		, album_like
+		, a.album_no
+        , a.artist_no
+		, a.album_title
+		, a.album_type
+		, a.album_genre
+		, a.album_commany
+		, a.album_date
+		, a.album_like
+		, b.artist_name
         FROM
-            tn_ms_album) a
-        ,tn_ms_artist b
-        ,tc_ms_com_code c
+            tn_ms_album a
+            ,tn_ms_artist b
+        WHERE
+        	 a.artist_no = b.artist_no
+        
+        ]]>    
+            <if test="keyword != null">
+		
+	       		AND
+	        	UPPER(${select}) 
+				LIKE 
+	        	UPPER('%'||#{keyword}||'%')
+	        
+       		 </if>
+    
+   		<![CDATA[       
+            ) a
+            
+         ,tc_ms_com_code b
     WHERE
         a.rn
     BETWEEN #{rowStart} AND #{rowEnd}
     AND
-        a.artist_no = b.artist_no
-    AND
-        a.album_genre = c.com_code_no
+        a.album_genre = b.com_code_no
+        
     ORDER BY rn
 		 
   	]]>
@@ -316,7 +383,21 @@
   	
 	<select id="albumcount" resultType="int">
 	
-	SELECT COUNT(*) FROM tn_ms_album
+	<![CDATA[
+	SELECT COUNT(*) 
+	FROM 
+		tn_ms_album a
+    	,tn_ms_artist b
+    WHERE
+    	a.artist_no = b.artist_no
+	]]>
+	
+	<if test="keyword != null">
+		
+    AND UPPER(${select}) 
+    LIKE UPPER('%'||#{keyword}||'%')
+        
+    </if>    
 
 	</select>
 	
@@ -431,13 +512,26 @@
 		, artist_genre
 		, artist_fan
         FROM
-            tn_ms_artist) a
+            tn_ms_artist
+   ]]>    
+            <if test="keyword != null">
+		
+	       		WHERE
+	        	UPPER(${select}) 
+				LIKE 
+	        	UPPER('%'||#{keyword}||'%')
+	        
+       		 </if>
+    
+    <![CDATA[     
+            ) a
         ,tc_ms_com_code b
     WHERE
         a.rn
     BETWEEN #{rowStart} AND #{rowEnd}
     AND
-        a.artist_genre = b.com_code_no
+        a.artist_genre = b.com_code_no       
+        
     ORDER BY rn
 		 
   	]]>
@@ -450,7 +544,16 @@
   	
 	<select id="artistcount" resultType="int">
 	
+	<![CDATA[
 	SELECT COUNT(*) FROM tn_ms_artist
+	]]>
+	
+	<if test="keyword != null">
+		
+    WHERE UPPER(${select}) 
+    LIKE UPPER('%'||#{keyword}||'%')
+        
+    </if>    
 
 	</select>
 	

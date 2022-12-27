@@ -25,7 +25,7 @@ public class AdminLoginController {
 
 	// 관리자 로그인 체크
 
-	@RequestMapping(value = "/adminLoginCheck")
+	@RequestMapping(value = "/admin/LoginCheck")
 	public String adminLoginCheck(AdminMemberVo vo, HttpSession session) {
 
 		String adminId = vo.getMember_id();
@@ -44,7 +44,7 @@ public class AdminLoginController {
 				
 				session.setAttribute("adminId", adminId);
 				  
-				url = "redirect:/adminMember";
+				url = "redirect:/admin/Member";
 				  
 			}
 			
@@ -52,13 +52,23 @@ public class AdminLoginController {
 			
 			System.out.println("올바른 아이디로 로그인 바랍니다.");
 			
-			url = "/admin";
+			url = "admin/adminLogin";
 			
 		}
 
 		System.out.println(vo);
 
 		return url;
+	}
+	
+	// 관리자 로그아웃
+
+	@RequestMapping(value = "/admin/Logout")
+	public String adminLogout(HttpSession session) {
+
+		session.invalidate();
+			
+		return "redirect:/admin";
 	}
 	
 }

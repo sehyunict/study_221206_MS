@@ -23,7 +23,7 @@
 		
 		if (confirm("작업을 취소하시겠습니까?")) {
 		
-			location = "/adminArtist";
+			location = "/admin/Artist";
 			
 		}
 		
@@ -39,7 +39,7 @@
  	$.ajax({
  	
 	    type : "POST",
-        url : "/adminArtist/info",
+        url : "/admin/Artist/info",
         data : "artist_no=" + artistNo,
         dataType : "json",
         success : function(artistInfo) {
@@ -53,10 +53,9 @@
         	document.getElementById('artist_company').value = artistInfo.artist_company;
         	document.getElementById('artist_debut').value = artistInfo.artist_debut;
         	document.getElementById('artist_awarded').value = artistInfo.artist_awarded;
-        	document.getElementById('com_code').value = artistInfo.com_code;
         	document.getElementById('artist_fan').value = artistInfo.artist_fan;
         	document.getElementById('artist_no').value = artistInfo.artist_no;
-        	document.getElementById('artist_genre').value = artistInfo.artist_genre;
+        	$('#artist_genre').val(artistInfo.artist_genre).prop("selected",true);
 
     	},
     	
@@ -132,7 +131,13 @@
 					<tr>
 						<th>장르</th>
 						<td>
-						<input type="text" class="form-control" id="com_code" name="com_code" placeholder="" required="required" >
+							<select class="form-control" name="artist_genre" id = "artist_genre" style="display: inline-block;" >
+								<option value="1">댄스</option>
+								<option value="2">록</option>
+								<option value="3">발라드</option>
+								<option value="4">팝</option>
+								<option value="5">힙합</option>
+							</select>
 						</td>
 					</tr>
 					
@@ -149,7 +154,6 @@
 							<textarea id="artist_introduce" name='artist_introduce' style=" width: 100%; height:100px" ></textarea>
 							</td>
 					</tr>
-							<input type='hidden' id="artist_genre" name='artist_genre'>
 							<input type='hidden' id="artist_no" name='artist_no'>
 					</form:form>
 				</table>
@@ -176,7 +180,7 @@
  	 $.ajax({
  	
 	    type : "POST",
-        url : "/adminArtist/update",
+        url : "/admin/Artist/update",
         data : artistUpdate,
         dataType : "text",
         
@@ -186,7 +190,7 @@
         		
         	alert ("가수수정에 성공했습니다.");
         	
-        	location = "/adminArtist";
+        	location = "/admin/Artist";
         	
         	}else if (data == 'error')
         		
@@ -213,7 +217,7 @@
 		$.ajax({
 
 			type : "POST",
-			url : "/adminArtist/delete",
+			url : "/admin/Artist/delete",
 			data : "artist_no=" + artistNo,
 			dataType : "text",
 			success : function(data) {
@@ -221,7 +225,7 @@
 				if (data == 'success') {
 
 					alert(artistTitle + "가수삭제에 성공했습니다");
-					location = "/adminArtist";
+					location = "/admin/Artist";
 
 				} else if (data == 'error')
 

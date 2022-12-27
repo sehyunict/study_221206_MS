@@ -12,7 +12,7 @@ public interface AdminMusicService {
 	List<AdminMusicVo> adminMusicList(PageVo pvo);
 	
 	// 페이징 전체 음악수 조회
-	int adminMusicCount();
+	int adminMusicCount(PageVo pvo);
 	
 	// 선택음악 정보 조회
 	AdminMusicVo adminMusicInfo(AdminMusicVo vo);

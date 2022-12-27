@@ -21,11 +21,9 @@ public class AdminMemberController {
 
 	// 관리자 인덱스 페이지
 
-	@RequestMapping(value = "/adminMember") // 인덱스
+	@RequestMapping(value = "/admin/Member") // 인덱스
 	public String adminIndex(Model model, PageVo pvo) {
 			
-			System.out.println(pvo);
-			System.out.println("유저리스트");// 콘솔출력용
 			
 			model.addAttribute("adminMemberList", adminMemberService.adminMemberList(pvo));
 			
@@ -42,7 +40,7 @@ public class AdminMemberController {
 	
 	// 선택회원 관리페이지 이동 및 no 값 전달만 (단일회원정보)
 	
-	@RequestMapping(value = "/adminMember/user")
+	@RequestMapping(value = "/admin/Member/user")
 	public String admMemberInfo(Model model, AdminMemberVo vo) {
 		
 		model.addAttribute("member_no", vo.getMember_no());
@@ -54,7 +52,7 @@ public class AdminMemberController {
 	// AJAX 연결 회원정보 출력
 	
 	@ResponseBody
-	@RequestMapping(value = "/adminMember/info", method = RequestMethod.POST)
+	@RequestMapping(value = "/admin/Member/info", method = RequestMethod.POST)
 	public AdminMemberVo adminMemberInfo(AdminMemberVo vo) {
 		
 		System.out.println("회원정보 출력");
@@ -68,10 +66,11 @@ public class AdminMemberController {
 	// AJAX 연결 회원정보 수정
 	
 	@ResponseBody
-	@RequestMapping(value = "/adminMember/update")
+	@RequestMapping(value = "/admin/Member/update")
 	public String adminMemberUpdate(AdminMemberVo vo) {
 		
 		System.out.println("회원정보 업데이트");
+		System.out.println(vo);
 		String data = "";
 		
 		int result = adminMemberService.adminMemberUpdate(vo);
@@ -92,7 +91,7 @@ public class AdminMemberController {
 	// AJAX 연결 회원정보 삭제
 	
 	@ResponseBody
-	@RequestMapping(value = "/adminMember/delete")
+	@RequestMapping(value = "/admin/Member/delete")
 	public String adminMemberDelete(AdminMemberVo vo) {
 		
 		System.out.println("회정정보 삭제");
@@ -117,7 +116,7 @@ public class AdminMemberController {
 	// AJAX 연결 체크박스회원 삭제
 	
 	@ResponseBody
-	@RequestMapping(value = "/adminMember/chdelete")
+	@RequestMapping(value = "/admin/Member/chdelete")
 	public String adminMemberChDelete(int[] checkList) {
 		
 		System.out.println(checkList[0]);

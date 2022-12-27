@@ -81,18 +81,18 @@
 	</style>
 </head>
 <header>
-	<a href="/adminMember"><h1>SEHYUNICT Admin</h1></a>
+	<a href="/admin/Member"><h1>SEHYUNICT Admin</h1></a>
 	<nav>
 		<ul>
-			<li><a href="/adminMember">회원관리</a></li>
-			<li><a href="/adminMusic">음악관리</a></li>
-			<li><a href="/adminAlbum">앨범관리</a></li>
-			<li><a href="/adminArtist">가수관리</a></li>
+			<li><a href="/admin/Member">회원관리</a></li>
+			<li><a href="/admin/Music">음악관리</a></li>
+			<li><a href="/admin/Album">앨범관리</a></li>
+			<li><a href="/admin/Artist">가수관리</a></li>
 		</ul>
 	</nav>
 	<div>
 		<ul>
-			<li><a href="#">로그아웃</a></li>
+			<li><a href="/admin/Logout">로그아웃</a></li>
 		</ul>
 	</div>
 </header>
