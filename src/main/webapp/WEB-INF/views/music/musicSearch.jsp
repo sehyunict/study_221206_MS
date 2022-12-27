@@ -67,6 +67,7 @@ button {
   font-size:20px;
   width:20px;
 }
+
 </style>
 </head>
 <body>
@@ -170,7 +171,9 @@ button {
 			</table>
 		</div>
 	</section>
+
 	<jsp:include page="/WEB-INF/views/include/footer.jsp" />
+	
 </body>
 
 </html>

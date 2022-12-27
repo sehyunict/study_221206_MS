@@ -44,7 +44,8 @@
 			    left outer join tn_ms_album t3
     				on	t1.album_no = t3.album_no
 		WHERE 
-			music_title like  '%' ||  #{search} || '%'			
+			t1.music_title like  '%' ||  #{search} || '%'
+			or t2.artist_name like '%' ||  #{search} || '%'			
 	</select>
 	
 	

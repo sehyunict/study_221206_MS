@@ -73,7 +73,6 @@
 		}
 		section {
 			width: 1920px;
-			height: 900px;
 			padding: 50px 150px;
 			margin: 0px auto;
 		}
