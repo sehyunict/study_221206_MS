@@ -97,7 +97,7 @@
 	</nav>
 	<div>
 		<ul>
-			<li><a href="#">마이페이지</a></li>
+			<li><a href="/MI">마이페이지</a></li>
 			<li><form action="MS"><input type="text"><input type="submit" value="검색"></form></li>
 		</ul>
 	</div>

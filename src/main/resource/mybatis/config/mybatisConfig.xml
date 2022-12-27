@@ -19,7 +19,12 @@
 		<typeAlias type="sehyunict.admin.entity.AdminMusicVo" alias="adminMusicVo"/>
 		<typeAlias type="sehyunict.admin.entity.AdminAlbumVo" alias="adminAlbumVo"/>
 		<typeAlias type="sehyunict.admin.entity.AdminArtistVo" alias="adminArtistVo"/>
-
+	
+		<typeAlias type="sehyunict.member.entity.MemberVo" alias="memberVo"/>
+		<typeAlias type="sehyunict.member.entity.MemberLikeMusicVo" alias="memberMusicVo"/>
+		<typeAlias type="sehyunict.member.entity.MemberLikeAlbumVo" alias="memberAlbumVo"/>
+		<typeAlias type="sehyunict.member.entity.MemberFanVo" alias="memberFanVo"/>
+		
 	</typeAliases>
 
 </configuration>
