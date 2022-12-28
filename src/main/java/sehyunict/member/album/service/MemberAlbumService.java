@@ -1,8 +1,16 @@
 package sehyunict.member.album.service;
 
-import org.springframework.stereotype.Service;
+import java.util.List;
 
-@Service
-public class MemberAlbumService {
+import sehyunict.member.album.entity.AlbumVo;
+import sehyunict.member.entity.MemberVo;
 
+public interface MemberAlbumService {
+	
+	public List<AlbumVo> selectMemberAlbum();
+	public List<AlbumVo> selectMemberAlbumDetail(Integer memberAlbumNom);
+	public AlbumVo selectAlbumUpdate(Integer memberAlbumNo);
+  	public int updateMemberAlbumDetail(AlbumVo memberAlbumVo);
+	public Integer deleteMemberAlubm(Integer memberAlbumNo);
+	
 }

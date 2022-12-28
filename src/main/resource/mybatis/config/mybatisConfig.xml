@@ -29,6 +29,8 @@
 		<typeAlias type="sehyunict.music.entity.MusicDetailVo" alias="MusicDetailVo"/>
 		<typeAlias type="sehyunict.music.entity.AlbumDetailVo" alias="AlbumDetailVo"/>
 		<typeAlias type="sehyunict.music.entity.ArtistDetailVo" alias="ArtistDetailVo"/>
+
+		<typeAlias type="sehyunict.member.album.entity.AlbumVo" alias="AlbumVo"/>
 		
 	</typeAliases>
 

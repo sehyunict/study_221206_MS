@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="mybatis.memberAlbum">
+
+	<resultMap type="AlbumVo" id="memberAlbumVoResultMap">
+		
+		<result column="MEMBER_No" property="MEMBER_No"/>
+		<result column="MEMBER_Name" property="MEMBER_Name"/>
+		<result column="MEMBER_ALBUM_No" property="MEMBER_ALBUM_No"/>
+		<result column="MEMEBER_ALBUM_Title" property="MEMEBER_ALBUM_Title"/>
+		<result column="MEMBER_ALBUM_Date" property="MEMBER_ALBUM_Date"/>
+		<result column="MEMBER_ALBUM_Jacket" property="MEMBER_ALBUM_Jacket" jdbcType="BLOB" javaType="byte[]"/>
+		<result column="MUSIC_No" property="MUSIC_No" />
+		<result column="MUSIC_Title" property="MUSIC_Title"/>
+		<result column="ARTIST_Name" property="ARTIST_Name"/>
+		<result column="MAM_date" property="MAM_date"/>
+	</resultMap>
+
+	<select id="selectMemberAlbum" resultMap="memberAlbumVoResultMap">
+		SELECT 
+	    	T1.MEMBER_No
+		    , T2.MEMBER_NAME
+		    , T1.MEMBER_ALBUM_No
+		    , T1.MEMBER_ALBUM_Title 
+		    , T1.MEMBER_ALBUM_Date
+		    , T1.MEMBER_ALBUM_Jacket
+		FROM 
+		    TN_MS_MEMBER_ALBUM T1
+		    , TN_MS_MEMBER T2
+		WHERE 
+		    T1.MEMBER_NO = T2.MEMBER_NO
+		AND 
+		    T2.MEMBER_NO= 1
+		ORDER BY 
+		    MEMBER_ALBUM_No ASC
+	</select>
+	
+  	<select id="selectMemberAlbumCnt" resultMap="memberAlbumVoResultMap">
+		 SELECT 
+	    	COUNT(*) AS CNT
+		FROM 
+		    TN_MS_MEMBER_ALBUM T1
+		    , TN_MS_MEMBER T2
+		WHERE 
+		    T1.MEMBER_NO = T2.MEMBER_NO
+		AND 
+	    	T2.MEMBER_NO= 1
+    </select>
+	
+	<select id="selectMemberAlbumDetail" resultMap="memberAlbumVoResultMap">
+		SELECT
+		    T1.MUSIC_NO
+		  , T2.MUSIC_TITLE
+		  , (SELECT ARTIST_NAME FROM TN_MS_ARTIST WHERE T2.ARTIST_NO = ARTIST_NO) ARTIST_NAME
+		  , T1.MEMBER_ALBUM_MUSIC_DATE AS MAM_date
+		FROM
+		    TN_MS_MEMBER_ALBUM_MUSIC T1
+		  , TN_MS_MUSIC T2
+		WHERE
+		    T1.MUSIC_NO = T2.MUSIC_NO
+		AND MEMBER_ALBUM_NO = #{memberAlbumNo}
+		ORDER BY MUSIC_NO ASC
+	</select>
+	
+	<select id="selectMemberAlbumUpdate" resultType="memberAlbumVo">
+		SELECT
+	    MEMBER_ALBUM_NO
+		    , MEMBER_ALBUM_TITLE
+		FROM
+		    TN_MS_MEMBER_ALBUM
+		WHERE
+			MEMBER_ALBUM_NO = #{memberAlbumNo}
+		ORDER BY MEMBER_ALBUM_NO ASC
+	</select>
+	
+	<update id="updateMemberAlbumDetail" parameterType="memberAlbumVo">
+		UPDATE
+		    TN_MS_MEMBER_ALBUM
+		SET
+		    MEMBER_ALBUM_TITLE = #{MEMBER_ALBUM_Title}
+		WHERE
+		    MEMBER_ALBUM_NO = #{MEMBER_ALBUM_No}
+	</update>
+	
+	<select id="deleteMemberAlbum" resultMap="memberAlbumVoResultMap">
+		DELETE FROM 
+    		TN_MS_MEMBER_ALBUM
+		WHERE 
+   			MEMBER_ALBUM_NO = #{memberAlbumNo}
+	</select>
+	
+</mapper>
