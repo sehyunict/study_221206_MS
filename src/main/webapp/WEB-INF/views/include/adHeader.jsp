@@ -92,7 +92,7 @@
 	</nav>
 	<div>
 		<ul>
-			<li><a href="/admin/Logout">로그아웃</a></li>
+			<li><a href="/admin/Out">로그아웃</a></li>
 		</ul>
 	</div>
 </header>

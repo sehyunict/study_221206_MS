@@ -61,7 +61,7 @@
     	
         error : function(jqXHR, textStatus, errorThrown) {
       	  
-      	  alert("에러 발생 \n" +"/"+jqXHR+"/"+ textStatus + " : " + errorThrown);
+      	  alert("정보를 다시 입력해주세요.");
         }
     	
  	})
@@ -188,13 +188,13 @@
         	
         	if (data == 'success') {
         		
-        	alert ("가수수정에 성공했습니다.");
+        	alert ("가수 수정에 성공했습니다.");
         	
         	location = "/admin/Artist";
         	
         	}else if (data == 'error')
         		
-        	alert ("가수수정에 싫패했습니다.");
+        	alert ("가수 수정에 실패했습니다.");
         	
 		},
     	
@@ -229,14 +229,13 @@
 
 				} else if (data == 'error')
 
-					alert("가수삭제에 싫패했습니다.");
+					alert("가수삭제에 실패했습니다.");
 
 			},
 
 			error : function(jqXHR, textStatus, errorThrown) {
 
-				alert("에러 발생 \n" + "/" + jqXHR + "/" + textStatus + " : "
-						+ errorThrown);
+				alert("정보를 다시 입력해주세요.");
 			}
 
 		})

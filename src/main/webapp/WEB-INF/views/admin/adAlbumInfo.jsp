@@ -62,7 +62,7 @@
     	
         error : function(jqXHR, textStatus, errorThrown) {
       	  
-      	  alert("에러 발생 \n" +"/"+jqXHR+"/"+ textStatus + " : " + errorThrown);
+      	  alert("정보를 다시 입력해주세요.");
         }
     	
  	})
@@ -190,13 +190,13 @@
         	
         	if (data == 'success') {
         		
-        	alert ("회원수정에 성공했습니다.");
+        	alert ("앨범수정에 성공했습니다.");
         	
         	location = "/admin/Album";
         	
         	}else if (data == 'error')
         		
-        	alert ("회원수정에 싫패했습니다.");
+        	alert ("앨범수정에 실패했습니다.");
         	
 		},
     	
@@ -231,7 +231,7 @@
 
 				} else if (data == 'error')
 
-					alert("음악삭제에 싫패했습니다.");
+					alert("음악삭제에 실패했습니다.");
 
 			},
 

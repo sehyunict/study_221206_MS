@@ -28,14 +28,18 @@
 .wrap table th, .wrap table td {
 	padding: 20px;
 }
+span {
+	font-size: 20pt;
+	font-weight:bold;
+}
 </style>
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/include/header.jsp" />
 	<div class="wrap">
-		<table summary="목록" border=0>
+		<table summary="사용자 앨범 상세" border=0>
 			<caption>
-				<span style="font-size:14pt">목록</span>
+				<span style="font-size:20pt">사용자 앨범 상세</span>
 			</caption>
 			<thead>
 				<tr>

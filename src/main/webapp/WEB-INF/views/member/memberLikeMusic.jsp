@@ -43,7 +43,7 @@
 </head>
 <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript">
-	function del_music(no) {
+	function delMusic(no) {
 		let musicId = "#likeMusic" + no;
 		
 		$.ajax({
@@ -96,7 +96,7 @@
 							<td>${memberMusicVo.music_title}</td>
 							<td>${memberMusicVo.artist_name}</td>
 							<td>${memberMusicVo.album_title}</td>
-							<td><a href="#" onclick="del_music(${memberMusicVo.like_music_no})">취소</a></td>
+							<td><a href="#" onclick="delMusic(${memberMusicVo.like_music_no})">취소</a></td>
 						</tr>
 					</c:forEach>
 				</c:otherwise>

@@ -63,11 +63,11 @@ public class AdminLoginController {
 	
 	// 관리자 로그아웃
 
-	@RequestMapping(value = "/admin/Logout")
+	@RequestMapping(value = "/admin/Out")
 	public String adminLogout(HttpSession session) {
 
 		session.invalidate();
-			
+		
 		return "redirect:/admin";
 	}
 	

@@ -19,15 +19,11 @@ public class MemberAlbumMapper {
 	@Autowired
 	private SqlSession sqlSession;
 
-	public List<AlbumVo> selectMemberAlbum() {
-		
+	public List<AlbumVo> selectMemberAlbum() {	
 		return sqlSession.selectList("mybatis.memberAlbum.selectMemberAlbum");
 	}
 
-	public List<AlbumVo> selectMemberAlbumDetail(Integer memberAlbumNo) {
-		
-		System.out.println("매퍼 진입" + memberAlbumNo);
-		
+	public List<AlbumVo> selectMemberAlbumDetail(Integer memberAlbumNo) {		
 		return sqlSession.selectList("mybatis.memberAlbum.selectMemberAlbumDetail", memberAlbumNo);
 	}
 
@@ -35,14 +31,12 @@ public class MemberAlbumMapper {
 		return (AlbumVo)sqlSession.selectOne("selectMemberAlbumUpdate", memberAlbumNo);
 	}
 
-	public int updateMemberAlbumDetail(AlbumVo memberAlbumVo) {
-		
+	public int updateMemberAlbumDetail(AlbumVo memberAlbumVo) {	
 		return sqlSession.update("updateMemberAlbumDetail", memberAlbumVo);
 
 	}
 
 	public Integer deleteMemberAlbum(Integer memberAlbumNo) {
-		
 		return sqlSession.delete("mybatis.memberAlbum.deleteMemberAlbum", memberAlbumNo);
 	}
 }

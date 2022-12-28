@@ -29,7 +29,6 @@ public class MemberAlbumController {
 		model.addAttribute("list", list);
 		return "album/MemberAlbumList";
 	}
-	
 
 	//사용자 앨범 상세 조회
 	@RequestMapping(value = "/ma/detail", method = RequestMethod.GET)
@@ -42,9 +41,7 @@ public class MemberAlbumController {
 	//사용자 앨범이름 수정 화면
 	@RequestMapping(value = "/ma/update", method = RequestMethod.GET)
 	public String memberAblumTitleUpdateForm(@RequestParam("memberAlbumNo") Integer memberAlbumNo, Model model) {
-		System.out.println(memberAlbumNo);
 		AlbumVo mav = memberAlbumService.selectAlbumUpdate(memberAlbumNo);
-		System.out.println(mav);
 		model.addAttribute("mav", mav);
 		return "album/MemberAlbumUpdateForm";
 	}
@@ -53,9 +50,7 @@ public class MemberAlbumController {
 	@RequestMapping(value = "/ma/update", method = RequestMethod.POST)
 	public String memberAblumTitleUpdate(AlbumVo memberAlbumVo) {
 		int result = memberAlbumService.updateMemberAlbumDetail(memberAlbumVo);
-		System.out.println(result);
 		return "redirect:/ma";
-		
 	}
 
 	//사용자 앨범 삭제

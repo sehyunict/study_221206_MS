@@ -102,10 +102,10 @@ button {
 	<section>
 		<div>
 			<table id='MStable'>
-				<tr>
+<!-- 				<tr>
 					<th colspan="4"><button>듣기</button>
 					<button>담기</button></th>
-				</tr>
+				</tr> -->
 				<tr>
 					<th><input type='checkbox' name='selectAll' value='selectAll' onclick='selectAll(this)'/></th>
 					<th>No</th>

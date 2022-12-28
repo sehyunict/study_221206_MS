@@ -29,7 +29,7 @@
 	padding: 20px;
 }
 
-spane {
+span {
 	font-size: 20pt;
 	font-weight:bold;
 }
@@ -39,10 +39,10 @@ spane {
 <body>
 	<jsp:include page="/WEB-INF/views/include/header.jsp" />
 	<div class="wrap">
-		<table id="table" summary="목록" border=1>
+		<table id="table" summary="사용자 앨범 목록" border=0>
 			<caption>
-				<span style="font-size:20pt">목록</span>
-				<span style="">총 : 4 건</span>
+				<span style="font-size:20pt">사용자 앨범 목록</span>
+<!-- 				<span style="">총 : 4 건</span> -->
 			</caption>
 			<thead>
 				<tr>
@@ -52,7 +52,6 @@ spane {
 					<th>사용자앨범이름</th>
 					<th>앨범생성일</th>
 					<th>앨범커버</th>
-					<!-- <th>사용자 앨범명 수정</th> -->
 					<th>사용자 앨범 삭제</th>
 				</tr>
 			</thead>

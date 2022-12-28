@@ -242,14 +242,14 @@
 		        	
 		        }else if (data == 'error')
 		        		
-		        alert ("음악추가에 싫패했습니다.");
+		        alert ("음악추가에 실패했습니다.");
 		        	
 		        location = "/admin/Music";
 			},
     	
      	    error : function(jqXHR, textStatus, errorThrown) {
       		  
-			alert("에러 발생 \n" +"/"+jqXHR+"/"+ textStatus + " : " + errorThrown);
+			alert("정보를 다시 입력해주세요");
     	    }
     	
  		})

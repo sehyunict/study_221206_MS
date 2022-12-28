@@ -66,7 +66,7 @@
 		ORDER BY MUSIC_NO ASC
 	</select>
 	
-	<select id="selectMemberAlbumUpdate" resultType="memberAlbumVo">
+	<select id="selectMemberAlbumUpdate" resultType="AlbumVo">
 		SELECT
 	    MEMBER_ALBUM_NO
 		    , MEMBER_ALBUM_TITLE
@@ -77,7 +77,7 @@
 		ORDER BY MEMBER_ALBUM_NO ASC
 	</select>
 	
-	<update id="updateMemberAlbumDetail" parameterType="memberAlbumVo">
+	<update id="updateMemberAlbumDetail" parameterType="AlbumVo">
 		UPDATE
 		    TN_MS_MEMBER_ALBUM
 		SET

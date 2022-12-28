@@ -44,7 +44,7 @@
 </head>
 <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript">
-	function del_album(no) {
+	function delAlbum(no) {
 		let albumId = "#likeAlbum" + no;
 		
 		$.ajax({
@@ -96,7 +96,7 @@
 							<td>${memberAlbumVo.album_title}</td>
 							<td>${memberAlbumVo.artist_name}</td>
 							<td><fmt:formatDate value="${memberAlbumVo.album_date}" pattern="yyyy.MM.dd"/></td>
-							<td><a href="#" onclick="del_album(${memberAlbumVo.like_album_no})">취소</a></td>
+							<td><a href="#" onclick="delAlbum(${memberAlbumVo.like_album_no})">취소</a></td>
 						</tr>
 					</c:forEach>
 				</c:otherwise>

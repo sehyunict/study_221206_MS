@@ -23,6 +23,7 @@
 			<mvc:mapping path="/admin/**" /> <!-- 모든 URL 요청시 모두수행 -->
 			<mvc:exclude-mapping path="/admin"/>
 			<mvc:exclude-mapping path="/admin/LoginCheck"/>
+			<mvc:exclude-mapping path="/admin/Out"/>
 			<beans:bean class="sehyunict.admin.web.AdminInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>

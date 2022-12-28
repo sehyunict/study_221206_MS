@@ -186,7 +186,7 @@ function selectAll(selectAll)  {
     	
         error : function(jqXHR, textStatus, errorThrown) {
       	  
-      	  alert("에러 발생 \n" +"/"+jqXHR+"/"+ textStatus + " : " + errorThrown);
+      	  alert("정보를 다시 입력해주세요.");
         }
     	
  	})

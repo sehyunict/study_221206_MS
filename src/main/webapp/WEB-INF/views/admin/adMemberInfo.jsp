@@ -108,7 +108,7 @@ td {
     	
         error : function(jqXHR, textStatus, errorThrown) {
       	  
-      	  alert("에러 발생 \n" +"/"+jqXHR+"/"+ textStatus + " : " + errorThrown);
+      	  alert("정보를 다시 입력해주세요.");
         }
     	
  	})
@@ -248,14 +248,13 @@ td {
 
 				} else if (data == 'error')
 
-					alert("회원수정에 싫패했습니다.");
+					alert("회원수정에 실패했습니다.");
 
 			},
 
 			error : function(jqXHR, textStatus, errorThrown) {
 
-				alert("에러 발생 \n" + "/" + jqXHR + "/" + textStatus + " : "
-						+ errorThrown);
+				alert("정보를 다시 입력해주세요.");
 			}
 
 		})
@@ -287,14 +286,13 @@ td {
 
 				} else if (data == 'error')
 
-					alert("회원삭제에 싫패했습니다.");
+					alert("회원삭제에 실패했습니다.");
 
 			},
 
 			error : function(jqXHR, textStatus, errorThrown) {
 
-				alert("에러 발생 \n" + "/" + jqXHR + "/" + textStatus + " : "
-						+ errorThrown);
+				alert("다시 시도 바랍니다.");
 			}
 
 		})

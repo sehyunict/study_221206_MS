@@ -44,7 +44,7 @@
 </head>
 <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript">
-	function del_fan(no) {
+	function delFan(no) {
 		let fanId = "#likeFan" + no;
 		
 		$.ajax({
@@ -98,7 +98,7 @@
 							<td>${memberFanVo.artist_introduce}</td>
 							<td>${memberFanVo.artist_company}</td>
 							<td><fmt:formatDate value="${memberFanVo.artist_debut}" pattern="yyyy.MM.dd"/></td>
-							<td><a href="#" onclick="del_fan(${memberFanVo.fan_no})">취소</a></td>
+							<td><a href="#" onclick="delFan(${memberFanVo.fan_no})">취소</a></td>
 						</tr>
 					</c:forEach>
 				</c:otherwise>

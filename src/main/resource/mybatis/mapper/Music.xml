@@ -24,7 +24,7 @@
 	 
 	<select id="musicSearch" parameterType="String" resultMap="music">
 		SELECT
-			 rownum as music_number 
+			 ROW_NUMBER() OVER(ORDER BY t1.music_no) as music_number
     		,t1.music_title as music_title
     		,t2.artist_name as artist_name
     		,t3.album_title as album_title
