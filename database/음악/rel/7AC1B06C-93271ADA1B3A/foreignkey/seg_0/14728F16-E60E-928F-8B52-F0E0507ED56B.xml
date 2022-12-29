@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="14728F16-E60E-928F-8B52-F0E0507ED56B" containerWithKeyObject="504D2E5A-8823-3C23-9EDC-3D903793DE8A" localFKIndex="E8E2A9AA-0A70-B048-B579-F6569C176D4D" name="FAN_ARTIST_FK">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 04:30:43 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<referredTableLongName>ARTIST</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>257B7105-F41A-8984-D47F-806608FE4E70</referredTableID>
+<keyObject>76C652D4-0BFB-7E4B-8C0F-4ECB09EA0CC1</keyObject>
+<referredKeyID>76C652D4-0BFB-7E4B-8C0F-4ECB09EA0CC1</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ARTIST_No</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

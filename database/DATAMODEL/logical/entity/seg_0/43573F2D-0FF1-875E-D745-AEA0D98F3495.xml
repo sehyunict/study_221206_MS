@@ -1,0 +1,129 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="43573F2D-0FF1-875E-D745-AEA0D98F3495" name="ARTIST">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-24 05:59:59 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ARTIST_No" id="600E1AC1-EF4E-F135-7927-6FE2C6195090">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 00:30:00 UTC</createdTime>
+<ownerDesignName>asdasd</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ARTIST_Name" id="93DDE590-264C-5F94-6309-371CC4BD8AF0">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 00:35:38 UTC</createdTime>
+<ownerDesignName>asdasd</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ARTIST_Profile" id="EA22D151-3B3A-FE72-248C-5F87B5A4D725">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 00:35:45 UTC</createdTime>
+<ownerDesignName>asdasd</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ARTIST_Type" id="FA04E507-5B65-3218-D1BB-94400D1EBE34">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 00:35:45 UTC</createdTime>
+<ownerDesignName>asdasd</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ARTIST_Company" id="9246D3AE-87C4-8EA2-AA97-D8CC1C445058">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 00:35:45 UTC</createdTime>
+<ownerDesignName>asdasd</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ARTIST_Introduce" id="83F67467-76A9-59AA-D7A1-FDC4809461A2">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 00:35:45 UTC</createdTime>
+<ownerDesignName>asdasd</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ARTIST_Debut" id="F9729BF3-C306-AD74-E0CE-6999DBAD8890">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 00:35:45 UTC</createdTime>
+<ownerDesignName>asdasd</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ARTIST_Awarded" id="BA4F6857-2DBD-D874-0FEE-13E0828BE344">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 00:35:46 UTC</createdTime>
+<ownerDesignName>asdasd</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ARTIST_Genre" id="FE7AA805-9DAE-9849-2A21-342EE89B8D2A">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 00:35:46 UTC</createdTime>
+<ownerDesignName>asdasd</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="D9A0E946-4F65-2CFA-A21D-BB2F68E4C977" name="ARTIST PK">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 00:30:06 UTC</createdTime>
+<ownerDesignName>asdasd</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>600E1AC1-EF4E-F135-7927-6FE2C6195090</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

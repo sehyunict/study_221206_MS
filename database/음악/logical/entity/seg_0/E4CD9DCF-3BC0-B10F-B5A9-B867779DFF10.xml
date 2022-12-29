@@ -1,0 +1,159 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E4CD9DCF-3BC0-B10F-B5A9-B867779DFF10" name="회원_앨범_음악">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:34:06 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="회원_앨범_음악_번호" id="50757A73-EAE9-27C7-2E91-AE05EBBE3FBF">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:46:58 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="회원_앨범_번호" id="24AADDF6-A974-4D00-548C-DCDC5A131313">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:46:58 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="음악_번호" id="96A2429A-D55D-B77E-A99D-07852549414D">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:46:58 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="회원_앨범_음악_추가날짜" id="EA7C8DAD-1D41-B801-C30B-CF09CFD9E9CC">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:46:59 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="회원_번호1" id="FEB5247A-E572-77C9-5D9F-ACE764CEE987">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:53:08 UTC</createdTime>
+<generatorID>C646C1A8-6F59-5AF0-5305-0004F693B1E5</generatorID>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<referedAttribute>44C1CFB2-B459-FF04-DD7B-BF5498EC61A6</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="회원_앨범_번호1" id="049BFC26-073B-D3FF-5BAF-ED1C15D5C346">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:53:08 UTC</createdTime>
+<generatorID>C646C1A8-6F59-5AF0-5305-0004F693B1E5</generatorID>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<referedAttribute>15658C29-E900-5159-DE12-C46455EF188D</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="음악_번호1" id="546A0EB9-E04E-C265-8546-F070A1567330">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:53:20 UTC</createdTime>
+<generatorID>9220D3A3-0C26-2046-9261-9D255B538195</generatorID>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<referedAttribute>69D99F8D-F5DB-1087-E336-77025DE12FEE</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="앨범_번호1" id="4BA0C964-79CF-AF5C-4937-BDB9E587BA71">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:53:20 UTC</createdTime>
+<generatorID>9220D3A3-0C26-2046-9261-9D255B538195</generatorID>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<referedAttribute>65A8FE80-3D64-94BA-28C7-05CC47573006</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="아티스트_번호1" id="889D3BDA-6AA6-D10B-5CF7-486F18789B34">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:53:20 UTC</createdTime>
+<generatorID>9220D3A3-0C26-2046-9261-9D255B538195</generatorID>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<referedAttribute>CE2DBF8E-71B3-F0C0-B164-95D4DA432FD1</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="플레이리스트_번호" id="43ED11B9-856E-ABF0-FDAE-56A0A9B2B0BE">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:53:20 UTC</createdTime>
+<generatorID>9220D3A3-0C26-2046-9261-9D255B538195</generatorID>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<referedAttribute>D89D1787-FCB1-4704-A80B-76D76AA7520F</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="회원_랭킹_번호" id="ADEC8C7B-EB89-DADD-8759-4FA140A294A1">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 07:59:52 UTC</createdTime>
+<generatorID>9220D3A3-0C26-2046-9261-9D255B538195</generatorID>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<referedAttribute>D1DC8C11-F051-7FA7-274A-F193D97C2714</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="E866BA9F-9B17-3D29-D4CA-5AE9B25330E0" name="회원_앨범_음악 PK">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:47:08 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>50757A73-EAE9-27C7-2E91-AE05EBBE3FBF</attributeRef>
+<attributeRef>FEB5247A-E572-77C9-5D9F-ACE764CEE987</attributeRef>
+<attributeRef>049BFC26-073B-D3FF-5BAF-ED1C15D5C346</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

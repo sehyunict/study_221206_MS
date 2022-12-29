@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="음악" id="BD1F2110-D78C-4AE8-7B66-3274FD8218A1" version="3.5">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 04:31:33 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>BD1F2110-D78C-4AE8-7B66-3274FD8218A1</designId>
+</OSDM_Design>

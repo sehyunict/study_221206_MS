@@ -1,0 +1,199 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="0C9269A9-6876-6132-1C4C-CE4206D17CFC" name="회원">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 04:31:45 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="회원_번호" id="4F26BDD4-B8E6-7FDF-30FC-733FE105817A">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:09:22 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="회원_아이디" id="D7B7DA15-6D8D-EA6A-F803-F55828F3AB3E">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:09:22 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="회원_비밀번호" id="5C3A352F-9DF1-8DE9-EBE7-7D643B8DBA43">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:09:22 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="회원_프로필사진" id="F5DA420D-6EC5-DA7E-2154-AA33F4C35E88">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:09:22 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="회원_이름(닉네임)" id="F0560711-2DB5-8463-DCA5-DE980763E26D">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:09:22 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="회원_생년월일" id="A8F4DA32-5FF1-5A5F-9051-72BD5B43BEA4">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:09:23 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="회원_성별" id="CF74D003-937B-4F2D-3920-5A20A7E2074A">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:09:23 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="회원_소개" id="848C0D7B-E4F1-422A-5E1D-1B6B1902B5B2">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:09:23 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="회원_이메일" id="3F3757C3-47F7-3A69-D7C9-79F392D57B3F">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:09:24 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="회원_전화번호" id="52184B86-077B-B0D6-C859-3B883B326E9A">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:09:25 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="회원_가입일" id="2BF8C769-EF9D-5699-0546-41F807EE3C2D">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:16:55 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="회원_구독정보" id="D38F2CCC-EFBF-B8F9-F0BE-10FAF6E040AE">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:09:23 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="회원_등급" id="1296B81D-EB32-1CDE-E107-443381153041">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:09:23 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="회원_마케팅동의" id="C175F69B-6A7E-2782-246F-CEC03F45CDEB">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:17:00 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="플레이리스트_번호" id="C33452DE-BBA6-FFFD-1E4F-2825C194C34C">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:23:58 UTC</createdTime>
+<generatorID>67F1460A-B9DD-E23B-92E1-78CFF5A52CE9</generatorID>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<referedAttribute>814BA4A2-13DE-92DE-1EED-2C39AEA26190</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="회원_랭킹_번호" id="D5A65C7C-60B8-C668-5C99-A15220B529CE">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 07:59:50 UTC</createdTime>
+<generatorID>B0D2701F-12A5-DDF5-0378-D206A5EFF921</generatorID>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<referedAttribute>1FDAE794-3391-02DA-F82A-DADCF5B681E6</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="DDD90C02-D433-F7B5-BAFF-E1A245C11578" name="회원 PK">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:09:27 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>4F26BDD4-B8E6-7FDF-30FC-733FE105817A</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

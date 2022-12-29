@@ -1,0 +1,166 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="AD4C5565-BDE2-5F6F-E7D0-79DE8DFA07B8" name="ALBUM">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 06:58:54 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Album_No" id="6E90BF33-5990-D437-D388-FCD450AB3041">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 07:00:56 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Album_Type" id="2CDE9278-FC95-B91C-F669-265BCF3FD524">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 07:34:18 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Album_Title" id="339CF676-F8D2-5DBB-6FEF-95F02F7FA197">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 07:34:50 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Album_Artist" id="052B40C0-0658-DABB-AE69-4DB40F37F4E3">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 07:36:00 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Album_Thumbnail" id="C9D3FF5B-F5DE-16D5-F751-DA586C509BB6">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 06:59:26 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Album_Like" id="F20B5796-C07D-AB29-C563-F7FA9F054536">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 07:36:58 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Album_Grade" id="28FEAAC5-E53E-756B-D189-86A1A80899EB">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 07:37:11 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Album_date" id="2BB7D98C-DB3B-8593-A7F6-00D45D8B3553">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 07:36:25 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Album_Genre" id="0A2E9FFC-E4EB-94A8-7759-545196765730">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 07:39:00 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Album_Company" id="47FE4085-01F3-D3F8-E213-E8CCC5A5951A">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 07:39:17 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Album_Agency" id="D85C896C-B4C8-7DD2-254B-FFC114A6D819">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 07:39:29 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Album_Explanation" id="CA78608F-E364-DC75-27C7-A590E37949E5">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 07:39:58 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ARTIST_No" id="3A636EF6-32DF-6E7F-C593-350A31D41366">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 00:30:10 UTC</createdTime>
+<generatorID>089A4B1C-A712-21B5-9D0A-65FE55520D68</generatorID>
+<ownerDesignName>asdasd</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<referedAttribute>600E1AC1-EF4E-F135-7927-6FE2C6195090</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="738AAA89-7EB0-6AC5-5EC9-6EF48F7DE0A3" name="Album PK">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 07:01:04 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>6E90BF33-5990-D437-D388-FCD450AB3041</attributeRef>
+<attributeRef>3A636EF6-32DF-6E7F-C593-350A31D41366</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

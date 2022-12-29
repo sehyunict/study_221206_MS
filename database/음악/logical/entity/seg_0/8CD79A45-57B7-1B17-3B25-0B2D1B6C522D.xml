@@ -1,0 +1,110 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="8CD79A45-57B7-1B17-3B25-0B2D1B6C522D" name="좋아요_앨범">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 07:36:42 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="좋아요_앨범_번호" id="B6F55DF5-6E74-CC8B-5B31-D4B77B9FE93A">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 07:36:42 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="회원_번호" id="D5C8B551-3272-62D7-3AF6-187A23B649EE">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 07:36:42 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="앨범_번호" id="63CCECB0-FB33-A35D-F063-3CBCEC83CC82">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 07:36:42 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="좋아요_앨범_날짜" id="7B8EC3AF-EEA4-9336-7CFC-20EFC78EACEF">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 07:36:42 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="회원_번호1" id="933D5953-B645-5A5C-2541-BF762DBCF72A">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 07:38:28 UTC</createdTime>
+<generatorID>5ABB61E0-5F26-BF9C-E0CF-A552292AD11B</generatorID>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<referedAttribute>4F26BDD4-B8E6-7FDF-30FC-733FE105817A</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="아티스트_번호1" id="F91418FC-81BB-9136-AC20-65988B072D0D">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 07:39:21 UTC</createdTime>
+<generatorID>B108ECF9-D850-D4B0-A6DE-AF4B69D0BDAD</generatorID>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<referedAttribute>29194256-E436-9304-C0DD-45810A397EBD</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="앨범_번호1" id="EAA2B9D6-87BB-C686-8FD1-F572AFE02B4D">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 07:39:21 UTC</createdTime>
+<generatorID>B108ECF9-D850-D4B0-A6DE-AF4B69D0BDAD</generatorID>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<referedAttribute>2B752F50-52AE-468E-CEFC-6EAA631260F2</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="834B82DB-51A7-6ACE-C373-A1A75959C85A" name="좋아요_음악 PK">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 07:36:42 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>B6F55DF5-6E74-CC8B-5B31-D4B77B9FE93A</attributeRef>
+<attributeRef>933D5953-B645-5A5C-2541-BF762DBCF72A</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

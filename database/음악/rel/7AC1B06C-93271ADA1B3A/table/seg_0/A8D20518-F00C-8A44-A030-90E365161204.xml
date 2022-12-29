@@ -1,0 +1,105 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A8D20518-F00C-8A44-A030-90E365161204" name="TN_MS_NOW_PLAYLIST">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 05:25:38 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<ordsAlias>table_10</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NOW_PLAYLIST_No" id="F9B0DD5B-9D40-2662-7653-B654106EE114">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 05:25:38 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MEMBER_No" id="290CED18-BD59-287B-4F63-AB79AB78BFD7">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 05:25:38 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="582B6B84-C27A-7CCB-F9E5-6799D1157B2B" referredColumn="3E3ABDF7-4299-7303-908A-2FFEB01E6B16"/>
+</associations>
+</Column>
+<Column name="MUSIC_No" id="8ECC35B0-B0BA-3684-F007-B77140397F4A">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 05:25:38 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C0CA1404-B772-4921-D15C-829861C6C2A6" referredColumn="9EFB0F12-D977-1B34-B664-228628FD20A9"/>
+</associations>
+</Column>
+<Column name="NOW_PLAYLIST_Count" id="EB44B8E9-A297-C879-8F58-DF438347364F">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 05:25:38 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOW_PLAYLIST_Date" id="04A317F3-A0BC-893C-722A-5EE1FB34FBA8">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 05:31:16 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BBF6F1E4-D8A5-CFD7-ACF9-2623D676C080" name="NOW_PLAYLIST_PK">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 05:25:38 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F9B0DD5B-9D40-2662-7653-B654106EE114"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="755E1FFC-DD3F-B744-108D-2BD128A8854E" name="NOW_PLAYLIST_MEMBER_FK">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 05:32:55 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="290CED18-BD59-287B-4F63-AB79AB78BFD7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5DE7DEF2-7BFE-C99D-ACF3-8C8948726972" name="NOW_PLAYLIST_MUSIC_FK">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 05:32:55 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8ECC35B0-B0BA-3684-F007-B77140397F4A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

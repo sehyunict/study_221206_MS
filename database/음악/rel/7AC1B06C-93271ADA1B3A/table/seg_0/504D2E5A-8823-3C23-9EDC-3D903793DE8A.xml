@@ -1,0 +1,94 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="504D2E5A-8823-3C23-9EDC-3D903793DE8A" name="TN_MS_FAN">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 04:02:38 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<ordsAlias>table_10</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="FAN_No" id="A395667C-65C4-E853-06CD-ADCE92A11FFD">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 04:06:24 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MEMBER_No" id="59FA6ABD-0E9E-ED57-42C9-2647EA38F98B">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 04:25:06 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="289410D8-A2B6-1C14-97EA-38EBB23F4D44" referredColumn="3E3ABDF7-4299-7303-908A-2FFEB01E6B16"/>
+</associations>
+</Column>
+<Column name="ARTIST_No" id="A5B38193-8117-5FFF-B977-06872FC88D4C">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 04:26:25 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="14728F16-E60E-928F-8B52-F0E0507ED56B" referredColumn="2F77C6BD-0137-B140-1D62-91217CDB9649"/>
+</associations>
+</Column>
+<Column name="FAN_Date" id="17A298FB-5C47-A1C7-6B12-E349ACADAC57">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 04:06:24 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CA8E5B38-02BB-3042-14D4-578931DD703F" name="FAN_PK">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 04:06:24 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A395667C-65C4-E853-06CD-ADCE92A11FFD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="06831E99-0611-F32D-382C-FE5F76525F4A" name="FAN_MEMBER_FK">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 04:23:14 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="59FA6ABD-0E9E-ED57-42C9-2647EA38F98B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E8E2A9AA-0A70-B048-B579-F6569C176D4D" name="FAN_ARTIST_FK">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 04:30:43 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A5B38193-8117-5FFF-B977-06872FC88D4C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

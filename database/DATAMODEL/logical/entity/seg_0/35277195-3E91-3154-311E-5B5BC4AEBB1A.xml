@@ -1,0 +1,229 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="35277195-3E91-3154-311E-5B5BC4AEBB1A" name="MEMBER">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 05:55:50 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="MEMBER_No" id="7AE28BA8-1B21-0E1A-15B3-914A59A4A594">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 07:03:22 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MEMBER_ID" id="2C75D083-A4EA-32FB-95ED-2470EEC61B84">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 05:56:03 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MEMBER_PW" id="717EDD0E-44EA-2678-2060-233A529C0B8B">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 05:59:02 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>16 CHAR</dataTypeSize>
+<ownDataTypeParameters>16 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MEMBER_Profile" id="EFCF5ED0-47C1-22E9-451F-E59EE8CCC4F1">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 08:08:11 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MEMBER_Name" id="60E33742-B41E-4B29-76E1-3BF22E0C9D2E">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 08:05:10 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MEMBER_BirthDate" id="A9793371-11E5-F2EC-6A2E-8F0A56B8769A">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 08:22:39 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MEMBER_Gender" id="257D70AA-9368-6E7E-A995-2B28EFE1E107">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 08:28:38 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MEMBER_Introduce" id="97F6DC1A-4CE2-9FE4-AB92-C01EE7E65EEF">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 08:05:25 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MEMBER_Subscription" id="9EA7864C-CE00-1DFE-5FCE-0FC668BCF786">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 08:07:44 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MEMBER_Rating" id="9AA1755A-673C-4953-896A-64795C60F903">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 08:11:23 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MEMBER_Email" id="F568DDF9-57B3-E7D0-D5F9-EB464831BD8F">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 08:13:14 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MEMBER_Phone" id="730411F6-499D-ED0E-4657-1DC52F01E962">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 08:13:20 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MEMBER_Marketing_Check" id="5DDCFBF0-B19B-8F42-0B85-088F6A33B400">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 08:13:27 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MEMBER_Date" id="1AC5D3A7-2201-7044-8C28-C6CED3622142">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 08:24:31 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MEMBER_No1" id="95782944-1074-E260-9DA1-C949356F915C">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 01:10:27 UTC</createdTime>
+<generatorID>22507031-4D0E-EAEC-8410-1B6A4E227BE4</generatorID>
+<ownerDesignName>asdasd</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<referedAttribute>A31BC449-C6BF-2449-CFEB-6734EE521A20</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NP_No" id="57B2DC46-9971-3BF4-6431-19C0B087E26F">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 01:10:27 UTC</createdTime>
+<generatorID>22507031-4D0E-EAEC-8410-1B6A4E227BE4</generatorID>
+<ownerDesignName>asdasd</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<referedAttribute>2C6D6698-60E9-1A9F-B72A-24A8931836A7</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Like_No" id="0CA46A4E-A4C1-A341-7A83-017CD09F9BED">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 01:12:54 UTC</createdTime>
+<generatorID>BBCF5E8F-9F82-6B5A-66E8-737C19A4EFE5</generatorID>
+<ownerDesignName>asdasd</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<referedAttribute>BBD009A1-EE3E-FE21-9632-F7C58B6CC1BC</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MEMBER_No11" id="D6F195DF-7E12-1EE1-0810-09C68AD98517">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 01:12:54 UTC</createdTime>
+<generatorID>BBCF5E8F-9F82-6B5A-66E8-737C19A4EFE5</generatorID>
+<ownerDesignName>asdasd</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<referedAttribute>FD1C35D0-7DAA-0A8C-1FDE-0D9DB518D1FD</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="07A7DA23-5BFA-FAAC-08BA-53B7E591D29F" name="MEMBER PK">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 05:56:55 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>7AE28BA8-1B21-0E1A-15B3-914A59A4A594</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

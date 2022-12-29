@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="2D347BFB-38FF-1B25-2C69-C6744F7CA79B" mainViewID="AB09F8E4-529A-AEE0-09AC-02FDA3E61B9B">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 04:31:33 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

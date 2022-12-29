@@ -1,0 +1,340 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E6BCE733-3A85-5862-2A2B-E7CA04DF26C3" name="MUSIC">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 06:39:14 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="MUSIC_No" id="BE268597-9E2B-069D-9AF8-FBB98A1AD221">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 06:46:43 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Album_No" id="9B33E015-FEB7-5CB9-BF8A-C8D37ED8651D">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 07:42:31 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MUSIC_File" id="3C140BD8-F895-0068-CD6B-262481BC7703">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 06:51:22 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MUSUC_Title" id="91869B36-6CD1-B44D-7132-B1454D757725">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 06:40:25 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MUSIC_Artist" id="BE29B206-BD1A-DCFF-2A55-993D79AD1A8E">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 06:42:42 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MUSIC_Like" id="6CEE1171-8E29-6624-6F6B-61F874C8B7F2">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 06:51:22 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MUSIC_Lyrics" id="9F6A0B12-1510-B735-9FF2-4DC1AF4CA01A">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 06:51:21 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MUSIC_Composition" id="507229B3-6F98-E47E-2662-05C84FA0778E">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 06:51:01 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MUSIC_Write" id="D58B0053-D3A0-B42E-6085-137A190C8F2A">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 06:51:22 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MUSIC_Arrange" id="68CB07B1-AF36-B6C7-38C5-E6BA58EB8510">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 06:51:22 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MUSIC_Genre" id="E103E75A-BA17-ABEF-74FF-20A33A5B26E5">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 06:51:22 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MUSIC_Play_Count" id="00044CAB-36D8-B03B-F31B-5F29F91BE87D">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 06:51:22 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Album_No1" id="D758E42C-89EE-57E2-CB70-6F57D6C26D96">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 08:02:33 UTC</createdTime>
+<generatorID>22A86162-03D0-6C66-6DB2-1D31A8CBEFC9</generatorID>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<referedAttribute>6E90BF33-5990-D437-D388-FCD450AB3041</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MEMBER_No1" id="52C8C84C-0DB0-B5E2-D47F-DF1396702C26">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-24 00:34:46 UTC</createdTime>
+<generatorID>C47F8781-4348-F20F-660D-2068E05CC31D</generatorID>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<referedAttribute>A31BC449-C6BF-2449-CFEB-6734EE521A20</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NP_No" id="14255339-53B8-E89C-AFEC-8D38AFA52AE2">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-24 00:34:46 UTC</createdTime>
+<generatorID>C47F8781-4348-F20F-660D-2068E05CC31D</generatorID>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<referedAttribute>2C6D6698-60E9-1A9F-B72A-24A8931836A7</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MAL_No" id="576D702E-DADD-209B-9C4F-6557B7979414">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-24 00:40:16 UTC</createdTime>
+<generatorID>586EC93A-9A6A-758B-C087-9F8FD133D6A2</generatorID>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<referedAttribute>5D042E88-61E1-B85D-3ED1-8A58495EF5EA</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MA_No1" id="E9693C81-D596-34A8-4211-CB7476FD22FC">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-24 00:40:16 UTC</createdTime>
+<generatorID>586EC93A-9A6A-758B-C087-9F8FD133D6A2</generatorID>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<referedAttribute>BF4DA966-D9FD-6106-CD56-DD4F846EC492</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MEMBER_No11" id="29456C3D-2BCD-C4DE-43D8-5D09C3665B1A">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-24 00:40:16 UTC</createdTime>
+<generatorID>586EC93A-9A6A-758B-C087-9F8FD133D6A2</generatorID>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<referedAttribute>BD191F62-B6BC-0D85-A24E-ED86AB1B683B</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="RC_No" id="E2D7E662-0B6F-672A-CC5F-455A5F26F085">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-24 02:11:01 UTC</createdTime>
+<generatorID>708078BC-7980-A24F-1BC0-905258CCDE73</generatorID>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<referedAttribute>02A9863C-4B37-562A-2E8B-13B574E97B7A</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MUSIC_MV" id="3E15F8D8-F176-032A-6AA1-CB87EE8BA33A">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-24 04:41:10 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MPC_No" id="E045EFA0-CDB4-ED60-2E1A-E19CC1FE4C39">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-24 05:13:38 UTC</createdTime>
+<generatorID>28ABEF25-D4D1-CCB1-A29E-0AA5E319720B</generatorID>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<referedAttribute>629B7E51-C06C-2411-B8C4-02871EFB5BD9</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MEMBER_No12" id="ED4F34A0-D4E6-0A0C-91CE-F013D012B0D4">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-24 05:13:38 UTC</createdTime>
+<generatorID>28ABEF25-D4D1-CCB1-A29E-0AA5E319720B</generatorID>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<referedAttribute>4A1281C2-1A1C-1993-2785-1D0182F5C66C</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Like_No" id="0A52F470-D68A-1F76-4940-061B86E3EE6D">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-24 06:40:18 UTC</createdTime>
+<generatorID>01EB0AC7-1DF7-7952-4C9A-DCACE8EFFD21</generatorID>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<referedAttribute>BBD009A1-EE3E-FE21-9632-F7C58B6CC1BC</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MEMBER_No13" id="1FA59250-2600-F36C-1DB0-D69E6D86876C">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-24 06:40:18 UTC</createdTime>
+<generatorID>01EB0AC7-1DF7-7952-4C9A-DCACE8EFFD21</generatorID>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<referedAttribute>FD1C35D0-7DAA-0A8C-1FDE-0D9DB518D1FD</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MUSIC_19" id="8C775EFB-5ECA-31AB-8EFD-46F5DF2BD573">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-24 06:42:28 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ARTIST_No" id="D56A0E2B-0DD6-B31D-6BEA-E2D80AE6DD56">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 00:30:10 UTC</createdTime>
+<generatorID>22A86162-03D0-6C66-6DB2-1D31A8CBEFC9</generatorID>
+<ownerDesignName>asdasd</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<referedAttribute>3A636EF6-32DF-6E7F-C593-350A31D41366</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="078BCE86-493E-C2B6-C5BD-F562E93255F3" name="MUSIC PK">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 06:50:46 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>BE268597-9E2B-069D-9AF8-FBB98A1AD221</attributeRef>
+<attributeRef>D758E42C-89EE-57E2-CB70-6F57D6C26D96</attributeRef>
+<attributeRef>D56A0E2B-0DD6-B31D-6BEA-E2D80AE6DD56</attributeRef>
+<attributeRef>52C8C84C-0DB0-B5E2-D47F-DF1396702C26</attributeRef>
+<attributeRef>14255339-53B8-E89C-AFEC-8D38AFA52AE2</attributeRef>
+<attributeRef>576D702E-DADD-209B-9C4F-6557B7979414</attributeRef>
+<attributeRef>E9693C81-D596-34A8-4211-CB7476FD22FC</attributeRef>
+<attributeRef>29456C3D-2BCD-C4DE-43D8-5D09C3665B1A</attributeRef>
+<attributeRef>E2D7E662-0B6F-672A-CC5F-455A5F26F085</attributeRef>
+<attributeRef>E045EFA0-CDB4-ED60-2E1A-E19CC1FE4C39</attributeRef>
+<attributeRef>ED4F34A0-D4E6-0A0C-91CE-F013D012B0D4</attributeRef>
+<attributeRef>0A52F470-D68A-1F76-4940-061B86E3EE6D</attributeRef>
+<attributeRef>1FA59250-2600-F36C-1DB0-D69E6D86876C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

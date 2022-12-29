@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="289DEF4C-0334-F088-3D1A-394900F164F5" name="TC_MS_COM_CODE">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-30 01:35:42 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<ordsAlias>table_13</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="COM_CODE_No" id="D1EA2796-82F5-D546-7CD3-3035A43176F8">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-30 01:36:30 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="COM_CODE_TYPE" id="AE6A36E3-1B23-7CAD-3805-E85AD59D1577">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-30 01:39:35 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="COM_CODE" id="AA9D09CB-2456-6150-E818-40BB54CC8A3D">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-30 01:39:35 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="63E42231-836F-7A49-37D0-38E4289FE947" name="COM_CODE_PK">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-30 01:36:30 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D1EA2796-82F5-D546-7CD3-3035A43176F8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

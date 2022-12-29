@@ -1,0 +1,95 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="8BEB8817-961B-7D23-F99E-5FEB438B2E77" name="회원_랭킹">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 07:17:45 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="회원_랭킹_번호" id="1FDAE794-3391-02DA-F82A-DADCF5B681E6">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 07:18:56 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="회원_번호" id="7C4B0FBF-C855-AB64-57A0-C251A2972C57">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 07:18:56 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="음악_번호" id="6C913FDE-6F8B-3212-7B02-697253580729">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 07:18:56 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="회원_랭킹_재생횟수" id="F79D3797-A204-4C0E-DC9D-641C13EC03BF">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 07:18:56 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="회원_랭킹_날짜" id="3D19A68A-EEDD-44D2-19F4-75730F03A707">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 07:18:57 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="회원_번호1" id="D746C29C-D6DE-F945-7477-5999AA16B81A">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 07:59:48 UTC</createdTime>
+<generatorID>B0D2701F-12A5-DDF5-0378-D206A5EFF921</generatorID>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<referedAttribute>4F26BDD4-B8E6-7FDF-30FC-733FE105817A</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="6E9489BC-476D-281C-08F7-65185C6BEDF0" name="회원_랭킹 PK">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 07:19:07 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>1FDAE794-3391-02DA-F82A-DADCF5B681E6</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

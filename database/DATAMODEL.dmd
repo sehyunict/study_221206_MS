@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="asdasd" id="3C9F1C56-FB39-7F39-E92F-137726D5CCB3" version="3.5">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 05:40:10 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>3C9F1C56-FB39-7F39-E92F-137726D5CCB3</designId>
+</OSDM_Design>

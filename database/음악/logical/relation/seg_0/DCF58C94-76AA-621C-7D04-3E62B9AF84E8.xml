@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_19" directorySegmentName="seg_0" id="DCF58C94-76AA-621C-7D04-3E62B9AF84E8">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 07:49:29 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<sourcePk>52651EDA-8528-A82C-E311-CC74B0272B48</sourcePk>
+<targetPk>1A3534F3-69D9-9053-B1F1-1F6BF614714F</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>ED35BAF8-FC03-A781-4682-48A18A39E1EE</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>9C290B81-7AD0-2065-2AD2-CED4E770D83B</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_10" directorySegmentName="seg_0" id="5D75C541-139E-7F56-9A5B-3921C81FF192">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-24 00:36:59 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<sourcePk>CBF88C1D-1B5F-2371-552B-E88A677507A9</sourcePk>
+<identifying>true</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>D0D0DE2C-389B-FE64-BDA6-ADA20E1B1EC6</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>3D57DC09-0E98-3F5A-5778-F59B268EAC85</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BusinessInfoDesign class="oracle.dbtools.crest.model.businessinfo.BusinessInfoDesign" name="Business Information" id="6EDA60E8-0116-4658-D40B-CE0D1FE82234">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 04:31:33 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</BusinessInfoDesign>

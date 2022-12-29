@@ -1,0 +1,151 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="9FCA9343-4F96-4128-BC2D-E28CF6EB0663" name="랭킹">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:32:27 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="랭킹_번호" id="BE31EDCF-73BA-408A-1230-1ABBE6DAB3B3">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:33:26 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="음악_번호" id="F2D52B9D-BF7F-4155-1E88-5E2CD72C5945">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:33:26 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="랭킹_날짜" id="7B309E0E-D80F-A05A-A31E-1FFC45B02E11">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:33:26 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="랭킹_재생횟수" id="1C3E473B-30A3-B948-7A11-2861EA4E944B">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:33:26 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="랭킹_성별(남자)" id="34358289-A167-5B21-731D-91EF5266D76A">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 07:16:01 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="랭킹_성별(여자)" id="CF1C0C15-D4E8-B1EB-1CE1-160EB2ECB12A">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 07:16:01 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="랭킹_나이(10대)" id="D33F2450-6F1F-D814-4404-5F5C2ED04190">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 07:16:01 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="랭킹_나이(20대)" id="38258E30-89DE-6423-5015-2E79B3A3C13F">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 07:16:02 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="랭킹_나이(30대)" id="9BAA5F7F-32DF-E7AA-BC72-5496273E4EE5">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 07:16:02 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="랭킹_나이(40대)" id="DF1C444C-AC70-D095-7E19-497F2C31AC95">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 07:16:03 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="랭킹_나이(50대)" id="723A2E0F-8176-F9D2-FE8E-8B333D1A738D">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 07:16:02 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="66A164C8-2E37-CD6E-BD00-DACCAA7E0CC5" name="랭킹 PK">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-25 06:33:31 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<engineerTo>
+<item key="7AC1B06C-270E-B533-F9E6-93271ADA1B3A" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>BE31EDCF-73BA-408A-1230-1ABBE6DAB3B3</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

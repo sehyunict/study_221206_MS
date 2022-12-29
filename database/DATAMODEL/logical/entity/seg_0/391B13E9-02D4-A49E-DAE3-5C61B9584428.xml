@@ -1,0 +1,96 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="391B13E9-02D4-A49E-DAE3-5C61B9584428" name="NOW_PLAYLIST">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 08:39:09 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="NP_No" id="2C6D6698-60E9-1A9F-B72A-24A8931836A7">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 08:39:59 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MEMBER_No" id="7200043D-8167-6DB8-9808-70BD74ADC862">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-24 00:11:04 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MUSIC_No" id="8D7510D1-7862-113C-23E9-CDD4EDC7C85C">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-23 08:40:15 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NP_Count" id="6D2B2E63-6E0C-C4EE-5F24-3BEF5CB1336A">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-24 00:05:49 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NP_Date" id="05D3C742-5A98-04B0-6CF1-39B82AFA03DD">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-24 00:07:04 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MEMBER_No1" id="A31BC449-C6BF-2449-CFEB-6734EE521A20">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-24 00:13:41 UTC</createdTime>
+<generatorID>22507031-4D0E-EAEC-8410-1B6A4E227BE4</generatorID>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<referedAttribute>7AE28BA8-1B21-0E1A-15B3-914A59A4A594</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="389B48EC-1F90-CCBD-6000-AA90382CD982" name="NOW_PLAYLIST PK">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-24 00:13:41 UTC</createdTime>
+<ownerDesignName>DATAMODEL</ownerDesignName>
+<engineerTo>
+<item key="F9DE55CF-AECE-1358-5B78-565B0F86BE4D" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>A31BC449-C6BF-2449-CFEB-6734EE521A20</attributeRef>
+<attributeRef>2C6D6698-60E9-1A9F-B72A-24A8931836A7</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

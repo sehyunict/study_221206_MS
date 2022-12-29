@@ -1,0 +1,143 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="257B7105-F41A-8984-D47F-806608FE4E70" name="TN_MS_ARTIST">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 02:25:02 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<ordsAlias>table_6</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ARTIST_No" id="2F77C6BD-0137-B140-1D62-91217CDB9649">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 04:27:27 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ARTIST_Name" id="5D182BD4-6080-326C-9EB5-79085AE68F35">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 04:27:27 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ARTIST_Date" id="74278847-E9BC-3087-D651-B52936076AE7">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 04:39:12 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ARTIST_Profile" id="C4D5707B-37F7-EE2C-0A23-CE01EDE7B2F3">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 04:27:27 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT029</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ARTIST_Type" id="00646EBB-A022-0116-B7CA-75551AA3C31E">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 04:27:27 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ARTIST_Introduce" id="BFFDEACB-A5FA-37FE-4691-EDEF31DC43DA">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 04:27:27 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT028</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ARTIST_Company" id="1BD22C4B-54CA-10CC-F658-232E612AC5AC">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 04:27:27 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ARTIST_Debut" id="5161958A-EFAB-6BBA-8C68-5F0B1A68E996">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 04:27:27 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ARTIST_Awarded" id="EAFF6372-FE22-A2D1-978C-3BFD5610CDEA">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 04:27:27 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT028</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ARTIST_Genre" id="7443F34A-628B-6404-51A8-DDB38149120B">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 04:27:27 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ARTIST_Fan" id="33A08A60-B25A-8209-F1E6-6EE0E06796A6">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 05:14:29 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="76C652D4-0BFB-7E4B-8C0F-4ECB09EA0CC1" name="ARTIST_PK">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 04:27:39 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2F77C6BD-0137-B140-1D62-91217CDB9649"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

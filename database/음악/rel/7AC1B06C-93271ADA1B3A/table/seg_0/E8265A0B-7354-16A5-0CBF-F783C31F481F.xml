@@ -1,0 +1,178 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E8265A0B-7354-16A5-0CBF-F783C31F481F" name="TN_MS_MEMBER">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 01:13:43 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="MEMBER_No" id="3E3ABDF7-4299-7303-908A-2FFEB01E6B16">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 01:21:14 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MEMBER_ID" id="F0C0B368-7AE5-EA5F-5BF9-748AA8C7162A">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 01:21:14 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MEMBER_PW" id="A3C824A2-0022-437D-EF56-D009C0C9B1E4">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 01:21:14 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MEMBER_Profile" id="7ADE5555-E66B-0DE0-4265-39536BE845B7">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 01:21:14 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT029</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MEMBER_Name" id="599BFAAD-2309-E2F2-3EB8-9D6E5697F133">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 01:21:14 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>12</dataTypeSize>
+<ownDataTypeParameters>12,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MEMBER_BirthDate" id="3DA3D9EF-3F5D-5733-0BB8-1D2C26A3E4EE">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 01:21:14 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MEMBER_Gender" id="41A792AD-3678-7E1F-EFFE-4284CAA4EAEE">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 01:21:14 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MEMBER_Introduce" id="635E1689-9E35-BCAA-494C-76DBA793CF70">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 01:21:14 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MEMBER_Email" id="6D90BF9A-C1E2-17FE-199E-6CA6AC0D2347">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 01:21:14 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MEMBER_Phone" id="D422F088-1BB9-9F14-AC37-BDA31C379BB0">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 01:23:48 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MEMBER_Date" id="1B8C6B19-7262-DD5C-DC44-6415923204E9">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 01:23:48 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MEMBER_Subscription" id="7C9ABED5-A12F-21B0-57D8-DE3139B4F9B9">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 01:21:14 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MEMBER_Rating" id="C4ECCEF5-A1C3-1F31-2DE4-2D6D8934F5B1">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 01:23:48 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MEMBER_MarketingCheck" id="AB940F32-F2E4-0CD7-843D-5CD09094F4D5">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 01:23:48 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D55F7F0A-0C7E-00F4-EEC4-6A10B955B2CD" name="MEMBER_PK">
+<createdBy>Yoo</createdBy>
+<createdTime>2022-11-29 01:21:18 UTC</createdTime>
+<ownerDesignName>음악</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3E3ABDF7-4299-7303-908A-2FFEB01E6B16"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
